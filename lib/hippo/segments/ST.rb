@@ -9,11 +9,11 @@ module Hippo::Segments
     def self.fields
       [
         { :sequence => 1,
-          :name     => 'Transaction Set Identifier Code', 
+          :name     => 'TransactionSetIdentifierCode', 
           :datatype => :list, 
           :options  => ['835']}, 
         { :sequence => 2,
-          :name => 'Transaction Set Control Number', 
+          :name => 'TransactionSetControlNumber', 
           :datatype => :alpha_numeric}
       ]
     end
