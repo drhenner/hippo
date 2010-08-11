@@ -1,17 +1,18 @@
 module Hippo
-  class Hippo::ST
+  class ST
    include Hippo::Segment 
-
-    identifier = 'ST'
-
-    add_field :name => 'Transaction Set Identifier Code', 
-              :datatype => :list, 
-              :options => [
-                            '835'
-              ]
-    add_field :name => 'Transaction Set Control Number', 
-              :datatype => :alpha_numeric                
-  
+    
+   IDENTIFIER = 'ST'
+   FIELDS = [
+      { :name     => 'Transaction Set Identifier Code', 
+        :datatype => :list, 
+        :options  => ['835']
+      }, 
+      {
+        :name => 'Transaction Set Control Number', 
+        :datatype => :alpha_numeric  
+      }
+   ]
   end
 end
 
