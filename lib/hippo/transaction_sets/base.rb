@@ -15,8 +15,8 @@ module Hippo::TransactionSets
     end
 
     def get_segment(identifier, sequence = 0)
-      @segments.select do |f|
-        f.class.identifier == identifier
+      @segments.select do |s|
+        s.class.identifier == identifier
       end[sequence]
     end
 

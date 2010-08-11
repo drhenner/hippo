@@ -1,7 +1,19 @@
 require 'pp'
 
 module Hippo::Segments
-  module Base
+  class Base
+    class << self
+      attr_accessor :fields, :identifier
+
+      def fields
+        @fields ||= []
+      end
+
+      def identifier
+        @identifier ||= ''
+      end
+    end
+
     attr_accessor :values
 
     def initialize
@@ -14,16 +26,10 @@ module Hippo::Segments
     
     def get_field(field)
       if field.class == Fixnum || field =~ /\d+/
-        self.class.fields[field.to_i - 1]
+        @fields[field.to_i - 1]
       else
         self.class.fields.select{|f| f[:name] == get_field_name(field).to_s}.first
       end
-    end
-
-    def set_value(field, value)
-      field = get_field(field)
-
-      @values[field[:sequence]] = value
     end
 
     def to_s
@@ -34,6 +40,18 @@ module Hippo::Segments
       end
 
       output += Hippo::SegmentSeparator
+    end
+    
+    def self.field(field)
+      self.fields << field.merge(:sequence => self.fields.length + 1)
+    end
+
+    def self.segment_identifier(id)
+      self.identifier = id
+    end
+
+    def identifier
+      self.class.identifier
     end
 
     def method_missing(method_name, *args) 

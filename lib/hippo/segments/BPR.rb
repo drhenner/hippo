@@ -1,29 +1,20 @@
 module Hippo::Segments
-  class BPR
-    include Hippo::Segments::Base 
+  class BPR < Base
+    segment_identifier 'BPR'
 
-    def self.identifier
-      'BPR'
-    end
-
-    def self.fields
-      [
-        { :sequence => 1,
-          :name     => 'Transaction Handling Code', 
+    field :name     => 'TransactionHandlingCode', 
           :datatype => :list, 
-          :options  => ['C','D','H','I','P','U','X']}, 
-        { :sequence => 2,
-          :name     => 'Monetary Amount', 
-          :datatype => :numeric},
-        { :sequence => 3,
-          :name     => 'Credit/Debit Flag Code',
+          :options  => ['C','D','H','I','P','U','X']
+
+    field :name     => 'MonetaryAmount', 
+          :datatype => :numeric
+
+    field :name     => 'CreditDebitFlagCode',
           :datatype => :list,
-          :options  => ['C','D']},
-        { :sequence => 4,
-          :name     => 'Payment Method Code',
+          :options  => ['C','D']
+
+    field :name     => 'PaymentMethodCode',
           :datatype => :list,
-          :options  => ['ACH','BOP','CHK','FWT','NON']}
-      ]
-    end
+          :options  => ['ACH','BOP','CHK','FWT','NON']
   end
 end

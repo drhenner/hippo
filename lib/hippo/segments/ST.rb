@@ -1,21 +1,14 @@
 module Hippo::Segments
-  class ST
-    include Hippo::Segments::Base 
+  class ST < Base
 
-    def self.identifier
-      'ST'
-    end
+    segment_identifier  'ST'
 
-    def self.fields
-      [
-        { :sequence => 1,
-          :name     => 'TransactionSetIdentifierCode', 
-          :datatype => :list, 
-          :options  => ['835']}, 
-        { :sequence => 2,
-          :name => 'TransactionSetControlNumber', 
-          :datatype => :alpha_numeric}
-      ]
-    end
+    field   :name     => 'TransactionSetIdentifierCode', 
+            :datatype => :list, 
+            :options  => ['835']
+
+    field   :name => 'TransactionSetControlNumber', 
+            :datatype => :alpha_numeric
+    
   end
 end

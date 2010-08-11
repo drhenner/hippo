@@ -8,14 +8,15 @@ module Hippo
 end
 
 if __FILE__ == $0
-  ts = Hippo::TransactionSets::HIPAA835.new
-
-  ts.ST.TransactionSetIdentifierCode = '835'
-  ts.ST.set_value('002','RANDOM NUMBER HERE')
+  ts = Hippo::TransactionSets::HIPAA_835.new
   
-  ts.segments[1].set_value(1,'C')
-  ts.segments[1].set_value(2,1000.00)
-  ts.segments[1].set_value(3,'C')
+  ts.ST.TransactionSetIdentifierCode = '835'
+  ts.ST.TransactionSetControlNumber = 'RANDOM NUMBER HERE'
+ 
+  ts.BPR.TransactionHandlingCode = 'C'
+  ts.BPR.MonetaryAmount = 10000.00
+  ts.BPR.CreditDebitFlagCode = 'C'
+  ts.BPR.PaymentMethodCode = 'ACH'
 
   #st = Hippo::Segments::ST.new
 
