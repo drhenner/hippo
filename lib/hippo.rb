@@ -1,7 +1,7 @@
 #require 'hippo/field'
 require 'hippo/segments'
+require 'hippo/transaction_sets'
 #require 'hippo/loop'
-#require 'hippo/transaction_set'
 
 module Hippo
   FieldSeparator = '*'
@@ -10,11 +10,15 @@ module Hippo
 end
 
 if __FILE__ == $0
-  st = Hippo::Segments::ST.new
+  ts = Hippo::TransactionSets::HIPPA_835.new
 
-  st.set_value('Transaction Set Identifier Code', '835')
-  st.set_value('002', 'abalalkalakj')
+  ts.segments[0].set_value('Transaction Set Identifier Code', '835')
+  ts.segments[0].set_value('002','RANDOM NUMBER HERE')
+  
+  ts.segments[1].set_value(1,'C')
+  ts.segments[1].set_value(2,1000.00)
+  ts.segments[1].set_value(3,'C')
 
-  puts st.to_s
+  puts ts.to_s
 end
 
