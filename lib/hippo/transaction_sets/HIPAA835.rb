@@ -1,5 +1,5 @@
 module Hippo::TransactionSets
-  class HIPAA_835
+  class HIPAA835
     include Hippo::TransactionSets::Base 
 
     def initialize
