@@ -14,6 +14,10 @@ module Hippo::Segments
       end
     end
 
+    def initialize
+      @values = {}  
+    end
+
     def get_field_name(text)
       text.to_s.gsub(' ','').gsub('=','')
     end
@@ -59,9 +63,9 @@ module Hippo::Segments
       field = get_field(get_field_name(method_name))
 
       if method_name.to_s =~ /=\z/
-        field.value = args[0]
+        @values[field.sequence] = args[0]
       else
-        field.value
+        @values[field.sequence]
       end
     end  
   end
