@@ -4,7 +4,7 @@ require 'hippo'
 require 'pp'
 
 XML_DIR = '/Users/rjackson/Source/ruby/X12-1.1.0/misc'
-SEGMENT_DIR = '/Users/rjackson/Source/ruby/hippo/lib/hippo/segments/'
+SEGMENT_DIR = 'hippo/segments/'
 
 def get_field_options(table)
   return nil unless File.exists?(File.join(XML_DIR, table.to_s + '.xml'))
@@ -90,9 +90,19 @@ def get_fields(segment)
   @fields
 end
 
+def get_autoloads
+  Dir.glob(SEGMENT_DIR + '*.rb').each do |path|
+    puts "  autoload :#{(File.basename(path, ".*") + ',').ljust(10)} '#{path}'"
+  end
+end
+
 if __FILE__ == $0
-  @segment = ARGV[0]
-  @fields = get_fields(@segment)
+  if ARGV[0] == 'autoload'
+    get_autoloads
+  else
+    @segment = ARGV[0]
+    @fields = get_fields(@segment)
   
-  write_class_file
+    write_class_file
+  end
 end
