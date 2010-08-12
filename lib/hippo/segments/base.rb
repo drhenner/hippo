@@ -14,12 +14,6 @@ module Hippo::Segments
       end
     end
 
-    attr_accessor :values
-
-    def initialize
-      @values = {}
-    end
-
     def get_field_name(text)
       text.to_s.gsub(' ','').gsub('=','')
     end
@@ -28,7 +22,7 @@ module Hippo::Segments
       if field.class == Fixnum || field =~ /\d+/
         @fields[field.to_i - 1]
       else
-        self.class.fields.select{|f| f[:name] == get_field_name(field).to_s}.first
+        self.class.fields.select{|f| f.name == get_field_name(field).to_s}.first
       end
     end
 
@@ -36,14 +30,21 @@ module Hippo::Segments
       output = self.class.identifier
 
       self.class.fields.each do |field|
-        output += Hippo::FieldSeparator + @values[field[:sequence]].to_s
+        output += Hippo::FieldSeparator + field.value.to_s
       end
 
       output += Hippo::SegmentSeparator
     end
     
     def self.field(field)
-      self.fields << field.merge(:sequence => self.fields.length + 1)
+      f = Hippo::Field.new
+      f.sequence = fields.length + 1
+      f.name = field[:name]
+      f.datatype = field[:datatype]
+      f.options = field[:options]
+      f.restrictions = field[:restrictions]
+
+      self.fields << f
     end
 
     def self.segment_identifier(id)
@@ -58,9 +59,9 @@ module Hippo::Segments
       field = get_field(get_field_name(method_name))
 
       if method_name.to_s =~ /=\z/
-        @values[field[:sequence]] = args[0]
+        field.value = args[0]
       else
-        @values[field[:sequence]] 
+        field.value
       end
     end  
   end
