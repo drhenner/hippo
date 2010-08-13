@@ -62,7 +62,12 @@ module Hippo::TransactionSets
 
     class L2100 < Hippo::TransactionSets::Base
       segment Hippo::Segments::CLP
-      segment Hippo::Segments::CAS
+      segment Hippo::Segments::CAS,
+              :minimum => 0,
+              :maximum => 99
+      segment Hippo::Segments::NM1,
+              'EntityIdentifierCode' => 'QC'
+
     end
   end
 end
