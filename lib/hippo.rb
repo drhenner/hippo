@@ -1,7 +1,8 @@
 module Hippo
-  autoload :Segments, 'hippo/segments'
-  autoload :TransactionSets, 'hippo/transaction_sets'
-  autoload :Field, 'hippo/field'
+  autoload :Segments,         'hippo/segments'
+  autoload :TransactionSets,  'hippo/transaction_sets'
+  autoload :Field,            'hippo/field'
+  autoload :CompositeField,   'hippo/composite_field'
 
   FieldSeparator = '*'
   CompositeSeparator = ':'
