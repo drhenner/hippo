@@ -33,6 +33,9 @@ module Hippo::TransactionSets
               :minimum => 1,
               :maximum => nil
 
+      segment Hippo::Segments::SE,  #Transaction Set Trailer
+              :minimum => 1,
+              :maximum => 1
     end
 
     class L1000A < Hippo::TransactionSets::Base
@@ -105,7 +108,7 @@ module Hippo::TransactionSets
       segment Hippo::Segments::NM1,
               'EntityIdentifierCode' => 'IL',  #Insured or Subscriber
               :minimum => 0,
-              :maximum  => 1
+              :maximum => 1
       segment Hippo::Segments::NM1,
               'EntityIdentifierCode' => '74',  #Corrected Insured
               :minimum => 0,
@@ -114,7 +117,6 @@ module Hippo::TransactionSets
               'EntityIdentifierCode' => '82',  #Rendering Provider
               :minimum => 0,
               :maximum => 1
-     
       segment Hippo::Segments::NM1,
               'EntityIdentifierCode' => 'TT',  #Transfer To
               :minimum => 0,
@@ -147,6 +149,15 @@ module Hippo::TransactionSets
       segment Hippo::Segments::QTY, #Claim Supplemental Information Quantity
               :minimum => 0,
               :maximum => 15
+
+      loop    L2110, 
+              :idenitied_by => {'SVC.CompositeMedicalProcedureIdentifier1' => '!=nil'},
+              :minimum => 0,
+              :maximum => 999
+              
+    end
+
+    class L2110 < Hippo::TransactionSets::Base
       segment Hippo::Segments::SVC, #Service Payment Information
               :minimum => 0,
               :maximum => 1
@@ -174,9 +185,6 @@ module Hippo::TransactionSets
       segment Hippo::Segments::PLB,  #Provider Adjustment
               :minimum => 1,
               :maximum => nil
-      segment Hippo::Segments::SE,  #Transaction Set Trailer
-              :minimum => 1,
-              :maximum => 1
     end
   end
 end
