@@ -1,23 +1,29 @@
 module Hippo::TransactionSets
   module HIPAA_835
     class Base < Hippo::TransactionSets::Base
+      #Transaction Set Header 
+      segment Hippo::Segments::ST, 
+                 'TransactionSetIdentifierCode' => '835'
+      
+      #Financial Information
+      segment Hippo::Segments::BPR  
+      
+      #Reassociation Trace Number
+      segment Hippo::Segments::TRN, 
+                 'TraceTypeCode' => '1'
 
-      segment Hippo::Segments::ST,  #Transaction Set Header 
-                'TransactionSetIdentifierCode' => '835'
+      #Foreign Currency Information
+      segment Hippo::Segments::CUR  
 
-      segment Hippo::Segments::BPR  #Financial Information
+      #Receiver Identification
+      segment Hippo::Segments::REF  
 
-      segment Hippo::Segments::TRN, #Reassociation Trace Number
-                'TraceTypeCode' => '1'
-
-      segment Hippo::Segments::CUR  #Foreign Currency Information
-
-      segment Hippo::Segments::REF  #Receiver Identification
-
-      segment Hippo::Segments::REF  #Version Identification
-       
-      segment Hippo::Segments::DTM, #Production Date
-                'DateTimeQualifier' => '405'
+      #Version Identification
+      segment Hippo::Segments::REF 
+      
+      #Production Date
+      segment Hippo::Segments::DTM, 
+                  'DateTimeQualifier' => '405'
       
       loop    L1000A,  
               :identified_by => {'N1.EntityIdentifierCode' => 'PR'},
@@ -32,58 +38,78 @@ module Hippo::TransactionSets
       loop    L2000,
               :minimum => 1,
               :maximum => nil
-
-      segment Hippo::Segments::SE,  #Transaction Set Trailer
+     
+      #Transaction Set Trailer
+      segment Hippo::Segments::SE, 
               :minimum => 1,
               :maximum => 1
     end
 
     class L1000A < Hippo::TransactionSets::Base
-      segment Hippo::Segments::N1,  #Payer Identification
-              'EntityIdentifierCode' => 'PR',
+      #Payer Identification
+      segment Hippo::Segments::N1,  
+                  'EntityIdentifierCode' => 'PR',
+              :minimum => 1,
+              :maximum => 1
+      
+      #Payer Address 
+      segment Hippo::Segments::N3,  
               :minimum => 1,
               :maximum => 1
 
-      segment Hippo::Segments::N3,  #Payer Address 
+      #Payer Cit, State, Zip Code
+      segment Hippo::Segments::N4, 
               :minimum => 1,
               :maximum => 1
 
-      segment Hippo::Segments::N4,  #Payer Cit, State, Zip Code
-              :minimum => 1,
-              :maximum => 1
-
-      segment Hippo::Segments::REF,  #Additional Payer Identification
+      #Additional Payer Identification
+      segment Hippo::Segments::REF,  
               :minimum => 0,
               :maximum => 4
-      segment Hippo::Segments::PER,  #Payer Contact Information 
-              :minimum => 0,
-              :maximum => 1
+     
+       #Payer Contact Information 
+       segment Hippo::Segments::PER, 
+               :minimum => 0,
+               :maximum => 1
     end
 
     class L1000B < Hippo::TransactionSets::Base
-      segment Hippo::Segments::N1,  #Payee Identification
+      #Payee Identification
+      segment Hippo::Segments::N1,  
               'EntityIdentifierCode' => 'PE',
               :minimum => 1,
               :maximum => 1
-      segment Hippo::Segments::N3,  #Payee Address
+      
+      #Payee Address
+      segment Hippo::Segments::N3,  
               :minimum => 0,
               :maximum => 1
-      segment Hippo::Segments::N4,  #Payee City, State, Zip Code
+
+      #Payee City, State, Zip Code
+      segment Hippo::Segments::N4,  
               :minimum => 0,
               :maximum => 1
-      segment Hippo::Segments::REF,  #Payee Additional Identification
+     
+      #Payee Additional Identification
+      segment Hippo::Segments::REF,  
               :minimum => 1,
               :maximum => nil
     end
 
     class L2000 < Hippo::TransactionSets::Base
-      segment Hippo::Segments::LX,  #Header Number
+      
+      #Header Number
+      segment Hippo::Segments::LX, 
               :minimum => 1,
               :maximum => nil
-      segment Hippo::Segments::TS3,  #Provider Summary Information
+     
+      #Provider Summary Information
+      segment Hippo::Segments::TS3,  
               :minimum => 0,
               :maximum => 1
-      segment Hippo::Segments::TS2,  #Provider Supplemental Summary Information
+     
+      #Provider Supplemental Summary Information
+      segment Hippo::Segments::TS2,  
               :minimum => 0,
               :maximum => 1
 
@@ -95,12 +121,17 @@ module Hippo::TransactionSets
 
     
     class L2100 < Hippo::TransactionSets::Base
-      segment Hippo::Segments::CLP, #Claim Payment Information
+      
+      #Claim Payment Information
+      segment Hippo::Segments::CLP, 
               :minimum => 1,
               :maximum => 1
-      segment Hippo::Segments::CAS, #Claim Adjustment
+     
+      #Claim Adjustment
+      segment Hippo::Segments::CAS, 
               :minimum => 0,
               :maximum => 99
+     
       segment Hippo::Segments::NM1,
               'EntityIdentifierCode' => 'QC',  #Patient
               :minimum => 1,
@@ -125,28 +156,44 @@ module Hippo::TransactionSets
               'EntityIdentifierCode' => 'PR',  #Payer
               :minimum => 0,
               :maximum => 1
-      segment Hippo::Segments::MIA,  #Inpatient Adjudication Information
+      
+      #Inpatient Adjudication Information
+      segment Hippo::Segments::MIA,             
               :minimum => 0, 
               :maximum => 1
-      segment Hippo::Segments::MOA,  #Outpatient Adjudication Information
+     
+      #Outpatient Adjudication Information 
+      segment Hippo::Segments::MOA, 
               :minimum => 0,
               :maximum => 1
-      segment Hippo::Segments::REF,  #Other Claim Related Identification
+     
+      #Other Claim Related Identification
+      segment Hippo::Segments::REF, 
               :minimum => 0,
               :maximum => 99
-      segment Hippo::Segments::REF,  #Rendering Provider Identification
+      
+      #Rendering Provider Identification
+      segment Hippo::Segments::REF,  
               :minimum => 0,
               :maximum => 10
-      segment Hippo::Segments::DTM,  #Claim Date
+       
+      #Claim Date
+      segment Hippo::Segments::DTM,               
               :minimum => 0,
               :maximum => 4
-      segment Hippo::Segments::PER,  #Claim Contact Information
+
+      #Claim Contact Information
+      segment Hippo::Segments::PER,  
               :minimum => 0,
               :maximum => 3
-      segment Hippo::Segments::AMT,  #Claim Supplemental Information
+     
+      #Claim Supplemental Information
+      segment Hippo::Segments::AMT,  
               :minimum => 0, 
               :maximum => 14
-      segment Hippo::Segments::QTY, #Claim Supplemental Information Quantity
+     
+      #Claim Supplemental Information Quantity
+      segment Hippo::Segments::QTY, 
               :minimum => 0,
               :maximum => 15
 
@@ -158,31 +205,49 @@ module Hippo::TransactionSets
     end
 
     class L2110 < Hippo::TransactionSets::Base
-      segment Hippo::Segments::SVC, #Service Payment Information
+    
+      #Service Payment Information
+      segment Hippo::Segments::SVC,
               :minimum => 0,
               :maximum => 1
-      segment Hippo::Segments::DTM, #Service Date
+      
+      #Service Date
+      segment Hippo::Segments::DTM, 
               :minimum => 0,
               :maximum => 3
-      segment Hippo::Segments::CAS,  #Service Adjustment
+       
+      #Service Adjustment
+      segment Hippo::Segments::CAS, 
               :minimum => 0,
               :maximum => 99
-      segment Hippo::Segments::REF,  #Service Identification
+   
+      #Service Identification
+      segment Hippo::Segments::REF,  
               :minimum => 0,
               :maximum => 7
-      segment Hippo::Segments::REF,  #Rendering Provider Information
+      
+      #Rendering Provider Information
+      segment Hippo::Segments::REF, 
               :minimum => 0,
               :maximum => 10
-      segment Hippo::Segments::AMT,  #Service Supplemental Amount
+      
+      #Service Supplemental Amount
+      segment Hippo::Segments::AMT, 
               :minimum => 0,
               :maximum => 12
-      segment Hippo::Segments::QTY,  #Service Supplemental Quantity
+  
+      #Service Supplemental Quantity
+      segment Hippo::Segments::QTY,  
               :minimum => 0,
               :maximum => 6
-      segment Hippo::Segments::LQ,  #Health Care Remark Codes 
+     
+      #Health Care Remark Codes 
+      segment Hippo::Segments::LQ, 
               :minimum => 0,
               :maximum => 99
-      segment Hippo::Segments::PLB,  #Provider Adjustment
+     
+      #Provider Adjustment
+      segment Hippo::Segments::PLB,  
               :minimum => 1,
               :maximum => nil
     end
