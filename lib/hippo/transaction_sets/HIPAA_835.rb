@@ -2,23 +2,29 @@ module Hippo::TransactionSets
   module HIPAA_835
     class Base < Hippo::TransactionSets::Base
 
-      segment Hippo::Segments::ST,
+      segment Hippo::Segments::ST,  #Transaction Set Header 
                 'TransactionSetIdentifierCode' => '835'
-      segment Hippo::Segments::BPR
-      segment Hippo::Segments::TRN,
+
+      segment Hippo::Segments::BPR  #Financial Information
+
+      segment Hippo::Segments::TRN, #Reassociation Trace Number
                 'TraceTypeCode' => '1'
-      segment Hippo::Segments::CUR
-      segment Hippo::Segments::REF
-      segment Hippo::Segments::REF
-      segment Hippo::Segments::DTM,
+
+      segment Hippo::Segments::CUR  #Foreign Currency Information
+
+      segment Hippo::Segments::REF  #Receiver Identification
+
+      segment Hippo::Segments::REF  #Version Identification
+       
+      segment Hippo::Segments::DTM, #Production Date
                 'DateTimeQualifier' => '405'
       
-      loop    L1000A,
+      loop    L1000A,  
               :identified_by => {'N1.EntityIdentifierCode' => 'PR'},
               :minimum => 1,
               :maximum => 1
 
-      loop    L1000B,
+      loop    L1000B, 
               :identified_by => {'N1.EntityIdentifierCode' => 'PE'},
               :minimum => 1,
               :maximum => 1
@@ -30,29 +36,53 @@ module Hippo::TransactionSets
     end
 
     class L1000A < Hippo::TransactionSets::Base
-      segment Hippo::Segments::N1,
-              'EntityIdentifierCode' => 'PR'
+      segment Hippo::Segments::N1,  #Payer Identification
+              'EntityIdentifierCode' => 'PR',
+              :minimum => 1,
+              :maximum => 1
 
-      segment Hippo::Segments::N3
-      segment Hippo::Segments::N4
-      segment Hippo::Segments::REF
-      segment Hippo::Segments::PER
+      segment Hippo::Segments::N3,  #Payer Address 
+              :minimum => 1,
+              :maximum => 1
+
+      segment Hippo::Segments::N4,  #Payer Cit, State, Zip Code
+              :minimum => 1,
+              :maximum => 1
+
+      segment Hippo::Segments::REF,  #Additional Payer Identification
+              :minimum => 0,
+              :maximum => 4
+      segment Hippo::Segments::PER,  #Payer Contact Information 
+              :minimum => 0,
+              :maximum => 1
     end
 
     class L1000B < Hippo::TransactionSets::Base
-      segment Hippo::Segments::N1,
-              'EntityIdentifierCode' => 'PE'
-
-      segment Hippo::Segments::N3
-      segment Hippo::Segments::N4
-      segment Hippo::Segments::REF
-      segment Hippo::Segments::PER
+      segment Hippo::Segments::N1,  #Payee Identification
+              'EntityIdentifierCode' => 'PE',
+              :minimum => 1,
+              :maximum => 1
+      segment Hippo::Segments::N3,  #Payee Address
+              :minimum => 0,
+              :maximum => 1
+      segment Hippo::Segments::N4,  #Payee City, State, Zip Code
+              :minimum => 0,
+              :maximum => 1
+      segment Hippo::Segments::REF,  #Payee Additional Identification
+              :minimum => 1,
+              :maximum => nil
     end
 
     class L2000 < Hippo::TransactionSets::Base
-      segment Hippo::Segments::LX
-      segment Hippo::Segments::TS3
-      segment Hippo::Segments::TS2
+      segment Hippo::Segments::LX,  #Header Number
+              :minimum => 1,
+              :maximum => nil
+      segment Hippo::Segments::TS3,  #Provider Summary Information
+              :minimum => 0,
+              :maximum => 1
+      segment Hippo::Segments::TS2,  #Provider Supplemental Summary Information
+              :minimum => 0,
+              :maximum => 1
 
       loop    L2100, 
               :idenitied_by => {'CLP.ClaimSubmittersIdentifier' => '!=nil'},
@@ -93,10 +123,10 @@ module Hippo::TransactionSets
               'EntityIdentifierCode' => 'PR',  #Payer
               :minimum => 0,
               :maximum => 1
-      segment Hippo::Segments::MIA,
-              :minimum => 0,
+      segment Hippo::Segments::MIA,  #Inpatient Adjudication Information
+              :minimum => 0, 
               :maximum => 1
-      segment Hippo::Segments::MOA,  
+      segment Hippo::Segments::MOA,  #Outpatient Adjudication Information
               :minimum => 0,
               :maximum => 1
       segment Hippo::Segments::REF,  #Other Claim Related Identification
@@ -147,10 +177,6 @@ module Hippo::TransactionSets
       segment Hippo::Segments::SE,  #Transaction Set Trailer
               :minimum => 1,
               :maximum => 1
-
-
-              
-
     end
   end
 end
