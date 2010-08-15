@@ -14,17 +14,5 @@ module Hippo::Segments
             :maximum  => 15,
             :required => false
 
-    field   :name     => 'CompositeUnitOfMeasure',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => inf,
-            :required => false
-
-    field   :name     => 'FreeFormMessage',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 30,
-            :required => false
-
   end
 end
