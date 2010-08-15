@@ -69,7 +69,6 @@ module Hippo::Segments
       field = get_field(get_field_name(method_name))
 
       if method_name.to_s =~ /=\z/
-        puts 'assigning'
         @values[field.sequence] = args[0]
       else
         @values[field.sequence]
