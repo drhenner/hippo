@@ -36,10 +36,11 @@ module Hippo::Segments
 
       self.class.fields.each do |field|
         if current_separator != field.separator
-          
+          output = output[0,output.length-1] + field.separator
         end
 
         output += @values[field.sequence] + field.separator
+        current_separator = field.separator
       end
 
       output += Hippo::SegmentSeparator
