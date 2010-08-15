@@ -23,7 +23,7 @@ module Hippo::Segments
     end
     
     def get_field(field)
-      if field.class == Fixnum || field =~ /\d+/
+      if field.class == Fixnum || field =~ /\a\d+\z/
         self.class.fields[field.to_i - 1]
       else
         self.class.fields.select{|f| f.name == get_field_name(field).to_s}.first
@@ -67,7 +67,7 @@ module Hippo::Segments
 
     def method_missing(method_name, *args) 
       field = get_field(get_field_name(method_name))
-      
+
       if method_name.to_s =~ /=\z/
         puts 'assigning'
         @values[field.sequence] = args[0]
