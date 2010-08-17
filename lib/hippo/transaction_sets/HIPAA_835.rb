@@ -5,33 +5,33 @@ module Hippo::TransactionSets
       #Transaction Set Header 
       segment Hippo::Segments::ST, 
                  'TransactionSetIdentifierCode' => '835',
-                 :position => 010
+                 :position => 10
 
       #Financial Information
       segment Hippo::Segments::BPR,  
-                  :position => 020
+                  :position => 20
       
       #Reassociation Trace Number
       segment Hippo::Segments::TRN, 
                  'TraceTypeCode' => '1',
-                  :position => 040
+                  :position => 40
 
       #Foreign Currency Information
       segment Hippo::Segments::CUR,  
-                  :position => 050
+                  :position => 50
 
       #Receiver Identification
       segment Hippo::Segments::REF,  
-                  :position => 060
+                  :position => 60
                 
       #Version Identification
       segment Hippo::Segments::REF, 
-                  :position => 060
+                  :position => 60
 
       #Production Date
       segment Hippo::Segments::DTM, 
                   'DateTimeQualifier' => '405',
-                  :position => 070
+                  :position => 70
                     
       loop    L1000A,  
               :identified_by => {'N1.EntityIdentifierCode' => 'PR'},
@@ -51,7 +51,7 @@ module Hippo::TransactionSets
       segment Hippo::Segments::SE, 
               :minimum => 1,
               :maximum => 1,
-              :position => 020
+              :position => 20
     end
 
     class L1000A < Hippo::TransactionSets::Base
@@ -60,7 +60,7 @@ module Hippo::TransactionSets
                   'EntityIdentifierCode' => 'PR',
               :minimum => 1,
               :maximum => 1,
-              :position => 080
+              :position => 80
       
       #Payer Address 
       segment Hippo::Segments::N3,  
@@ -93,8 +93,7 @@ module Hippo::TransactionSets
               'EntityIdentifierCode' => 'PE',
               :minimum => 1,
               :maximum => 1,
-              :position => 080
-
+              :position => 80
       
       #Payee Address
       segment Hippo::Segments::N3,  
@@ -121,19 +120,19 @@ module Hippo::TransactionSets
       segment Hippo::Segments::LX, 
               :minimum => 1,
               :maximum => nil,
-              :position => 003
+              :position => 3
      
       #Provider Summary Information
       segment Hippo::Segments::TS3,  
               :minimum => 0,
               :maximum => 1,
-              :position => 005
+              :position => 5
      
       #Provider Supplemental Summary Information
       segment Hippo::Segments::TS2,  
               :minimum => 0,
               :maximum => 1,
-              :position => 007
+              :position => 7
 
       loop    L2100, 
               :idenitied_by => {'CLP.ClaimSubmittersIdentifier' => '!=nil'},
@@ -148,97 +147,97 @@ module Hippo::TransactionSets
       segment Hippo::Segments::CLP, 
               :minimum => 1,
               :maximum => 1,
-              :position => 010
+              :position => 10
      
       #Claim Adjustment
       segment Hippo::Segments::CAS, 
               :minimum => 0,
               :maximum => 99,
-              :position => 020
+              :position => 20
      
       segment Hippo::Segments::NM1,
               'EntityIdentifierCode' => 'QC',  #Patient
               :minimum => 1,
               :maximum => 1,
-              :position => 030
+              :position => 30
 
       segment Hippo::Segments::NM1,
               'EntityIdentifierCode' => 'IL',  #Insured or Subscriber
               :minimum => 0,
               :maximum => 1, 
-              :position => 030
+              :position => 30
 
       segment Hippo::Segments::NM1,
               'EntityIdentifierCode' => '74',  #Corrected Insured
               :minimum => 0,
               :maximum => 1,
-              :position => 030
+              :position => 30
 
       segment Hippo::Segments::NM1,
               'EntityIdentifierCode' => '82',  #Rendering Provider
               :minimum => 0,
               :maximum => 1,
-              :position => 030
+              :position => 30
 
       segment Hippo::Segments::NM1,
               'EntityIdentifierCode' => 'TT',  #Transfer To
               :minimum => 0,
               :maximum => 1,
-              :position => 030
+              :position => 30
 
       segment Hippo::Segments::NM1, 
               'EntityIdentifierCode' => 'PR',  #Payer
               :minimum => 0,
               :maximum => 1,
-              :position => 030
+              :position => 30
       
       #Inpatient Adjudication Information
       segment Hippo::Segments::MIA,             
               :minimum => 0, 
               :maximum => 1,
-              :position => 033
+              :position => 33
      
       #Outpatient Adjudication Information 
       segment Hippo::Segments::MOA, 
               :minimum => 0,
               :maximum => 1,
-              :position => 035
+              :position => 35
      
       #Other Claim Related Identification
       segment Hippo::Segments::REF, 
               :minimum => 0,
               :maximum => 99,
-              :position => 040
+              :position => 40
       
       #Rendering Provider Identification
       segment Hippo::Segments::REF,  
               :minimum => 0,
               :maximum => 10,
-              :position => 040
+              :position => 40
        
       #Claim Date
       segment Hippo::Segments::DTM,               
               :minimum => 0,
               :maximum => 4,
-              :position => 050
+              :position => 50
 
       #Claim Contact Information
       segment Hippo::Segments::PER,  
               :minimum => 0,
               :maximum => 3,
-              :position => 060
+              :position => 60
      
       #Claim Supplemental Information
       segment Hippo::Segments::AMT,  
               :minimum => 0, 
               :maximum => 14,
-              :position => 062
+              :position => 62
      
       #Claim Supplemental Information Quantity
       segment Hippo::Segments::QTY, 
               :minimum => 0,
               :maximum => 15,
-              :position => 064
+              :position => 64
 
       loop    L2110, 
               :idenitied_by => {'SVC.CompositeMedicalProcedureIdentifier1' => '!=nil'},
@@ -253,19 +252,19 @@ module Hippo::TransactionSets
       segment Hippo::Segments::SVC,
               :minimum => 0,
               :maximum => 1,
-              :position => 070
+              :position => 70
       
       #Service Date
       segment Hippo::Segments::DTM, 
               :minimum => 0,
               :maximum => 3,
-              :position => 080
+              :position => 80
        
       #Service Adjustment
       segment Hippo::Segments::CAS, 
               :minimum => 0,
               :maximum => 99,
-              :position => 090
+              :position => 90
    
       #Service Identification
       segment Hippo::Segments::REF,  
@@ -301,7 +300,7 @@ module Hippo::TransactionSets
       segment Hippo::Segments::PLB,  
               :minimum => 1,
               :maximum => nil,
-              :position => 010
+              :position => 10
     end
   end
 end
