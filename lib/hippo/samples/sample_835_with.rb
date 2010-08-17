@@ -214,12 +214,9 @@ GE*1*27211711~
 IEA*1*002721171~"
 
 segments = s.gsub("\n", "").split(/~/)
-
 segments.each do |segment|
   segment.split(/\*/)  
-  
   puts segment[0,3].gsub("*", "").ljust(3)  + " <----Segment Standard |||| Segment -----> " + segment
-  
 end
   
   
