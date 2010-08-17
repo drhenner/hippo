@@ -39,7 +39,7 @@ module Hippo::Segments
           output = output[0,output.length-1] + field.separator
         end
 
-        output += @values[field.sequence] + field.separator
+        output += @values[field.sequence].to_s + field.separator
         current_separator = field.separator
       end
 

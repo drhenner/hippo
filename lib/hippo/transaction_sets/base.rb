@@ -1,39 +1,61 @@
 module Hippo::TransactionSets
   class Base
     class << self
-      attr_accessor :components
+      attr_accessor :components, :identifier
 
       def components
         @components ||= []
       end
 
-      def segment(seg)
-        components << seg
+      def loop_name(id)
+        identifier = id
       end
+
+      def add_component(klass, options={}) 
+        components << options.merge(:class => klass)
+      end
+      alias segment add_component
+      alias loop add_component
     end
 
-    def initialize
-      @segments = []
-    end
+    attr_accessor :values
 
+    def values
+      @values ||= []
+    end
+    
     def to_s
       output = ''
 
-      self.class.components.each do |segment|
-        output += segment.to_s
+      values.each do |component|
+        output += component.to_s
       end
 
       output
     end
 
     def get_component(identifier, sequence = 0)
-      self.class.components.select do |s|
-        s.class.identifier == identifier
+      self.class.components.select do |c|
+        c[:class].identifier == identifier
       end[sequence]
     end
 
     def method_missing(method_name, *args) 
-      get_segment(method_name.to_s)
+      component_entry = get_component(method_name.to_s)
+      component = component_entry[:class].new
+      
+      # iterate through the hash of defaults
+      # and assign them to the component before
+      # adding to @values
+      component_entry.each do |key, value|
+        next unless key.class == String
+
+        component.send((key + '=').to_sym, value)
+      end
+
+      values << component
+
+      return component
     end  
   end
 end
