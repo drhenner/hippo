@@ -5,7 +5,7 @@ module Hippo::Segments
 
     field   :name     => 'ClaimAdjustmentGroupCode',
             :datatype => :list,
-            :list     => [ 'CO','CR','DE','MA','NC','OA','PI','PR','RR']
+            :list     => [ 'CO','CR','DE','MA','NC','OA','PI','PR','RR'],
             :required => true
 
     field   :name     => 'ClaimAdjustmentReasonCode1',

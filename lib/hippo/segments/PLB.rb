@@ -18,7 +18,7 @@ module Hippo::Segments
     field   :name     => 'AdjustmentIdentifier1',
             :datatype => :alpha_numeric,
             :minimum  => 0,
-            :maximum  => inf,
+            :maximum  => 9999999,
             :required => true
 
     field   :name     => 'MonetaryAmount1',
@@ -30,7 +30,7 @@ module Hippo::Segments
     field   :name     => 'AdjustmentIdentifier2',
             :datatype => :alpha_numeric,
             :minimum  => 0,
-            :maximum  => inf,
+            :maximum  => 999999,
             :required => false
 
     field   :name     => 'MonetaryAmount2',
@@ -42,7 +42,7 @@ module Hippo::Segments
     field   :name     => 'AdjustmentIdentifier3',
             :datatype => :alpha_numeric,
             :minimum  => 0,
-            :maximum  => inf,
+            :maximum  => 999999,
             :required => false
 
     field   :name     => 'MonetaryAmount3',
@@ -54,7 +54,7 @@ module Hippo::Segments
     field   :name     => 'AdjustmentIdentifier4',
             :datatype => :alpha_numeric,
             :minimum  => 0,
-            :maximum  => inf,
+            :maximum  => 999999,
             :required => false
 
     field   :name     => 'MonetaryAmount4',
@@ -66,7 +66,7 @@ module Hippo::Segments
     field   :name     => 'AdjustmentIdentifier5',
             :datatype => :alpha_numeric,
             :minimum  => 0,
-            :maximum  => inf,
+            :maximum  => 999999,
             :required => false
 
     field   :name     => 'MonetaryAmount5',
@@ -78,7 +78,7 @@ module Hippo::Segments
     field   :name     => 'AdjustmentIdentifier6',
             :datatype => :alpha_numeric,
             :minimum  => 0,
-            :maximum  => inf,
+            :maximum  => 999999,
             :required => false
 
     field   :name     => 'MonetaryAmount6',
