@@ -5,7 +5,7 @@ module Hippo::TransactionSets
 
       #Payer Identification
       segment Hippo::Segments::N1,  
-                  'EntityIdentifierCode' => 'PR',
+                  'EntityIdentifierCode1' => 'PR',
               :minimum => 1,
               :maximum => 1,
               :position => 80
@@ -40,7 +40,7 @@ module Hippo::TransactionSets
 
       #Payee Identification
       segment Hippo::Segments::N1,  
-              'EntityIdentifierCode' => 'PE',
+              'EntityIdentifierCode1' => 'PE',
               :minimum => 1,
               :maximum => 1,
               :position => 80
@@ -138,37 +138,37 @@ module Hippo::TransactionSets
               :position => 20
      
       segment Hippo::Segments::NM1,
-              'EntityIdentifierCode' => 'QC',  #Patient
+              'EntityIdentifierCode1' => 'QC',  #Patient
               :minimum => 1,
               :maximum => 1,
               :position => 30
 
       segment Hippo::Segments::NM1,
-              'EntityIdentifierCode' => 'IL',  #Insured or Subscriber
+              'EntityIdentifierCode1' => 'IL',  #Insured or Subscriber
               :minimum => 0,
               :maximum => 1, 
               :position => 30
 
       segment Hippo::Segments::NM1,
-              'EntityIdentifierCode' => '74',  #Corrected Insured
+              'EntityIdentifierCode1' => '74',  #Corrected Insured
               :minimum => 0,
               :maximum => 1,
               :position => 30
 
       segment Hippo::Segments::NM1,
-              'EntityIdentifierCode' => '82',  #Rendering Provider
+              'EntityIdentifierCode1' => '82',  #Rendering Provider
               :minimum => 0,
               :maximum => 1,
               :position => 30
 
       segment Hippo::Segments::NM1,
-              'EntityIdentifierCode' => 'TT',  #Transfer To
+              'EntityIdentifierCode1' => 'TT',  #Transfer To
               :minimum => 0,
               :maximum => 1,
               :position => 30
 
       segment Hippo::Segments::NM1, 
-              'EntityIdentifierCode' => 'PR',  #Payer
+              'EntityIdentifierCode1' => 'PR',  #Payer
               :minimum => 0,
               :maximum => 1,
               :position => 30
@@ -292,12 +292,12 @@ module Hippo::TransactionSets
                   :position => 70
                     
       loop    Hippo::TransactionSets::HIPAA_835::L1000A,  
-              :identified_by => {'N1.EntityIdentifierCode' => 'PR'},
+              :identified_by => {'N1.EntityIdentifierCode1' => 'PR'},
               :minimum => 1,
               :maximum => 1
 
       loop    Hippo::TransactionSets::HIPAA_835::L1000B, 
-              :identified_by => {'N1.EntityIdentifierCode' => 'PE'},
+              :identified_by => {'N1.EntityIdentifierCode1' => 'PE'},
               :minimum => 1,
               :maximum => 1
 

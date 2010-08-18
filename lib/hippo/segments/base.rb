@@ -69,6 +69,10 @@ module Hippo::Segments
     def method_missing(method_name, *args) 
       field = get_field(get_field_name(method_name))
 
+      if field.nil? 
+        puts method_name, * args
+      end
+
       if method_name.to_s =~ /=\z/
         @values[field.sequence] = args[0]
       else
