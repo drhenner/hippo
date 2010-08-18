@@ -19,7 +19,7 @@ end
 
 if __FILE__ == $0
   ts = Hippo::TransactionSets::HIPAA_835::Base.new
-  
+
   ts.ST do |seg|
     seg.TransactionSetIdentifierCode = rand(10 * 100)
     seg.TransactionSetControlNumber = rand(10 * 100)
@@ -52,7 +52,7 @@ if __FILE__ == $0
     seg.Description = "Description"
     seg.ReferenceIdentifier = "1241"
   end
-  
+
   ts.REF do |seg|
     seg.ReferenceIdentificationQualifier = "URL"
     seg.ReferenceIdentification = "R0203"
@@ -61,60 +61,60 @@ if __FILE__ == $0
   end
 
   ts.DTM do |seg|
-   seg.DateTimeQualifier = "002"
-   seg.Date = "19451104"
+    seg.DateTimeQualifier = "002"
+    seg.Date = "19451104"
   end
 
 
-    ts.L1000A do |loop|
-      loop.N1 do |seg|
-        seg.EntityIdentifierCode1 = "PR"
-        seg.Name = Faker::Name.name
-      end
-      loop.N3 do |seg|
-        seg.AddressInformation1 = Faker::Address.street_address
-        seg.AddressInformation2 = "#{Faker::Address.city} #{Faker::Address.us_state} #{Faker::Address.zip_code}"
-      end
-      loop.N4 do |seg|
-       seg.CityName = Faker::Address.city
-       seg.StateOrProvinceCode = Faker::Address.us_state_abbr
-       seg.PostalCode = Faker::Address.zip_code
-       seg.CountryCode = "US"
-      end
-      loop.REF do |seg|
-        seg.ReferenceIdentificationQualifier = "URL"
-        seg.ReferenceIdentification = "R0203"
-        seg.Description = "Description"
-        seg.ReferenceIdentifier = "1241"
-      end
-     loop.PER do |seg|
+  ts.L1000A do |loop|
+    loop.N1 do |seg|
+      seg.EntityIdentifierCode1 = "PR"
+      seg.Name = Faker::Name.name
+    end
+    loop.N3 do |seg|
+      seg.AddressInformation1 = Faker::Address.street_address
+      seg.AddressInformation2 = "#{Faker::Address.city} #{Faker::Address.us_state} #{Faker::Address.zip_code}"
+    end
+    loop.N4 do |seg|
+      seg.CityName = Faker::Address.city
+      seg.StateOrProvinceCode = Faker::Address.us_state_abbr
+      seg.PostalCode = Faker::Address.zip_code
+      seg.CountryCode = "US"
+    end
+    loop.REF do |seg|
+      seg.ReferenceIdentificationQualifier = "URL"
+      seg.ReferenceIdentification = "R0203"
+      seg.Description = "Description"
+      seg.ReferenceIdentifier = "1241"
+    end
+    loop.PER do |seg|
       seg.ContactFunctionCode = "1A"
       seg.Name = Faker::Name.name
-     end
     end
+  end
 
-    ts.L1000B do |loop|
-      loop.N1 do |seg|
-        seg.EntityIdentifierCode1 = "PR"
-        seg.Name = Faker::Name.name
-      end
-      loop.N3 do |seg|
-        seg.AddressInformation1 = Faker::Address.street_address
-        seg.AddressInformation2 = "#{Faker::Address.city} #{Faker::Address.us_state} #{Faker::Address.zip_code}"
-      end
-      loop.N4 do |seg|
-       seg.CityName = Faker::Address.city
-       seg.StateOrProvinceCode = Faker::Address.us_state_abbr
-       seg.PostalCode = Faker::Address.zip_code
-       seg.CountryCode = "US"
-      end
-      loop.REF do |seg|
-        seg.ReferenceIdentificationQualifier = "URL"
-        seg.ReferenceIdentification = "R0203"
-        seg.Description = "Description"
-        seg.ReferenceIdentifier = "1241"
-      end
+  ts.L1000B do |loop|
+    loop.N1 do |seg|
+      seg.EntityIdentifierCode1 = "PR"
+      seg.Name = Faker::Name.name
     end
+    loop.N3 do |seg|
+      seg.AddressInformation1 = Faker::Address.street_address
+      seg.AddressInformation2 = "#{Faker::Address.city} #{Faker::Address.us_state} #{Faker::Address.zip_code}"
+    end
+    loop.N4 do |seg|
+      seg.CityName = Faker::Address.city
+      seg.StateOrProvinceCode = Faker::Address.us_state_abbr
+      seg.PostalCode = Faker::Address.zip_code
+      seg.CountryCode = "US"
+    end
+    loop.REF do |seg|
+      seg.ReferenceIdentificationQualifier = "URL"
+      seg.ReferenceIdentification = "R0203"
+      seg.Description = "Description"
+      seg.ReferenceIdentifier = "1241"
+    end
+  end
 
   5.times do |i|  
     ts.L2000 do |loop|
@@ -147,33 +147,34 @@ if __FILE__ == $0
         seg.MonetaryAmount6 = rand(10 * 100).to_f
       end
 
+      2.times do |i|
+        loop.L2100 do |sub_loop|
+
+          sub_loop.CLP do |seg|
+            seg.ClaimSubmittersIdentifier = rand(10 * 100).to_f
+            seg.ClaimStatusCode = "1"
+            seg.MonetaryAmount1 = rand(10 * 100).to_f
+            seg.ClaimFilingIndicatorCode = "01"
+            seg.YesNoConditionOrResponseCode = "Y"
+          end
+
+          sub_loop.CAS do |seg|
+            seg.ClaimAdjustmentGroupCode = "CO"
+            seg.ClaimAdjustmentReasonCode1 = "139"
+            seg.MonetaryAmount1 = rand(10 * 100).to_f
+          end
+
+          sub_loop.NM1 do |seg|
+            seg.EntityIdentifierCode1 = "00"
+            seg.EntityTypeQualifier = 1
+            seg.NameLastOrOrganizationName = Faker::Name.name
+            seg.NameFirst = Faker::Name.first_name
+          end
+        end
+      end
     end
   end
 
-#  2.times do |i|
-  ts.L2100 do |loop|
-
-      loop.CLP do |seg|
-        seg.ClaimSubmittersIdentifier = "PatientControllNumber"
-        seg.ClaimStatusCode = "1"
-        seg.MonetaryAmount1 = rand(10 * 100).to_f
-        seg.ClaimFilingIndicatorCode = "01"
-        seg.YesNoConditionOrResponseCode = "Y"
-      end
-
-      loop.CAS do |seg|
-       seg.ClaimAdjustmentGroupCode = "CO"
-       seg.ClaimAdjustmentReasonCode1 = "139"
-       seg.MonetaryAmount1 = rand(10 * 100).to_f
-      end
-      loop.NM1 do |seg|
-        seg.EntityIdentifierCode1 = "00"
-        seg.EntityTypeQualifier = 1
-        seg.NameLastOrOrganizationName = Faker::Name.name
-        seg.NameFirst = Faker::Name.first_name
-      end
-    end
- # end
 
 
   #st = Hippo::Segments::ST.new
@@ -182,7 +183,7 @@ if __FILE__ == $0
   #st.TransactionSetControlNumber = 'RANDOM NUMBER'
 
   puts ts.to_s
-  
+
   #svc = Hippo::Segments::SVC.new
 
   #svc.class.fields.each do |f|

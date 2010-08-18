@@ -28,7 +28,6 @@ module Hippo::TransactionSets
       output = ''
 
       values.each do |component|
-        puts component.to_s
         output += component.to_s
       end
 
