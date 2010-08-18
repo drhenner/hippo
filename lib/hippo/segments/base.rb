@@ -23,8 +23,8 @@ module Hippo::Segments
     end
     
     def get_field(field)
-      if field.class == Fixnum || field =~ /\a\d+\z/
-        self.class.fields[field.to_i - 1]
+      if field.class == Numeric || field =~ /\A#{self.class.identifier}(\d+)\z/
+        self.class.fields[$1.to_i - 1]
       else
         self.class.fields.select{|f| f.name == get_field_name(field).to_s}.first
       end
