@@ -18,13 +18,24 @@ if __FILE__ == $0
   ts = Hippo::TransactionSets::HIPAA_835::Base.new
   
   #ts.ST.TransactionSetIdentifierCode = '835'
-  ts.ST.TransactionSetControlNumber = 'RANDOM NUMBER HERE'
+  ts.ST do |seg|
+    seg.TransactionSetControlNumber = 'RANDOM NUMBER HERE'
+  end
 
-  ts.BPR.TransactionHandlingCode = 'C'
-  ts.BPR.MonetaryAmount = 10000.00
-  ts.BPR.CreditDebitFlagCode = 'C'
-  ts.BPR.PaymentMethodCode = 'ACH'
+  ts.BPR do |seg|
+    seg.TransactionHandlingCode = 'C'
+    seg.MonetaryAmount = 10000.00
+    seg.CreditDebitFlagCode = 'C'
+    seg.PaymentMethodCode = 'ACH'
+  end
 
+  10.times do |i|
+    ts.L2000 do |loop|
+      loop.LX do |seg|
+        seg.AssignedNumber = i
+      end
+    end
+  end
   #st = Hippo::Segments::ST.new
 
   #st.TransactionSetIdentifierCode = '835'

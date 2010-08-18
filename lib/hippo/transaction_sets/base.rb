@@ -8,7 +8,7 @@ module Hippo::TransactionSets
       end
 
       def loop_name(id)
-        identifier = id
+        @identifier = id
       end
 
       def add_component(klass, options={}) 
@@ -53,9 +53,9 @@ module Hippo::TransactionSets
         component.send((key + '=').to_sym, value)
       end
 
-      values << component
+      yield component if block_given?
 
-      return component
+      values << component
     end  
   end
 end
