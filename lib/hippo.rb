@@ -6,6 +6,7 @@ module Hippo
   autoload :TransactionSets,  'hippo/transaction_sets'
   autoload :Field,            'hippo/field'
   autoload :CompositeField,   'hippo/composite_field'
+  autoload :Parser,           'hippo/parser'
 
   FieldSeparator = '*'
   CompositeSeparator = ':'
