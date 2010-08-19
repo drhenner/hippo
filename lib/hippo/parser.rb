@@ -10,11 +10,13 @@ module Hippo
     end
 
     def populate_segments
+      segment_prefix = 'Hippo::Segments::'
+
       @raw_data.split(Hippo::SegmentSeparator).each do |line|
         line = line.strip
         fields = line.split(/\#{Hippo::FieldSeparator}|\#{Hippo::CompositeSeparator}/)
-
-        segment = Hippo::Segments::ISA.new
+        
+        segment = Object.const_get(segment_prefix + fields[0]).new
 
       end
     end
