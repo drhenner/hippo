@@ -228,32 +228,38 @@ end
 
 
 @output = ''
-
+     
+     @output += "ts = Hippo::TransactionSets::HIPAA_835::Base.new"                    #Transaction set start
+     
 @segments.each do |segmento|
   segmento.each do |key, value|
     i = 0
-    
     value.each do |x|
-
       seg = (key.to_s + "%02d" % i).gsub(" ", "")
-
-      unless x == ""
-        case 
+      unless x == ""                                                                 #start unless
+        case                                                                         #start meta case
         when  seg =~ /LX01/
-          @output +=  "seg.#{seg} = #{x}              #LX - Possible Loop" + "\n"
-        when seg =~ /#{x.to_s}/
-          @output +="end"+ "\n"
-          @output += "ts.#{key.upcase} do |seg|" + "\n" #segment loop
+          @output += "  seg.#{seg} = #{x}              #LX - Possible Loop" + "\n"
+        when seg =~ /#{x.to_s}/  
+          @output += "  end"+ "\n\n"
+          @output += "  ts.#{key.upcase} do |seg|" + "\n"                            #segment loop
         else
-         @output += "  seg.#{seg} = #{x}" + "\n" #segments
-        end
+          case                                                                      #start sub-case
+          when x.to_i == 0
+            @output += "    seg.#{seg} = '#{x}'" + "\n"                               #segments
+          when x.to_i != 0
+            @output += "    seg.#{seg} = rand(10 ** #{x.length})" + "\n"
+          end                                                                       #end sub-case
+        end                                                                         #end meta-case
         i += 1 
-      end
+      end                                                                           #end unless
     end
   end  
 end
 
-File.open("/Users/jjackson/dev/ruby/hippo/lib/hippo/samples/sample_parsed.rb", "w") do |line|
+@output += "  end" + "\n" + "end"                                                   #Transaction set end
+
+File.open("./sample_parsed.rb", "w") do |line|
   line.write(@output)
 end
 puts @output
