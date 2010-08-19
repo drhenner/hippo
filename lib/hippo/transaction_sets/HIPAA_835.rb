@@ -260,6 +260,9 @@ module Hippo::TransactionSets
 
     class Base < Hippo::TransactionSets::Base
       
+      segment Hippo::Segments::ISA
+      segment Hippo::Segments::GS
+
       #Transaction Set Header 
       segment Hippo::Segments::ST, 
                  'TransactionSetIdentifierCode' => '835',
@@ -310,6 +313,9 @@ module Hippo::TransactionSets
               :minimum => 1,
               :maximum => 1,
               :position => 20
+      
+      segment Hippo::Segments::GE
+      segment Hippo::Segments::IEA
     end
 
   end
