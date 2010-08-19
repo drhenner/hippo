@@ -1,3 +1,5 @@
+require 'rubygems'
+require 'pp'
 s = "ISA*00*          *00*          *ZZ*SENDER         *ZZ*RECEIVER       *080319*2327*U*00401*002721171*0*P*:~
 GS*HC*SENDER*RECEIVER*20080319*2327*27211711*X*004010X091A1~
 ST*835*1234~
@@ -213,14 +215,49 @@ SE*28*1234~
 GE*1*27211711~
 IEA*1*002721171~"
 
+@segments = []
 segments = s.gsub("\n", "").split(/~/)
-segments.each do |segment|
-  segment.split(/\*/)  
-  puts segment[0,3].gsub("*", "").ljust(3)  + " <----Segment Standard |||| Segment -----> " + segment
+segments.each do |segment| 
+  @segment =  {  
+    segment[0,3].gsub("*", "").ljust(3) => segment.gsub(" ", "").
+    gsub(":", "").                                    
+    split(/\*/) 
+  }
+  @segments << @segment
 end
-  
-  
-  
+
+
+@output = ''
+
+@segments.each do |segmento|
+  segmento.each do |key, value|
+    i = 0
+    
+    value.each do |x|
+
+      seg = (key.to_s + "%02d" % i).gsub(" ", "")
+
+      unless x == ""
+        case 
+        when  seg =~ /LX01/
+          @output +=  "seg.#{seg} = #{x}              #LX - Possible Loop" + "\n"
+        when seg =~ /#{x.to_s}/
+          @output +="end"+ "\n"
+          @output += "ts.#{key.upcase} do |seg|" + "\n" #segment loop
+        else
+         @output += "  seg.#{seg} = #{x}" + "\n" #segments
+        end
+        i += 1 
+      end
+    end
+  end  
+end
+
+File.open("/Users/jjackson/dev/ruby/hippo/lib/hippo/samples/sample_parsed.rb", "w") do |line|
+  line.write(@output)
+end
+puts @output
+
   
   
   
