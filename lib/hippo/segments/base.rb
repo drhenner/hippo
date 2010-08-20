@@ -44,7 +44,7 @@ module Hippo::Segments
       end
 
       # remove extra field separators that aren't needed
-      output = output.gsub(/:{2,}/,'').gsub(/\*{2,}/,'')
+      output = output.gsub(/:{2,}/,'').gsub(/\*{2,}/,'').gsub(/:\*/,'*').gsub(/\*~/,'~')
 
       output += Hippo::SegmentSeparator
     end
