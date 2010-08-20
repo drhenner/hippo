@@ -1,7 +1,7 @@
-module Hippo
-  require 'rubygems'
-  require 'faker'
+require 'rubygems'
+require 'faker'
 
+module Hippo
   autoload :Segments,         'hippo/segments'
   autoload :TransactionSets,  'hippo/transaction_sets'
   autoload :Field,            'hippo/field'

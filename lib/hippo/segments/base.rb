@@ -32,16 +32,19 @@ module Hippo::Segments
 
     def to_s
       output = self.class.identifier + Hippo::FieldSeparator
-      current_separator = Hippo::FieldSeparator
+      current_separator = nil
 
       self.class.fields.each do |field|
-        if current_separator != field.separator
+        if current_separator && current_separator != field.separator
           output = output[0,output.length-1] + field.separator
         end
 
         output += @values[field.sequence].to_s + field.separator
         current_separator = field.separator
       end
+
+      # remove extra field separators that aren't needed
+      output = output.gsub(/:{2,}/,'').gsub(/\*{2,}/,'')
 
       output += Hippo::SegmentSeparator
     end
