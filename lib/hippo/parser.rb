@@ -46,7 +46,7 @@ module Hippo
             
             # initialize the values hash with a hash for this
             # composite field
-            segment.values[field.sequence] = {}
+            segment.values[index] = {}
 
             # iterate through each value present in the composite field
             # and save them to the appropriate sequence in the values 

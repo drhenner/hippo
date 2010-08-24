@@ -40,7 +40,7 @@ module Hippo::Segments
       end
 
       def segment_identifier(id)
-        identifier = id
+        @identifier = id
       end
 
       #def grouped_fields
@@ -93,10 +93,10 @@ module Hippo::Segments
     def to_s
       output = self.class.identifier + Hippo::FieldSeparator
 
-      self.class.fields.each do |field|
+      self.class.fields.each_with_index do |field, index|
         if field.class == Array
           field.each do |comp_field|
-            output += @values[field.sequence][comp_field.sequence].to_s + comp_field.separator
+            output += @values[index][comp_field.sequence].to_s + comp_field.separator
           end
         else
           output += @values[field.sequence].to_s + field.separator
