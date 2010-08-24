@@ -27,7 +27,7 @@ module Hippo
 
         # each field is separated by either * or : depending 
         # if it is a composite field.  we treat them the same
-        fields = line.split(/#{'\\' + Hippo::FieldSeparator}|#{'\\' + Hippo::CompositeSeparator}/)
+        fields = line.split(Hippo::FieldSeparator)
 
         # grab the first field as it is the segment identifier 
         segment_identifier = fields.shift
@@ -37,7 +37,26 @@ module Hippo
         
         # populate each field from the original input
         fields.each_with_index do |value, index|
-          segment.send(:"#{segment_identifier}#{index + 1}=", value)
+          field = segment.class.fields[index]
+         
+          # if the field is an array that means it is a
+          # composite field
+          if field.class == Array
+            composite_fields = value.split(Hippo::CompositeSeparator)
+            
+            # initialize the values hash with a hash for this
+            # composite field
+            segment.values[field.sequence] = {}
+
+            # iterate through each value present in the composite field
+            # and save them to the appropriate sequence in the values 
+            # hash
+            composite_fields.each_with_index do |comp_value, comp_index|
+              segment.values[index][field[comp_index].sequence] = comp_value
+            end
+          else
+            segment.values[field.sequence] = value
+          end
         end
         
         # save the newly created segment to the segments accessor
