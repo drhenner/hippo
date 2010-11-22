@@ -6,6 +6,9 @@ module Hippo::TransactionSets
       #Informational Source Level
       segment Hippo::Segments::HL,
         :position => 10
+      loop Hippo::TransactionSets::HIPAA_276::L2100A,
+        :minimum => 1,
+        :maximum => nil
     end
     class L2100A < Hippo::TransactionSets::Base
       loop_name '2100A'
@@ -28,6 +31,9 @@ module Hippo::TransactionSets
         :position => 10,
         :minimum => 1,
         :maximum => 1
+      loop Hippo::TransactionSets::HIPPA_276::L2100B,
+        :minimum => 1,
+        :maximum => nil
     end
     class L2100B < Hippo::TransactionSets::Base
       loop_name '2100B'
@@ -42,6 +48,10 @@ module Hippo::TransactionSets
       #Service Provider Level
       segment Hippo::Segments::HL,
         :position => 10,
+        :minimum => 1,
+        :maximum => nil
+      
+      loop Hippo::TransactionSets::HIPPA_276::L2100C,
         :minimum => 1,
         :maximum => nil
       end
@@ -65,6 +75,13 @@ module Hippo::TransactionSets
       #Subscriber Demographic Information
       segment Hippo::Segments::DMG,
         :position => 40
+      
+      loop Hippo::TransactionSets::HIPPA_276::L2100D,
+        :minimum => 1,
+        :maximum => 1
+      loop Hippo::TransactionSets::HIPPA_276::L2200D,
+        :minimum => 1,
+        :maximum => 1
     end
     
     class L2100D < Hippo::TransactionSets::Base
@@ -104,6 +121,9 @@ module Hippo::TransactionSets
         segment Hippo::Segments::DTP,
           :position => 120,
           :maximum => 2
+        loop Hippo::TransactionSets::HIPPA_276::L2210D,
+          :minimum => nil,
+          :maximum => 1
     end
     
     class L2210D < Hippo::TransactionSets::Base
@@ -136,6 +156,12 @@ module Hippo::TransactionSets
       #Dependent Demographic Information
       segment Hippo::Segments::DMG,
         :position => 40,
+        :maximum => 1
+      loop Hippo::TransactionSets::HIPPA_276::L2100E,
+        :minimum => 1,
+        :maximum => 1
+      loop Hippo::TransactionSets::HIPPA_276::L2200E,
+        :minimum => 1,
         :maximum => 1
     end
     
@@ -180,6 +206,9 @@ module Hippo::TransactionSets
       segment Hippo::Segments::DTP,
         :position => 120,
         :maximum => 2
+      loop Hippo::TransactionSets::HIPPA_276::L2210E,
+        :minimum => nil,
+        :maximum => 1
     end
     class L2210E < Hippo::TransactionSets::Base
       loop_name '2210'
@@ -215,45 +244,16 @@ module Hippo::TransactionSets
       loop  Hippo::TransactionSets::HIPAA_276::L2000A,  
         :minimum => 1,
         :maximum => nil
-      
-      loop Hippo::TransactionSets::HIPAA_276::L2100A,
-        :identified_by => {'NM1.EntityIdentifierCode' => 'PR'}
-        :minimum => 1,
-        :maximum => nil
       loop Hippo::TransactionSets::HIPPA_276::L2000B,
         :minimum => 1,
         :maximum => nil
-      loop Hippo::TransactionSets::HIPPA_276::L2100B,
-        :minimum => 1,
-        :maximum nil
       loop Hippo::TransactionSets::HIPPA_276::L2000C,
-        :minimum => 1,
-        :maximum => nil
-      loop Hippo::TransactionSets::HIPPA_276::L2100C,
         :minimum => 1,
         :maximum => nil
       loop Hippo::TransactionSets::HIPPA_276::L2000D,
         :minimum => 1,
         :maximum => nil
-      loop Hippo::TransactionSets::HIPPA_276::L2100D,
-        :minimum => 1,
-        :maximum => 1
-      loop Hippo::TransactionSets::HIPPA_276::L2200D,
-        :minimum => 1,
-        :maximum => 1
-      loop Hippo::TransactionSets::HIPPA_276::L2210D,
-        :minimum => nil,
-        :maximum => 1
       loop Hippo::TransactionSets::HIPPA_276::L2000E,
-        :minimum => nil,
-        :maximum => 1
-      loop Hippo::TransactionSets::HIPPA_276::L2100E,
-        :minimum => 1,
-        :maximum => 1
-      loop Hippo::TransactionSets::HIPPA_276::L2200E,
-        :minimum => 1,
-        :maximum => 1
-      loop Hippo::TransactionSets::HIPPA_276::L2210E,
         :minimum => nil,
         :maximum => 1
         
