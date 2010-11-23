@@ -1,5 +1,6 @@
 module Hippo::TransactionSets
   module HIPAA_835
+    
     class L1000A < Hippo::TransactionSets::Base
       loop_name 'L1000A'
 

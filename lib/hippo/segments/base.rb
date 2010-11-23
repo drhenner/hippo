@@ -86,6 +86,7 @@ module Hippo::Segments
       if field.class == Numeric || field =~ /\A#{self.class.identifier}(?:(\d+)(?:_(\d+)){0,1})\z/
         self.class.fields[$1.to_i - 1]
       else
+        pp self.class.fields.select
         self.class.fields.select{|f| f.name == get_field_name(field).to_s}.first
       end
     end
@@ -118,12 +119,14 @@ module Hippo::Segments
     end
 
     def method_missing(method_name, *args) 
-      field = get_field(get_field_name(method_name))
+      values
+      
+      field = get_field(get_field_name(method_name.to_s))
 
       if field.nil? 
-        puts method_name, * args
+         puts method_name, *args
       end
-
+      
       if method_name.to_s =~ /=\z/
         @values[field.sequence] = args[0]
       else
