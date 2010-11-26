@@ -1,5 +1,5 @@
-require 'rubygems'
-require 'faker'
+libdir = File.dirname(__FILE__)
+$LOAD_PATH.unshift(libdir) unless $LOAD_PATH.include?(libdir)
 
 module Hippo
   autoload :Segments,         'hippo/segments'
@@ -19,7 +19,15 @@ def random_chars(count = 5)
 end
 
 if __FILE__ == $0
+  require 'rubygems'
+  require 'faker'
+  require 'pp'
+
   ts = Hippo::TransactionSets::HIPAA_835::Base.new
+
+  ts.ISA do |seg|
+
+  end
 
   ts.ST do |seg|
     seg.TransactionSetIdentifierCode = rand(10 * 100)
