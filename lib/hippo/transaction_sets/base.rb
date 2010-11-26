@@ -36,7 +36,6 @@ module Hippo::TransactionSets
 
     def get_component(identifier, sequence = 0)
       self.class.components.select do |c|
-        pp c[:class].identifier
         c[:class].identifier == identifier
       end[sequence]
     end

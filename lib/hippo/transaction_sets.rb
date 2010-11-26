@@ -1,5 +1,3 @@
-#require 'hippo/transaction_sets/HIPAA835'
-
 module Hippo::TransactionSets
     autoload :HIPAA_835,      'hippo/transaction_sets/HIPAA_835'
     autoload :HIPAA_276,      'hippo/transaction_sets/HIPAA_276'
