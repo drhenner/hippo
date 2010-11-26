@@ -21,6 +21,8 @@ module Hippo::Segments
         f.separator = field[:separator] || @default_separator || Hippo::FieldSeparator
 
         if @composite_block
+					f.composite = true
+					f.composite_sequence = fields.length
           f.sequence = fields.last.length + 1
           fields.last << f
         else
@@ -40,34 +42,6 @@ module Hippo::Segments
       def segment_identifier(id)
         @identifier = id
       end
-
-      #def grouped_fields
-      #  return @grouped_fields unless @grouped_fields.nil?
-
-      #  @grouped_fields = []
-      #  current_composite = []
-
-      #  @fields.each do |f|
-      #    if f.separator == Hippo::FieldSeparator
-
-      #      unless current_composite.empty?
-      #        @grouped_fields << current_composite
-      #        current_composite = []
-      #      end
-
-      #      @grouped_fields << f
-      #    else
-      #      current_composite << f
-      #    end
-      #  end
-
-      #  unless current_composite.empty?
-      #    @grouped_fields << current_composite
-      #    current_composite = []
-      #  end
-      #  
-      #  return @grouped_fields
-      #end
     end
     
     attr_accessor :values
@@ -84,8 +58,7 @@ module Hippo::Segments
       if field.class == Numeric || field =~ /\A#{self.class.identifier}(?:(\d+)(?:_(\d+)){0,1})\z/
         self.class.fields[$1.to_i - 1]
       else
-        pp self.class.fields.select
-        self.class.fields.select{|f| f.name == get_field_name(field).to_s}.first
+        self.class.fields.flatten.select{|f| f.name == get_field_name(field).to_s}.first
       end
     end
 
@@ -95,7 +68,7 @@ module Hippo::Segments
       self.class.fields.each_with_index do |field, index|
         if field.class == Array
           field.each do |comp_field|
-            output += @values[index][comp_field.sequence].to_s + comp_field.separator
+            output += @values[index + 1][comp_field.sequence].to_s + comp_field.separator
           end
         else
           output += @values[field.sequence].to_s + field.separator
@@ -126,7 +99,12 @@ module Hippo::Segments
       end
       
       if method_name.to_s =~ /=\z/
-        self.values[field.sequence] = args[0]
+				if field.composite
+					self.values[field.composite_sequence] ||= {}
+					self.values[field.composite_sequence][field.sequence] = args[0]
+				else
+					self.values[field.sequence] = args[0]
+				end
       else
         self.values[field.sequence]
       end
