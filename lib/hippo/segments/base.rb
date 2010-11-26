@@ -1,5 +1,3 @@
-require 'pp'
-
 module Hippo::Segments
   class Base
     class << self
@@ -123,11 +121,11 @@ module Hippo::Segments
       if field.nil? 
         puts method_name, * args
       end
-
+      
       if method_name.to_s =~ /=\z/
-        @values[field.sequence] = args[0]
+        self.values[field.sequence] = args[0]
       else
-        @values[field.sequence]
+        self.values[field.sequence]
       end
     end  
   end
