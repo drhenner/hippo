@@ -36,6 +36,7 @@ module Hippo::TransactionSets
 
     def get_component(identifier, sequence = 0)
       self.class.components.select do |c|
+        pp c[:class].identifier
         c[:class].identifier == identifier
       end[sequence]
     end
@@ -43,12 +44,12 @@ module Hippo::TransactionSets
     def method_missing(method_name, *args) 
       component_entry = get_component(method_name.to_s)
       component = component_entry[:class].new
-      
+
       # iterate through the hash of defaults
       # and assign them to the component before
       # adding to @values
       component_entry.each do |key, value|
-        next unless key.class == String
+         next unless key.class == String
 
         component.send((key + '=').to_sym, value)
       end
