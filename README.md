@@ -10,9 +10,9 @@ effective 2012/01/01 all organizations must be migrated to using version
 
 More information can be found at the following sites:
 
-* (https://www.cms.gov/HIPAAGenInfo/01_Overview.asp)
-* (http://en.wikipedia.org/wiki/Hipaa)
-* (https://www.cms.gov/ElectronicBillingEDITrans/18_5010D0.asp)
+* [General HIPAA information from CMS](https://www.cms.gov/HIPAAGenInfo/01_Overview.asp)
+* [Wikipedia HIPAA Article](http://en.wikipedia.org/wiki/Hipaa)
+* [5010 Implementation Timeline](https://www.cms.gov/ElectronicBillingEDITrans/18_5010D0.asp)
 
 Installation
 ------------
