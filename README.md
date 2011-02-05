@@ -17,5 +17,34 @@ Once installed simply set for 835 transaction set:
         seg.TransactionSetIdentifierCode = rand(10 * 100)
         seg.TransactionSetControlNumber = rand(10 * 100)
     end
+    
+Here's what a loop would look like.  We are using the Faker gem to generate random info for this example.
+
+    ts.L1000A do |loop|
+        loop.N1 do |seg|
+            seg.EntityIdentifierCode1 = "PR"
+            seg.Name = Faker::Name.name
+        end
+        loop.N3 do |seg|
+            seg.AddressInformation1 = Faker::Address.street_address
+            seg.AddressInformation2 = "#{Faker::Address.city} #{Faker::Address.us_state} #{Faker::Address.zip_code}"
+        end
+        loop.N4 do |seg|
+            seg.CityName = Faker::Address.city
+            seg.StateOrProvinceCode = Faker::Address.us_state_abbr
+            seg.PostalCode = Faker::Address.zip_code
+            seg.CountryCode = "US"
+        end
+        loop.REF do |seg|
+            seg.ReferenceIdentificationQualifier = "URL"
+            seg.ReferenceIdentification = "R0203"
+            seg.Description = "Description"
+            seg.ReferenceIdentifier = "1241"
+        end
+        loop.PER do |seg|
+            seg.ContactFunctionCode = "1A"
+            seg.Name = Faker::Name.name
+        end
+    end
 
 We are pursuing this aggressively at Pro-Medical, Inc. because HIPAA 5010 will take effect later this year and testing/refactoring must be finished before then.
