@@ -8,6 +8,12 @@ organization. The current version (as of 2011/02/05) is 4010A1, but
 effective 2012/01/01 all organizations must be migrated to using version
 5010.
 
+More information can be found at the following sites:
+
+* (https://www.cms.gov/HIPAAGenInfo/01_Overview.asp)
+* (http://en.wikipedia.org/wiki/Hipaa)
+* (https://www.cms.gov/ElectronicBillingEDITrans/18_5010D0.asp)
+
 Installation
 ------------
     gem install hippo
