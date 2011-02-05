@@ -1,4 +1,5 @@
 require './lib/hippo.rb'
+require 'faker'
 
 module Hippo
 	class Demo835

@@ -7,7 +7,7 @@ module Hippo
   autoload :Field,            'hippo/field'
   autoload :CompositeField,   'hippo/composite_field'
   autoload :Parser,           'hippo/parser'
-  
+
   FieldSeparator = '*'
   CompositeSeparator = ':'
   SegmentSeparator = '~'
