@@ -1,6 +1,6 @@
 module Hippo::TransactionSets
   module HIPAA_835
-    
+
     class L1000A < Hippo::TransactionSets::Base
       loop_name 'L1000A'
 
@@ -10,7 +10,7 @@ module Hippo::TransactionSets
               :minimum => 1,
               :maximum => 1,
               :position => 80
-      
+
       #Payer Address 
       segment Hippo::Segments::N3,  
               :minimum => 1,
@@ -28,7 +28,7 @@ module Hippo::TransactionSets
               :minimum => 0,
               :maximum => 4,
               :position => 120
-     
+
        #Payer Contact Information 
        segment Hippo::Segments::PER, 
                :minimum => 0,
@@ -45,7 +45,7 @@ module Hippo::TransactionSets
               :minimum => 1,
               :maximum => 1,
               :position => 80
-      
+
       #Payee Address
       segment Hippo::Segments::N3,  
               :minimum => 0,
@@ -57,7 +57,7 @@ module Hippo::TransactionSets
               :minimum => 0,
               :maximum => 1,
               :position => 110
-     
+
       #Payee Additional Identification
       segment Hippo::Segments::REF,  
               :minimum => 1,
@@ -73,49 +73,49 @@ module Hippo::TransactionSets
               :minimum => 0,
               :maximum => 1,
               :position => 70
-      
+
       #Service Date
       segment Hippo::Segments::DTM, 
               :minimum => 0,
               :maximum => 3,
               :position => 80
-       
+
       #Service Adjustment
       segment Hippo::Segments::CAS, 
               :minimum => 0,
               :maximum => 99,
               :position => 90
-   
+
       #Service Identification
       segment Hippo::Segments::REF,  
               :minimum => 0,
               :maximum => 7,
               :position => 100
-      
+
       #Rendering Provider Information
       segment Hippo::Segments::REF, 
               :minimum => 0,
               :maximum => 10,
               :position => 100
-      
+
       #Service Supplemental Amount
       segment Hippo::Segments::AMT, 
               :minimum => 0,
               :maximum => 12,
               :position => 110
-  
+
       #Service Supplemental Quantity
       segment Hippo::Segments::QTY,  
               :minimum => 0,
               :maximum => 6,
               :position => 120
-     
+
       #Health Care Remark Codes 
       segment Hippo::Segments::LQ, 
               :minimum => 0,
               :maximum => 99,
               :position => 130
-     
+
       #Provider Adjustment
       segment Hippo::Segments::PLB,  
               :minimum => 1,
@@ -131,13 +131,13 @@ module Hippo::TransactionSets
               :minimum => 1,
               :maximum => 1,
               :position => 10
-     
+
       #Claim Adjustment
       segment Hippo::Segments::CAS, 
               :minimum => 0,
               :maximum => 99,
               :position => 20
-     
+
       segment Hippo::Segments::NM1,
               'EntityIdentifierCode1' => 'QC',  #Patient
               :minimum => 1,
