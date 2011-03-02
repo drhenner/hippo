@@ -1,5 +1,29 @@
 module Hippo::TransactionSets
   module HIPAA_270
+    
+    class L2110C < Hippo::TransactionSets::Base
+      loop_name 'L2110C'
+      
+      #Subscriber Eligibility or Benefit Inquiry Information
+      segment Hippo::Segments::EQ,
+      :position => 130
+      
+      #Subscriber Spend Down Amount
+      segment Hippo::Segments::AMT,
+      :position => 135
+      
+      #Subscriber Elgibility or Benefit Additonal Inquiry Information
+      segment Hippo::Segments::III,
+      :position => 170
+      
+      #Subscriber Additional Information
+      segment Hippo::Segments::REF,
+      :position => 190
+      
+      #Subscriber Eligibility/Benefit Date
+      segment Hippo::Segments::DTP,
+      :position => 200
+    end
 
     class L2100A < Hippo::TransactionSets::Base
       loop_name 'L2100A'
@@ -38,32 +62,8 @@ module Hippo::TransactionSets
       :position => 90
     end
     
-    class L2110C < Hippo::TransactionSets::Base
-      loop_name '2110C'
-      
-      #Subscriber Eligibility or Benefit Inquiry Information
-      segment Hippo::Segments::EQ,
-      :position => 130
-      
-      #Subscriber Spend Down Amount
-      segment Hippo::Segments::AMT,
-      :position => 135
-      
-      #Subscriber Elgibility or Benefit Additonal Inquiry Information
-      segment Hippo::Segments::III,
-      :position => 170
-      
-      #Subscriber Additional Information
-      segment Hippo::Segments::REF,
-      :position => 190
-      
-      #Subscriber Eligibility/Benefit Date
-      segment Hippo::Segments::DTP,
-      :position => 200
-    end
-    
-    class L2110D < Hippo::TrransactionSets::Base
-      loop_name '2110D'
+    class L2110D < Hippo::TransactionSets::Base
+      loop_name 'L2110D'
       
       #Dependent Eligibility Or Benefit INquiry Information
       segment Hippo::Segments::EQ,
@@ -168,6 +168,7 @@ module Hippo::TransactionSets
       #Informational Source Level
       segment Hippo::Segments::HL,
       :position => 10
+      
       loop Hippo::TransactionSets::HIPAA_270::L2100A,
       :minimum => 1,
       :maximum => nil
