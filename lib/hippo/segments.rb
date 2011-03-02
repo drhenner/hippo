@@ -56,4 +56,7 @@ module Hippo::Segments
   autoload :TRN,       'hippo/segments/TRN.rb'
   autoload :TS2,       'hippo/segments/TS2.rb'
   autoload :TS3,       'hippo/segments/TS3.rb'
+  autoload :EQ,        'hippo/segments/EQ.rb'
+  autoload :III,       'hippo/segments/III.rb'
+  autoload :INS,       'hippo/segments/INS.rb'
 end
