@@ -23,7 +23,7 @@ module Hippo::TransactionSets
     def values
       @values ||= []
     end
-    
+
     def to_s
       output = ''
 
@@ -42,20 +42,32 @@ module Hippo::TransactionSets
 
     def method_missing(method_name, *args) 
       component_entry = get_component(method_name.to_s)
-      component = component_entry[:class].new
 
-      # iterate through the hash of defaults
-      # and assign them to the component before
-      # adding to @values
-      component_entry.each do |key, value|
-         next unless key.class == String
-
-        component.send((key + '=').to_sym, value)
+      unless @values.nil?
+        components = @values.select do |v|
+          v.class.to_s == method_name.to_s
+        end
       end
+      
+      if components.nil? 
+        component = components[0] 
+        return component
+      else
+        component ||= component_entry[:class].new
 
-      yield component if block_given?
+        # iterate through the hash of defaults
+        # and assign them to the component before
+        # adding to @values
+        component_entry.each do |key, value|
+          next unless key.class == String
 
-      values << component
+          component.send((key + '=').to_sym, value)
+        end
+
+        yield component if block_given?
+
+        values << component
+      end
     end  
   end
 end
