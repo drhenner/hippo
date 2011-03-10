@@ -12,7 +12,7 @@ module Hippo::TransactionSets
       end
 
       def add_component(klass, options={})
-        components << options.merge(:class => klass)
+        components << options.merge(:class => klass, :sequence => components.length)
       end
       alias segment add_component
       alias loop add_component
@@ -21,39 +21,37 @@ module Hippo::TransactionSets
     attr_accessor :values
 
     def values
-      @values ||= []
+      @values ||= {}
     end
 
     def to_s
       output = ''
 
-      values.each do |component|
+      values.sort.each do |sequence, component|
         output += component.to_s
       end
 
       output
     end
 
-    def get_component(identifier, sequence = 0)
+    def get_component(identifier, sequence = nil)
+      if sequence.nil?
+        sequence = 0
+      else
+        sequence = sequence.to_i - 1
+      end
+
       self.class.components.select do |c|
         c[:class].identifier == identifier
       end[sequence]
     end
 
-    def method_missing(method_name, *args) 
-      component_entry = get_component(method_name.to_s)
+    def method_missing(method_name, *args)
+      component_name, component_sequence = method_name.to_s.split('_')
+      component_entry = get_component(component_name, component_sequence)
 
-      unless @values.nil?
-        components = @values.select do |v|
-          v.class.to_s == method_name.to_s
-        end
-      end
-
-      if components.nil? 
-        component = components[0] 
-        return component
-      else
-        component ||= component_entry[:class].new
+      if values[component_entry[:sequence]].nil?
+        component = component_entry[:class].new
 
         # iterate through the hash of defaults
         # and assign them to the component before
@@ -66,7 +64,9 @@ module Hippo::TransactionSets
 
         yield component if block_given?
 
-        values << component
+        values[component_entry[:sequence]] = component
+      else
+        return values[component_entry[:sequence]]
       end
     end
   end
