@@ -11,7 +11,7 @@ module Hippo::TransactionSets
         @identifier = id
       end
 
-      def add_component(klass, options={}) 
+      def add_component(klass, options={})
         components << options.merge(:class => klass)
       end
       alias segment add_component
@@ -48,7 +48,7 @@ module Hippo::TransactionSets
           v.class.to_s == method_name.to_s
         end
       end
-      
+
       if components.nil? 
         component = components[0] 
         return component
@@ -68,6 +68,6 @@ module Hippo::TransactionSets
 
         values << component
       end
-    end  
+    end
   end
 end

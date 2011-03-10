@@ -21,8 +21,8 @@ module Hippo::Segments
         f.separator = field[:separator] || @default_separator || Hippo::FieldSeparator
 
         if @composite_block
-					f.composite = true
-					f.composite_sequence = fields.length
+          f.composite = true
+          f.composite_sequence = fields.length
           f.sequence = fields.last.length + 1
           fields.last << f
         else
@@ -43,9 +43,9 @@ module Hippo::Segments
         @identifier = id
       end
     end
-    
+
     attr_accessor :values
-    
+
     def values
       @values ||= {}
     end
@@ -53,7 +53,7 @@ module Hippo::Segments
     def get_field_name(text)
       text.to_s.gsub(' ','').gsub('=','')
     end
-    
+
     def get_field(field)
       if field.class == Numeric || field =~ /\A#{self.class.identifier}(?:(\d+)(?:_(\d+)){0,1})\z/
         self.class.fields[$1.to_i - 1]
@@ -83,7 +83,7 @@ module Hippo::Segments
       output += Hippo::SegmentSeparator
       output = output.gsub(/\*+~/,'~')
     end
-    
+
 
     def identifier
       self.class.identifier
@@ -91,23 +91,23 @@ module Hippo::Segments
 
     def method_missing(method_name, *args) 
       values
-      
+
       field = get_field(get_field_name(method_name.to_s))
 
-      if field.nil? 
+      if field.nil?
          puts method_name, *args
       end
-      
+
       if method_name.to_s =~ /=\z/
-				if field.composite
-					self.values[field.composite_sequence] ||= {}
-					self.values[field.composite_sequence][field.sequence] = args[0]
-				else
-					self.values[field.sequence] = args[0]
-				end
+        if field.composite
+          self.values[field.composite_sequence] ||= {}
+          self.values[field.composite_sequence][field.sequence] = args[0]
+        else
+          self.values[field.sequence] = args[0]
+        end
       else
         self.values[field.sequence]
       end
-    end  
+    end
   end
 end
