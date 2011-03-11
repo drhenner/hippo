@@ -68,9 +68,19 @@ module Hippo::TransactionSets
 
         yield component if block_given?
 
-        values[component_entry[:sequence]] = component
+        values[component_entry[:sequence]] = if component_entry[:maximum] && component_entry[:maximum] > 1
+                                               [component]
+                                             else
+                                               component
+                                             end
       else
-        return values[component_entry[:sequence]]
+        if component_entry[:maximum] && component_entry[:maximum] > 1 && block_given?
+          component =  component_entry[:class].new :parent => self
+          yield component
+          values[component_entry[:sequence]] << component
+        else
+          return values[component_entry[:sequence]]
+        end
       end
     end
   end
