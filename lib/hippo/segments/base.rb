@@ -44,7 +44,11 @@ module Hippo::Segments
       end
     end
 
-    attr_accessor :values
+    attr_accessor :values, :parent
+
+    def initialize(options = {})
+      @parent = options.delete(:parent)
+    end
 
     def values
       @values ||= {}
@@ -89,7 +93,7 @@ module Hippo::Segments
       self.class.identifier
     end
 
-    def method_missing(method_name, *args) 
+    def method_missing(method_name, *args)
       values
 
       field = get_field(get_field_name(method_name.to_s))

@@ -18,7 +18,11 @@ module Hippo::TransactionSets
       alias loop add_component
     end
 
-    attr_accessor :values
+    attr_accessor :values, :parent
+
+    def initialize(options = {})
+      @parent = options.delete(:parent)
+    end
 
     def values
       @values ||= {}
@@ -51,7 +55,7 @@ module Hippo::TransactionSets
       component_entry = get_component(component_name, component_sequence)
 
       if values[component_entry[:sequence]].nil?
-        component = component_entry[:class].new
+        component = component_entry[:class].new :parent => self
 
         # iterate through the hash of defaults
         # and assign them to the component before
