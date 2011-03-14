@@ -76,7 +76,7 @@ module Hippo::Segments
             :maximum  => 9,
             :required => false
 
-    field   :name     => 'AcknowledgmentRuested',
+    field   :name     => 'AcknowledgmentRequested',
             :datatype => :list,
             :list     => [ '0','1'],
             :required => false
