@@ -28,6 +28,22 @@ module Hippo::TransactionSets
       @values ||= {}
     end
 
+    def segment_count
+      counter = 0
+
+      values.sort.each do |sequence, component|
+        if component.class == Array
+          component.each{|c| counter += c.segment_count}
+        elsif component.class.ancestors.include?(Hippo::TransactionSets::Base)
+          counter += component.segment_count
+        else
+          counter += 1
+        end
+      end
+
+      counter
+    end
+
     def to_s
       output = ''
 
