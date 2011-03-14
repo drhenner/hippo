@@ -1,7 +1,7 @@
 module Hippo::Segments
   class Base
     class << self
-      attr_accessor :fields, :identifier
+      attr_accessor :fields, :identifier, :fixed_width
 
       def fields
         @fields ||= []
@@ -16,6 +16,8 @@ module Hippo::Segments
         f.sequence = fields.length + 1
         f.name = field[:name]
         f.datatype = field[:datatype]
+        f.minimum  = field[:minimum]
+        f.maximum  = field[:maximum]
         f.options = field[:options]
         f.restrictions = field[:restrictions]
         f.separator = field[:separator] || @default_separator || Hippo::FieldSeparator
@@ -41,6 +43,10 @@ module Hippo::Segments
 
       def segment_identifier(id)
         @identifier = id
+      end
+
+      def segment_fixed_width
+        @fixed_width = true
       end
     end
 
@@ -72,10 +78,16 @@ module Hippo::Segments
       self.class.fields.each_with_index do |field, index|
         if field.class == Array
           field.each do |comp_field|
-            output += @values[index + 1][comp_field.sequence].to_s + comp_field.separator
+            field_value = @values[index + 1][comp_field.sequence].to_s
+            field_value = field_value.ljust(comp_field.maximum) if self.class.fixed_width
+
+            output += field_value + comp_field.separator
           end
         else
-          output += @values[field.sequence].to_s + field.separator
+          field_value = @values[field.sequence].to_s
+          field_value = field_value.ljust(field.maximum) if self.class.fixed_width
+
+          output += field_value + field.separator
         end
       end
 
