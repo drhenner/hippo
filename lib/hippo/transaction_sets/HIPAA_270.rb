@@ -193,7 +193,7 @@ module Hippo::TransactionSets
 
       loop Hippo::TransactionSets::HIPAA_270::L2000D,
       :minimum => 1,
-      :maximum => nil
+      :maximum => 9999
     end
     class L2000B < Hippo::TransactionSets::Base
       loop_name 'L2000B'
@@ -210,7 +210,7 @@ module Hippo::TransactionSets
 
       loop Hippo::TransactionSets::HIPAA_270::L2000C,
       :minimum => 1,
-      :maximum => nil
+      :maximum => 9999
     end
 
     class L2000A < Hippo::TransactionSets::Base
@@ -222,11 +222,11 @@ module Hippo::TransactionSets
 
       loop Hippo::TransactionSets::HIPAA_270::L2100A,
       :minimum => 1,
-      :maximum => nil
+      :maximum => 9999
 
       loop Hippo::TransactionSets::HIPAA_270::L2000B,
       :minimum => 1,
-      :maximum => nil
+      :maximum => 9999
     end
 
 
@@ -240,9 +240,9 @@ module Hippo::TransactionSets
       segment Hippo::Segments::BHT,
       :position => 20
 
-      loop  Hippo::TransactionSets::HIPAA_270::L2000A,  
+      loop  Hippo::TransactionSets::HIPAA_270::L2000A,
       :minimum => 1,
-      :maximum => nil
+      :maximum => 9999
 
       segment Hippo::Segments::SE,
       :position => 210
