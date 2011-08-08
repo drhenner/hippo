@@ -206,7 +206,7 @@ module Hippo::TransactionSets
 
       loop Hippo::TransactionSets::HIPAA_270::L2100B,
       :minimum => 1,
-      :maximum => nil
+      :maximum => 1
 
       loop Hippo::TransactionSets::HIPAA_270::L2000C,
       :minimum => 1,
@@ -222,7 +222,7 @@ module Hippo::TransactionSets
 
       loop Hippo::TransactionSets::HIPAA_270::L2100A,
       :minimum => 1,
-      :maximum => 9999
+      :maximum => 1
 
       loop Hippo::TransactionSets::HIPAA_270::L2000B,
       :minimum => 1,
