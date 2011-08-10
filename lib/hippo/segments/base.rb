@@ -78,13 +78,13 @@ module Hippo::Segments
       self.class.fields.each_with_index do |field, index|
         if field.class == Array
           field.each do |comp_field|
-            field_value = @values[index + 1][comp_field.sequence].to_s
+            field_value = values[index + 1][comp_field.sequence].to_s
             field_value = field_value.ljust(comp_field.maximum) if self.class.fixed_width
 
             output += field_value + comp_field.separator
           end
         else
-          field_value = @values[field.sequence].to_s
+          field_value = values[field.sequence].to_s
           field_value = field_value.ljust(field.maximum) if self.class.fixed_width
 
           output += field_value + field.separator
