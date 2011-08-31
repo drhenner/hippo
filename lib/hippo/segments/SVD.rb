@@ -18,7 +18,7 @@ module Hippo::Segments
     field   :name     => 'CompositeMedicalProcedureIdentifier',
             :datatype => :alpha_numeric,
             :minimum  => 0,
-            :maximum  => inf,
+            :maximum  => nil,
             :required => false
 
     field   :name     => 'ProductServiceId',

@@ -11,7 +11,7 @@ module Hippo::Segments
 
     field   :name     => 'YesNoConditionOrResponseCode',
             :datatype => :list,
-            :list     => [ 'N','U','W','Y']
+            :list     => [ 'N','U','W','Y'],
             :required => false
 
     field   :name     => 'ReferenceIdentification',

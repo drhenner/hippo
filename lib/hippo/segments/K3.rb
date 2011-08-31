@@ -11,13 +11,13 @@ module Hippo::Segments
 
     field   :name     => 'RecordFormatCode',
             :datatype => :list,
-            :list     => [ 'C','D','E','F','P','S']
+            :list     => [ 'C','D','E','F','P','S'],
             :required => false
 
     field   :name     => 'CompositeUnitOfMeasure',
             :datatype => :alpha_numeric,
             :minimum  => 0,
-            :maximum  => inf,
+            :maximum  => nil,
             :required => false
 
   end

@@ -5,7 +5,7 @@ module Hippo::Segments
 
     field   :name     => 'ContractTypeCode',
             :datatype => :list,
-            :list     => [ '01','02','03','04','05','06','09','AB','AC','AD','AE','AF','AG','AH','AI','AJ','CA','CB','CH','CP','CS','CW','CX','CY','DI','EA','ER','FA','FB','FC','FD','FE','FF','FG','FH','FI','FJ','FK','FL','FM','FR','FX','LA','LE','LH','OC','PR','SP','TM','ZZ']
+            :list     => [ '01','02','03','04','05','06','09','AB','AC','AD','AE','AF','AG','AH','AI','AJ','CA','CB','CH','CP','CS','CW','CX','CY','DI','EA','ER','FA','FB','FC','FD','FE','FF','FG','FH','FI','FJ','FK','FL','FM','FR','FX','LA','LE','LH','OC','PR','SP','TM','ZZ'],
             :required => true
 
     field   :name     => 'MonetaryAmount',

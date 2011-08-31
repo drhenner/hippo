@@ -5,7 +5,7 @@ module Hippo::Segments
 
     field   :name     => 'DisciplineTypeCode',
             :datatype => :list,
-            :list     => [ 'AI','MS','OT','PT','SN','ST']
+            :list     => [ 'AI','MS','OT','PT','SN','ST'],
             :required => true
 
     field   :name     => 'Number1',
