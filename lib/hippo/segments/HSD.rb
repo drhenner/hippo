@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'HSD'
 
     field :name                 => 'QuantityQualifier',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 673
 
     field :name                 => 'Quantity',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 15,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 380
 
     field :name                 => 'UnitOrBasisForMeasurementCode',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 355
 
     field :name                 => 'SampleSelectionModulus',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 6,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 1167
 
     field :name                 => 'TimePeriodQualifier',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 2,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 615
 
     field :name                 => 'NumberOfPeriods',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :numeric,
           :decimal              => 0,
           :minimum              => 1,
@@ -53,7 +53,7 @@ module Hippo::Segments
           :data_element_number  => 616
 
     field :name                 => 'ShipDeliveryOrCalendarPatternCode',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 2,
@@ -61,7 +61,7 @@ module Hippo::Segments
           :data_element_number  => 678
 
     field :name                 => 'ShipDeliveryPatternTimeCode',
-          :sequence             => 08,
+          :sequence             => 8,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,

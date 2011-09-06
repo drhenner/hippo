@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'NM1'
 
     field :name                 => 'EntityIdentifierCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 98
 
     field :name                 => 'EntityTypeQualifier',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 1065
 
     field :name                 => 'NameLastOrOrganizationName',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 60,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 1035
 
     field :name                 => 'NameFirst',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 35,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 1036
 
     field :name                 => 'NameMiddle',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 25,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 1037
 
     field :name                 => 'NamePrefix',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 10,
@@ -52,7 +52,7 @@ module Hippo::Segments
           :data_element_number  => 1038
 
     field :name                 => 'NameSuffix',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 10,
@@ -60,7 +60,7 @@ module Hippo::Segments
           :data_element_number  => 1039
 
     field :name                 => 'IdentificationCodeQualifier',
-          :sequence             => 08,
+          :sequence             => 8,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 2,
@@ -68,7 +68,7 @@ module Hippo::Segments
           :data_element_number  => 66
 
     field :name                 => 'IdentificationCode',
-          :sequence             => 09,
+          :sequence             => 9,
           :datatype             => :string,
           :minimum              => 2,
           :maximum              => 80,

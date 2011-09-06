@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'LIN'
 
     field :name                 => 'AssignedIdentification',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 20,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 350
 
     field :name                 => 'ProductServiceIdQualifier',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 235
 
     field :name                 => 'ProductServiceId',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 48,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 234
 
     field :name                 => 'ProductServiceIdQualifier',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 235
 
     field :name                 => 'ProductServiceId',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 48,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 234
 
     field :name                 => 'ProductServiceIdQualifier',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -52,7 +52,7 @@ module Hippo::Segments
           :data_element_number  => 235
 
     field :name                 => 'ProductServiceId',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 48,
@@ -60,7 +60,7 @@ module Hippo::Segments
           :data_element_number  => 234
 
     field :name                 => 'ProductServiceIdQualifier',
-          :sequence             => 08,
+          :sequence             => 8,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -68,7 +68,7 @@ module Hippo::Segments
           :data_element_number  => 235
 
     field :name                 => 'ProductServiceId',
-          :sequence             => 09,
+          :sequence             => 9,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 48,

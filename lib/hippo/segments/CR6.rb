@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'CR6'
 
     field :name                 => 'PrognosisCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 923
 
     field :name                 => 'Date',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :date,
           :minimum              => 8,
           :maximum              => 8,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 373
 
     field :name                 => 'DateTimePeriodFormatQualifier',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 1250
 
     field :name                 => 'DateTimePeriod',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 35,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 1251
 
     field :name                 => 'Date',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :date,
           :minimum              => 8,
           :maximum              => 8,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 373
 
     field :name                 => 'YesNoConditionOrResponseCode',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -52,7 +52,7 @@ module Hippo::Segments
           :data_element_number  => 1073
 
     field :name                 => 'YesNoConditionOrResponseCode',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -60,7 +60,7 @@ module Hippo::Segments
           :data_element_number  => 1073
 
     field :name                 => 'CertificationTypeCode',
-          :sequence             => 08,
+          :sequence             => 8,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -68,7 +68,7 @@ module Hippo::Segments
           :data_element_number  => 1322
 
     field :name                 => 'Date',
-          :sequence             => 09,
+          :sequence             => 9,
           :datatype             => :date,
           :minimum              => 8,
           :maximum              => 8,

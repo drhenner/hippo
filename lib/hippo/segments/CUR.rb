@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'CUR'
 
     field :name                 => 'EntityIdentifierCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 98
 
     field :name                 => 'CurrencyCode',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :list,
           :minimum              => 3,
           :maximum              => 3,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 100
 
     field :name                 => 'ExchangeRate',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :numeric,
           :minimum              => 4,
           :maximum              => 10,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 280
 
     field :name                 => 'EntityIdentifierCode',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 98
 
     field :name                 => 'CurrencyCode',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :list,
           :minimum              => 3,
           :maximum              => 3,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 100
 
     field :name                 => 'CurrencyMarketExchangeCode',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :list,
           :minimum              => 3,
           :maximum              => 3,
@@ -52,7 +52,7 @@ module Hippo::Segments
           :data_element_number  => 669
 
     field :name                 => 'DateTimeQualifier',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :list,
           :minimum              => 3,
           :maximum              => 3,
@@ -60,7 +60,7 @@ module Hippo::Segments
           :data_element_number  => 374
 
     field :name                 => 'Date',
-          :sequence             => 08,
+          :sequence             => 8,
           :datatype             => :date,
           :minimum              => 8,
           :maximum              => 8,
@@ -68,7 +68,7 @@ module Hippo::Segments
           :data_element_number  => 373
 
     field :name                 => 'Time',
-          :sequence             => 09,
+          :sequence             => 9,
           :datatype             => :time,
           :minimum              => 4,
           :maximum              => 8,

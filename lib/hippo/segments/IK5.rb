@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'IK5'
 
     field :name                 => 'TransactionSetAcknowledgmentCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 717
 
     field :name                 => 'ImplementationTransactionSetSyntaxErrorCode',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 618
 
     field :name                 => 'ImplementationTransactionSetSyntaxErrorCode',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 618
 
     field :name                 => 'ImplementationTransactionSetSyntaxErrorCode',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 618
 
     field :name                 => 'ImplementationTransactionSetSyntaxErrorCode',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 618
 
     field :name                 => 'ImplementationTransactionSetSyntaxErrorCode',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,

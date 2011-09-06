@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'DN1'
 
     field :name                 => 'Quantity',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 15,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 380
 
     field :name                 => 'Quantity',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 15,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 380
 
     field :name                 => 'YesNoConditionOrResponseCode',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 1073
 
     field :name                 => 'Description',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 80,

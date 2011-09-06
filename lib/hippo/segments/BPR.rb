@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'BPR'
 
     field :name                 => 'TransactionHandlingCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 2,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 305
 
     field :name                 => 'MonetaryAmount',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 18,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 782
 
     field :name                 => 'CreditDebitFlagCode',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 478
 
     field :name                 => 'PaymentMethodCode',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :list,
           :minimum              => 3,
           :maximum              => 3,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 591
 
     field :name                 => 'PaymentFormatCode',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 10,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 812
 
     field :name                 => 'DfiIdNumberQualifier',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -52,7 +52,7 @@ module Hippo::Segments
           :data_element_number  => 506
 
     field :name                 => 'DfiIdentificationNumber',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :string,
           :minimum              => 3,
           :maximum              => 12,
@@ -60,7 +60,7 @@ module Hippo::Segments
           :data_element_number  => 507
 
     field :name                 => 'AccountNumberQualifier',
-          :sequence             => 08,
+          :sequence             => 8,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,
@@ -68,7 +68,7 @@ module Hippo::Segments
           :data_element_number  => 569
 
     field :name                 => 'AccountNumber',
-          :sequence             => 09,
+          :sequence             => 9,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 35,

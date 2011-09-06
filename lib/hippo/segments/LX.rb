@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'LX'
 
     field :name                 => 'AssignedNumber',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :numeric,
           :decimal              => 0,
           :minimum              => 1,

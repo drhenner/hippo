@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'DN2'
 
     field :name                 => 'ReferenceIdentification',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 50,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 127
 
     field :name                 => 'ToothStatusCode',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 2,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 1368
 
     field :name                 => 'Quantity',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 15,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 380
 
     field :name                 => 'DateTimePeriodFormatQualifier',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 1250
 
     field :name                 => 'DateTimePeriod',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 35,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 1251
 
     field :name                 => 'CodeListQualifierCode',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,

@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'HL'
 
     field :name                 => 'HierarchicalIdNumber',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 12,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 628
 
     field :name                 => 'HierarchicalParentIdNumber',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 12,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 734
 
     field :name                 => 'HierarchicalLevelCode',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 2,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 735
 
     field :name                 => 'HierarchicalChildCode',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,

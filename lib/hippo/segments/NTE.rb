@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'NTE'
 
     field :name                 => 'NoteReferenceCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 3,
           :maximum              => 3,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 363
 
     field :name                 => 'Description',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 80,

@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'DTM'
 
     field :name                 => 'DateTimeQualifier',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 3,
           :maximum              => 3,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 374
 
     field :name                 => 'Date',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :date,
           :minimum              => 8,
           :maximum              => 8,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 373
 
     field :name                 => 'Time',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :time,
           :minimum              => 4,
           :maximum              => 8,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 337
 
     field :name                 => 'TimeCode',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 623
 
     field :name                 => 'DateTimePeriodFormatQualifier',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 1250
 
     field :name                 => 'DateTimePeriod',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 35,

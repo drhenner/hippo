@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'DSB'
 
     field :name                 => 'DisabilityTypeCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 1146
 
     field :name                 => 'Quantity',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 15,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 380
 
     field :name                 => 'OccupationCode',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :list,
           :minimum              => 4,
           :maximum              => 6,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 1149
 
     field :name                 => 'WorkIntensityCode',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 1154
 
     field :name                 => 'ProductOptionCode',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 2,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 1161
 
     field :name                 => 'MonetaryAmount',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 18,
@@ -52,7 +52,7 @@ module Hippo::Segments
           :data_element_number  => 782
 
     field :name                 => 'ProductServiceIdQualifier',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -60,7 +60,7 @@ module Hippo::Segments
           :data_element_number  => 235
 
     field :name                 => 'MedicalCodeValue',
-          :sequence             => 08,
+          :sequence             => 8,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 15,

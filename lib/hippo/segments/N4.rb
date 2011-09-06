@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'N4'
 
     field :name                 => 'CityName',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :string,
           :minimum              => 2,
           :maximum              => 30,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 19
 
     field :name                 => 'StateOrProvinceCode',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 156
 
     field :name                 => 'PostalCode',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :list,
           :minimum              => 3,
           :maximum              => 15,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 116
 
     field :name                 => 'CountryCode',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 26
 
     field :name                 => 'LocationQualifier',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 2,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 309
 
     field :name                 => 'LocationIdentifier',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 30,
@@ -52,7 +52,7 @@ module Hippo::Segments
           :data_element_number  => 310
 
     field :name                 => 'CountrySubdivisionCode',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,

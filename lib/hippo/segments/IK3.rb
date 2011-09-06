@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'IK3'
 
     field :name                 => 'SegmentIdCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 721
 
     field :name                 => 'SegmentPositionInTransactionSet',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :numeric,
           :decimal              => 0,
           :minimum              => 1,
@@ -21,7 +21,7 @@ module Hippo::Segments
           :data_element_number  => 719
 
     field :name                 => 'LoopIdentifierCode',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 4,
@@ -29,7 +29,7 @@ module Hippo::Segments
           :data_element_number  => 447
 
     field :name                 => 'ImplementationSegmentSyntaxErrorCode',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,

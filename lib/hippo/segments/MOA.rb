@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'MOA'
 
     field :name                 => 'PercentageAsDecimal',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 10,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 954
 
     field :name                 => 'MonetaryAmount',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 18,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 782
 
     field :name                 => 'ReferenceIdentification',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 50,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 127
 
     field :name                 => 'ReferenceIdentification',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 50,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 127
 
     field :name                 => 'ReferenceIdentification',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 50,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 127
 
     field :name                 => 'ReferenceIdentification',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 50,
@@ -52,7 +52,7 @@ module Hippo::Segments
           :data_element_number  => 127
 
     field :name                 => 'ReferenceIdentification',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 50,
@@ -60,7 +60,7 @@ module Hippo::Segments
           :data_element_number  => 127
 
     field :name                 => 'MonetaryAmount',
-          :sequence             => 08,
+          :sequence             => 8,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 18,
@@ -68,7 +68,7 @@ module Hippo::Segments
           :data_element_number  => 782
 
     field :name                 => 'MonetaryAmount',
-          :sequence             => 09,
+          :sequence             => 9,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 18,

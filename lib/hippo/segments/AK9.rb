@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'AK9'
 
     field :name                 => 'FunctionalGroupAcknowledgeCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 715
 
     field :name                 => 'NumberOfTransactionSetsIncluded',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :numeric,
           :decimal              => 0,
           :minimum              => 1,
@@ -21,7 +21,7 @@ module Hippo::Segments
           :data_element_number  => 97
 
     field :name                 => 'NumberOfReceivedTransactionSets',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :numeric,
           :decimal              => 0,
           :minimum              => 1,
@@ -30,7 +30,7 @@ module Hippo::Segments
           :data_element_number  => 123
 
     field :name                 => 'NumberOfAcceptedTransactionSets',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :numeric,
           :decimal              => 0,
           :minimum              => 1,
@@ -39,7 +39,7 @@ module Hippo::Segments
           :data_element_number  => 2
 
     field :name                 => 'FunctionalGroupSyntaxErrorCode',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,
@@ -47,7 +47,7 @@ module Hippo::Segments
           :data_element_number  => 716
 
     field :name                 => 'FunctionalGroupSyntaxErrorCode',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,
@@ -55,7 +55,7 @@ module Hippo::Segments
           :data_element_number  => 716
 
     field :name                 => 'FunctionalGroupSyntaxErrorCode',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,
@@ -63,7 +63,7 @@ module Hippo::Segments
           :data_element_number  => 716
 
     field :name                 => 'FunctionalGroupSyntaxErrorCode',
-          :sequence             => 08,
+          :sequence             => 8,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,
@@ -71,7 +71,7 @@ module Hippo::Segments
           :data_element_number  => 716
 
     field :name                 => 'FunctionalGroupSyntaxErrorCode',
-          :sequence             => 09,
+          :sequence             => 9,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,

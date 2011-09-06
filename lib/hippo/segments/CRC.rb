@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'CRC'
 
     field :name                 => 'CodeCategory',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 1136
 
     field :name                 => 'YesNoConditionOrResponseCode',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 1073
 
     field :name                 => 'ConditionIndicator',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 1321
 
     field :name                 => 'ConditionIndicator',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 1321
 
     field :name                 => 'ConditionIndicator',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 1321
 
     field :name                 => 'ConditionIndicator',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -52,7 +52,7 @@ module Hippo::Segments
           :data_element_number  => 1321
 
     field :name                 => 'ConditionIndicator',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,

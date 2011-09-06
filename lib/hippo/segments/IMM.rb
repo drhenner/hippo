@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'IMM'
 
     field :name                 => 'IndustryCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 30,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 1271
 
     field :name                 => 'DateTimePeriodFormatQualifier',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 1250
 
     field :name                 => 'DateTimePeriod',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 35,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 1251
 
     field :name                 => 'ImmunizationStatusCode',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 2,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 1254
 
     field :name                 => 'ReportTypeCode',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 755
 
     field :name                 => 'CodeListQualifierCode',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,

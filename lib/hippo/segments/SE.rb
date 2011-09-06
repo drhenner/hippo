@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'SE'
 
     field :name                 => 'NumberOfIncludedSegments',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :numeric,
           :decimal              => 0,
           :minimum              => 1,
@@ -13,7 +13,7 @@ module Hippo::Segments
           :data_element_number  => 96
 
     field :name                 => 'TransactionSetControlNumber',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :string,
           :minimum              => 4,
           :maximum              => 9,

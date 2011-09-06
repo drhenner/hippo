@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'AK2'
 
     field :name                 => 'TransactionSetIdentifierCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 3,
           :maximum              => 3,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 143
 
     field :name                 => 'TransactionSetControlNumber',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :string,
           :minimum              => 4,
           :maximum              => 9,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 329
 
     field :name                 => 'ImplementationConventionReference',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 35,

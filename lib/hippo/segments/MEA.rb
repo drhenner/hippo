@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'MEA'
 
     field :name                 => 'MeasurementReferenceIdCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 737
 
     field :name                 => 'MeasurementQualifier',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 738
 
     field :name                 => 'MeasurementValue',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 20,
@@ -30,7 +30,7 @@ module Hippo::Segments
     composite_field 'CompositeUnitOfMeasure' do
 
       field :name                 => 'UnitOrBasisForMeasurementCode',
-            :sequence             => 01,
+            :sequence             => 1,
             :datatype             => :list,
             :minimum              => 2,
             :maximum              => 2,
@@ -38,7 +38,7 @@ module Hippo::Segments
             :data_element_number  => 355
 
       field :name                 => 'Exponent',
-            :sequence             => 02,
+            :sequence             => 2,
             :datatype             => :numeric,
             :minimum              => 1,
             :maximum              => 15,
@@ -46,7 +46,7 @@ module Hippo::Segments
             :data_element_number  => 1018
 
       field :name                 => 'Multiplier',
-            :sequence             => 03,
+            :sequence             => 3,
             :datatype             => :numeric,
             :minimum              => 1,
             :maximum              => 10,
@@ -54,7 +54,7 @@ module Hippo::Segments
             :data_element_number  => 649
 
       field :name                 => 'UnitOrBasisForMeasurementCode',
-            :sequence             => 04,
+            :sequence             => 4,
             :datatype             => :list,
             :minimum              => 2,
             :maximum              => 2,
@@ -62,7 +62,7 @@ module Hippo::Segments
             :data_element_number  => 355
 
       field :name                 => 'Exponent',
-            :sequence             => 05,
+            :sequence             => 5,
             :datatype             => :numeric,
             :minimum              => 1,
             :maximum              => 15,
@@ -70,7 +70,7 @@ module Hippo::Segments
             :data_element_number  => 1018
 
       field :name                 => 'Multiplier',
-            :sequence             => 06,
+            :sequence             => 6,
             :datatype             => :numeric,
             :minimum              => 1,
             :maximum              => 10,
@@ -78,7 +78,7 @@ module Hippo::Segments
             :data_element_number  => 649
 
       field :name                 => 'UnitOrBasisForMeasurementCode',
-            :sequence             => 07,
+            :sequence             => 7,
             :datatype             => :list,
             :minimum              => 2,
             :maximum              => 2,
@@ -86,7 +86,7 @@ module Hippo::Segments
             :data_element_number  => 355
 
       field :name                 => 'Exponent',
-            :sequence             => 08,
+            :sequence             => 8,
             :datatype             => :numeric,
             :minimum              => 1,
             :maximum              => 15,
@@ -94,7 +94,7 @@ module Hippo::Segments
             :data_element_number  => 1018
 
       field :name                 => 'Multiplier',
-            :sequence             => 09,
+            :sequence             => 9,
             :datatype             => :numeric,
             :minimum              => 1,
             :maximum              => 10,
@@ -152,7 +152,7 @@ module Hippo::Segments
     end
 
     field :name                 => 'RangeMinimum',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 20,
@@ -160,7 +160,7 @@ module Hippo::Segments
           :data_element_number  => 740
 
     field :name                 => 'RangeMaximum',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 20,
@@ -168,7 +168,7 @@ module Hippo::Segments
           :data_element_number  => 741
 
     field :name                 => 'MeasurementSignificanceCode',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -176,7 +176,7 @@ module Hippo::Segments
           :data_element_number  => 935
 
     field :name                 => 'MeasurementAttributeCode',
-          :sequence             => 08,
+          :sequence             => 8,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -184,7 +184,7 @@ module Hippo::Segments
           :data_element_number  => 936
 
     field :name                 => 'SurfaceLayerPositionCode',
-          :sequence             => 09,
+          :sequence             => 9,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,

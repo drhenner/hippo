@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'AMT'
 
     field :name                 => 'AmountQualifierCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 522
 
     field :name                 => 'MonetaryAmount',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 18,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 782
 
     field :name                 => 'CreditDebitFlagCode',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,

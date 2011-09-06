@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'CR4'
 
     field :name                 => 'YesNoConditionOrResponseCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 1073
 
     field :name                 => 'CertificationTypeCode',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 1322
 
     field :name                 => 'UnitOrBasisForMeasurementCode',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 355
 
     field :name                 => 'Quantity',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 15,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 380
 
     field :name                 => 'UnitOrBasisForMeasurementCode',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 355
 
     field :name                 => 'Quantity',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 15,
@@ -52,7 +52,7 @@ module Hippo::Segments
           :data_element_number  => 380
 
     field :name                 => 'NonVisitCode',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -60,7 +60,7 @@ module Hippo::Segments
           :data_element_number  => 1344
 
     field :name                 => 'UnitOrBasisForMeasurementCode',
-          :sequence             => 08,
+          :sequence             => 8,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -68,7 +68,7 @@ module Hippo::Segments
           :data_element_number  => 355
 
     field :name                 => 'Quantity',
-          :sequence             => 09,
+          :sequence             => 9,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 15,

@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'TRN'
 
     field :name                 => 'TraceTypeCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 2,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 481
 
     field :name                 => 'ReferenceIdentification',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 50,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 127
 
     field :name                 => 'OriginatingCompanyIdentifier',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :string,
           :minimum              => 10,
           :maximum              => 10,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 509
 
     field :name                 => 'ReferenceIdentification',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 50,

@@ -6,7 +6,7 @@ module Hippo::Segments
     composite_field 'PositionInSegment' do
 
       field :name                 => 'ElementPositionInSegment',
-            :sequence             => 01,
+            :sequence             => 1,
             :datatype             => :numeric,
             :decimal              => 0,
             :minimum              => 1,
@@ -15,7 +15,7 @@ module Hippo::Segments
             :data_element_number  => 722
 
       field :name                 => 'ComponentDataElementPositionInComposite',
-            :sequence             => 02,
+            :sequence             => 2,
             :datatype             => :numeric,
             :decimal              => 0,
             :minimum              => 1,
@@ -24,7 +24,7 @@ module Hippo::Segments
             :data_element_number  => 1528
 
       field :name                 => 'RepeatingDataElementPosition',
-            :sequence             => 03,
+            :sequence             => 3,
             :datatype             => :numeric,
             :decimal              => 0,
             :minimum              => 1,
@@ -35,7 +35,7 @@ module Hippo::Segments
     end
 
     field :name                 => 'DataElementReferenceNumber',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :numeric,
           :decimal              => 0,
           :minimum              => 1,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 725
 
     field :name                 => 'ImplementationDataElementSyntaxErrorCode',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,
@@ -52,7 +52,7 @@ module Hippo::Segments
           :data_element_number  => 621
 
     field :name                 => 'CopyOfBadDataElement',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 99,

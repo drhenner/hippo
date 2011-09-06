@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'SV7'
 
     field :name                 => 'ReferenceIdentification',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 50,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 127
 
     field :name                 => 'ReferenceIdentification',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 50,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 127
 
     field :name                 => 'PrescriptionDenialOverrideCode',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 1355
 
     field :name                 => 'CoverageLevelCode',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :list,
           :minimum              => 3,
           :maximum              => 3,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 1207
 
     field :name                 => 'ProductProcessCharacteristicCode',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 750
 
     field :name                 => 'YesNoConditionOrResponseCode',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,

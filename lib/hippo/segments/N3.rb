@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'N3'
 
     field :name                 => 'AddressInformation',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 55,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 166
 
     field :name                 => 'AddressInformation',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 55,

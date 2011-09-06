@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'N2'
 
     field :name                 => 'Name',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 60,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 93
 
     field :name                 => 'Name',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 60,

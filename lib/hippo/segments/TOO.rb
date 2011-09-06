@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'TOO'
 
     field :name                 => 'CodeListQualifierCode',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 3,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 1270
 
     field :name                 => 'IndustryCode',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 30,
@@ -22,7 +22,7 @@ module Hippo::Segments
     composite_field 'ToothSurface' do
 
       field :name                 => 'ToothSurfaceCode',
-            :sequence             => 01,
+            :sequence             => 1,
             :datatype             => :list,
             :minimum              => 1,
             :maximum              => 2,
@@ -30,7 +30,7 @@ module Hippo::Segments
             :data_element_number  => 1369
 
       field :name                 => 'ToothSurfaceCode',
-            :sequence             => 02,
+            :sequence             => 2,
             :datatype             => :list,
             :minimum              => 1,
             :maximum              => 2,
@@ -38,7 +38,7 @@ module Hippo::Segments
             :data_element_number  => 1369
 
       field :name                 => 'ToothSurfaceCode',
-            :sequence             => 03,
+            :sequence             => 3,
             :datatype             => :list,
             :minimum              => 1,
             :maximum              => 2,
@@ -46,7 +46,7 @@ module Hippo::Segments
             :data_element_number  => 1369
 
       field :name                 => 'ToothSurfaceCode',
-            :sequence             => 04,
+            :sequence             => 4,
             :datatype             => :list,
             :minimum              => 1,
             :maximum              => 2,
@@ -54,7 +54,7 @@ module Hippo::Segments
             :data_element_number  => 1369
 
       field :name                 => 'ToothSurfaceCode',
-            :sequence             => 05,
+            :sequence             => 5,
             :datatype             => :list,
             :minimum              => 1,
             :maximum              => 2,

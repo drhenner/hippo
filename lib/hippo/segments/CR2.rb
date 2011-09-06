@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'CR2'
 
     field :name                 => 'Count',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :numeric,
           :decimal              => 0,
           :minimum              => 1,
@@ -13,7 +13,7 @@ module Hippo::Segments
           :data_element_number  => 609
 
     field :name                 => 'Quantity',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 15,
@@ -21,7 +21,7 @@ module Hippo::Segments
           :data_element_number  => 380
 
     field :name                 => 'SubluxationLevelCode',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -29,7 +29,7 @@ module Hippo::Segments
           :data_element_number  => 1367
 
     field :name                 => 'SubluxationLevelCode',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 3,
@@ -37,7 +37,7 @@ module Hippo::Segments
           :data_element_number  => 1367
 
     field :name                 => 'UnitOrBasisForMeasurementCode',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :list,
           :minimum              => 2,
           :maximum              => 2,
@@ -45,7 +45,7 @@ module Hippo::Segments
           :data_element_number  => 355
 
     field :name                 => 'Quantity',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 15,
@@ -53,7 +53,7 @@ module Hippo::Segments
           :data_element_number  => 380
 
     field :name                 => 'Quantity',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 15,
@@ -61,7 +61,7 @@ module Hippo::Segments
           :data_element_number  => 380
 
     field :name                 => 'NatureOfConditionCode',
-          :sequence             => 08,
+          :sequence             => 8,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,
@@ -69,7 +69,7 @@ module Hippo::Segments
           :data_element_number  => 1342
 
     field :name                 => 'YesNoConditionOrResponseCode',
-          :sequence             => 09,
+          :sequence             => 9,
           :datatype             => :list,
           :minimum              => 1,
           :maximum              => 1,

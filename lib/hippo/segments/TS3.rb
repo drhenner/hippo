@@ -4,7 +4,7 @@ module Hippo::Segments
     segment_identifier 'TS3'
 
     field :name                 => 'ReferenceIdentification',
-          :sequence             => 01,
+          :sequence             => 1,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 50,
@@ -12,7 +12,7 @@ module Hippo::Segments
           :data_element_number  => 127
 
     field :name                 => 'FacilityCodeValue',
-          :sequence             => 02,
+          :sequence             => 2,
           :datatype             => :string,
           :minimum              => 1,
           :maximum              => 2,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :data_element_number  => 1331
 
     field :name                 => 'Date',
-          :sequence             => 03,
+          :sequence             => 3,
           :datatype             => :date,
           :minimum              => 8,
           :maximum              => 8,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :data_element_number  => 373
 
     field :name                 => 'Quantity',
-          :sequence             => 04,
+          :sequence             => 4,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 15,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :data_element_number  => 380
 
     field :name                 => 'MonetaryAmount',
-          :sequence             => 05,
+          :sequence             => 5,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 18,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :data_element_number  => 782
 
     field :name                 => 'MonetaryAmount',
-          :sequence             => 06,
+          :sequence             => 6,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 18,
@@ -52,7 +52,7 @@ module Hippo::Segments
           :data_element_number  => 782
 
     field :name                 => 'MonetaryAmount',
-          :sequence             => 07,
+          :sequence             => 7,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 18,
@@ -60,7 +60,7 @@ module Hippo::Segments
           :data_element_number  => 782
 
     field :name                 => 'MonetaryAmount',
-          :sequence             => 08,
+          :sequence             => 8,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 18,
@@ -68,7 +68,7 @@ module Hippo::Segments
           :data_element_number  => 782
 
     field :name                 => 'MonetaryAmount',
-          :sequence             => 09,
+          :sequence             => 9,
           :datatype             => :numeric,
           :minimum              => 1,
           :maximum              => 18,
