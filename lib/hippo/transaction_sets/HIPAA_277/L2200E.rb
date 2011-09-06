@@ -68,7 +68,7 @@ module Hippo::TransactionSets
                 :position       => 1200
 
       #Service Line Information
-      loop    Hippo::TransactionSets::HIPAA_837::L2220E,
+      loop    Hippo::TransactionSets::HIPAA_277::L2220E,
                 :name           => 'Service Line Information',
                 :minimum        => 0,
                 :maximum        => nil,

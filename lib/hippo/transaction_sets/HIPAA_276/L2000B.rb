@@ -12,7 +12,7 @@ module Hippo::TransactionSets
                 :position       => 100
 
       #Information Receiver Name
-      loop    Hippo::TransactionSets::HIPAA_837::L2100B,
+      loop    Hippo::TransactionSets::HIPAA_276::L2100B,
                 :name           => 'Information Receiver Name',
                 :identified_by  => {
                   'NM1.NM101' => '41',

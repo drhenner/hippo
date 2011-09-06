@@ -12,7 +12,7 @@ module Hippo::TransactionSets
                 :position       => 100
 
       #Payer Name
-      loop    Hippo::TransactionSets::HIPAA_837::L2100A,
+      loop    Hippo::TransactionSets::HIPAA_276::L2100A,
                 :name           => 'Payer Name',
                 :identified_by  => {
                   'NM1.NM101' => 'PR',

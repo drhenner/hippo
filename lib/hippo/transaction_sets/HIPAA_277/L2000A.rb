@@ -12,7 +12,7 @@ module Hippo::TransactionSets
                 :position       => 100
 
       #Information Source Name
-      loop    Hippo::TransactionSets::HIPAA_837::L2100A,
+      loop    Hippo::TransactionSets::HIPAA_277::L2100A,
                 :name           => 'Information Source Name',
                 :identified_by  => {
                   'NM1.NM102' => '2'
@@ -22,7 +22,7 @@ module Hippo::TransactionSets
                 :position       => 500
 
       #Transmission Receipt Control Identifier
-      loop    Hippo::TransactionSets::HIPAA_837::L2200A,
+      loop    Hippo::TransactionSets::HIPAA_277::L2200A,
                 :name           => 'Transmission Receipt Control Identifier',
                 :identified_by  => {
                   'TRN.TRN01' => '1'

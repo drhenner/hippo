@@ -12,7 +12,7 @@ module Hippo::TransactionSets
                 :position       => 100
 
       #Provider Name
-      loop    Hippo::TransactionSets::HIPAA_837::L2100C,
+      loop    Hippo::TransactionSets::HIPAA_276::L2100C,
                 :name           => 'Provider Name',
                 :identified_by  => {
                   'NM1.NM101' => '1P'

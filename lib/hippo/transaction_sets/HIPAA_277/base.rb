@@ -18,7 +18,7 @@ module Hippo::TransactionSets
                 :position       => 200
 
       #Information Source Level
-      loop    Hippo::TransactionSets::HIPAA_837::L2000A,
+      loop    Hippo::TransactionSets::HIPAA_277::L2000A,
                 :name           => 'Information Source Level',
                 :identified_by  => {
                   'HL.HL03' => '20',
@@ -29,7 +29,7 @@ module Hippo::TransactionSets
                 :position       => 100
 
       #Information Receiver Level
-      loop    Hippo::TransactionSets::HIPAA_837::L2000B,
+      loop    Hippo::TransactionSets::HIPAA_277::L2000B,
                 :name           => 'Information Receiver Level',
                 :identified_by  => {
                   'HL.HL03' => '21'
@@ -39,7 +39,7 @@ module Hippo::TransactionSets
                 :position       => 100
 
       #Billing Provider of Service Level
-      loop    Hippo::TransactionSets::HIPAA_837::L2000C,
+      loop    Hippo::TransactionSets::HIPAA_277::L2000C,
                 :name           => 'Billing Provider of Service Level',
                 :identified_by  => {
                   'HL.HL03' => '19'
@@ -49,7 +49,7 @@ module Hippo::TransactionSets
                 :position       => 100
 
       #Patient Level
-      loop    Hippo::TransactionSets::HIPAA_837::L2000D,
+      loop    Hippo::TransactionSets::HIPAA_277::L2000D,
                 :name           => 'Patient Level',
                 :identified_by  => {
                   'HL.HL03' => 'PT'

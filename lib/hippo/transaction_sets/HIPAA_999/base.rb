@@ -18,7 +18,7 @@ module Hippo::TransactionSets
                 :position       => 200
 
       #Transaction Set Response Header
-      loop    Hippo::TransactionSets::HIPAA_837::L2000AK2,
+      loop    Hippo::TransactionSets::HIPAA_999::L2000AK2,
                 :name           => 'Transaction Set Response Header',
                 :minimum        => 0,
                 :maximum        => nil,

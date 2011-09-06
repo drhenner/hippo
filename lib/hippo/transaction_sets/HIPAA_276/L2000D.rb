@@ -19,7 +19,7 @@ module Hippo::TransactionSets
                 :position       => 400
 
       #Subscriber Name
-      loop    Hippo::TransactionSets::HIPAA_837::L2100D,
+      loop    Hippo::TransactionSets::HIPAA_276::L2100D,
                 :name           => 'Subscriber Name',
                 :identified_by  => {
                   'NM1.NM101' => 'IL'
@@ -29,7 +29,7 @@ module Hippo::TransactionSets
                 :position       => 500
 
       #Claim Status Tracking Number
-      loop    Hippo::TransactionSets::HIPAA_837::L2200D,
+      loop    Hippo::TransactionSets::HIPAA_276::L2200D,
                 :name           => 'Claim Status Tracking Number',
                 :identified_by  => {
                   'TRN.TRN01' => '1'

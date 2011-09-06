@@ -138,7 +138,7 @@ module Hippo::TransactionSets
                 :position       => 640
 
       #Service Payment Information
-      loop    Hippo::TransactionSets::HIPAA_837::L2110,
+      loop    Hippo::TransactionSets::HIPAA_835::L2110,
                 :name           => 'Service Payment Information',
                 :minimum        => 0,
                 :maximum        => 999,

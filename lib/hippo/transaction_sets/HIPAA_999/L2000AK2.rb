@@ -12,7 +12,7 @@ module Hippo::TransactionSets
                 :position       => 300
 
       #Error Identification
-      loop    Hippo::TransactionSets::HIPAA_837::L2100AK2,
+      loop    Hippo::TransactionSets::HIPAA_999::L2100AK2,
                 :name           => 'Error Identification',
                 :minimum        => 0,
                 :maximum        => nil,

@@ -26,7 +26,7 @@ module Hippo::TransactionSets
                 :position       => 510
 
       #Implementation Data Element Note
-      loop    Hippo::TransactionSets::HIPAA_837::L2110AK2,
+      loop    Hippo::TransactionSets::HIPAA_999::L2110AK2,
                 :name           => 'Implementation Data Element Note',
                 :minimum        => 0,
                 :maximum        => nil,
