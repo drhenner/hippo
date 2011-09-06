@@ -9,14 +9,20 @@ module Hippo::TransactionSets
                 :name           => 'Dependent Level',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 100
+                :position       => 100,
+                :defaults => {
+                  'HL03' => '23'
+                }
 
       #Dependent Demographic Information
       segment Hippo::Segments::DMG,
                 :name           => 'Dependent Demographic Information',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 400
+                :position       => 400,
+                :defaults => {
+                  'DMG01' => 'D8'
+                }
 
       #Dependent Name
       loop    Hippo::TransactionSets::HIPAA_276::L2100E,

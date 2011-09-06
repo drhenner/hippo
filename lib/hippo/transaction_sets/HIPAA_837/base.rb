@@ -8,14 +8,20 @@ module Hippo::TransactionSets
                 :name           => 'Transaction Set Header',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 50
+                :position       => 50,
+                :defaults => {
+                  'ST01' => '837'
+                }
 
       #Beginning of Hierarchical Transaction
       segment Hippo::Segments::BHT,
                 :name           => 'Beginning of Hierarchical Transaction',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 100
+                :position       => 100,
+                :defaults => {
+                  'BHT01' => '0019'
+                }
 
       #Submitter Name
       loop    Hippo::TransactionSets::HIPAA_837::L1000A,

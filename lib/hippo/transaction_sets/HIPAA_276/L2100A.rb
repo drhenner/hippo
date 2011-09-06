@@ -9,7 +9,11 @@ module Hippo::TransactionSets
                 :name           => 'Payer Name',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 500
+                :position       => 500,
+                :defaults => {
+                  'NM101' => 'PR',
+                  'NM102' => '2'
+                }
 
     end
   end

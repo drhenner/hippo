@@ -9,7 +9,11 @@ module Hippo::TransactionSets
                 :name           => 'Other Payer Service Facility Location',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4650
+                :position       => 4650,
+                :defaults => {
+                  'NM101' => '77',
+                  'NM102' => '2'
+                }
 
       #Other Payer Service Facility Location Secondary Identification
       segment Hippo::Segments::REF,

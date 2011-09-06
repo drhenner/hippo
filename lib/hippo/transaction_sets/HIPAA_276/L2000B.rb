@@ -9,7 +9,11 @@ module Hippo::TransactionSets
                 :name           => 'Information Receiver Level',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 100
+                :position       => 100,
+                :defaults => {
+                  'HL03' => '21',
+                  'HL04' => '1'
+                }
 
       #Information Receiver Name
       loop    Hippo::TransactionSets::HIPAA_276::L2100B,

@@ -9,7 +9,10 @@ module Hippo::TransactionSets
                 :name           => 'Other Payer Referring Provider',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 3250
+                :position       => 3250,
+                :defaults => {
+                  'NM102' => '1'
+                }
 
       #Other Payer Referring Provider Secondary Identification
       segment Hippo::Segments::REF,

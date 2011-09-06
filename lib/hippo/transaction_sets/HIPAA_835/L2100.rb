@@ -23,49 +23,74 @@ module Hippo::TransactionSets
                 :name           => 'Patient Name',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 290
+                :position       => 290,
+                :defaults => {
+                  'NM101' => 'QC',
+                  'NM102' => '1'
+                }
 
       #Insured Name
       segment Hippo::Segments::NM1,
                 :name           => 'Insured Name',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 300
+                :position       => 300,
+                :defaults => {
+                  'NM101' => 'IL'
+                }
 
       #Corrected Patient/Insured Name
       segment Hippo::Segments::NM1,
                 :name           => 'Corrected Patient/Insured Name',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 310
+                :position       => 310,
+                :defaults => {
+                  'NM101' => '74',
+                  'NM108' => 'C'
+                }
 
       #Service Provider Name
       segment Hippo::Segments::NM1,
                 :name           => 'Service Provider Name',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 320
+                :position       => 320,
+                :defaults => {
+                  'NM101' => '82'
+                }
 
       #Crossover Carrier Name
       segment Hippo::Segments::NM1,
                 :name           => 'Crossover Carrier Name',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 330
+                :position       => 330,
+                :defaults => {
+                  'NM101' => 'TT',
+                  'NM102' => '2'
+                }
 
       #Corrected Priority Payer Name
       segment Hippo::Segments::NM1,
                 :name           => 'Corrected Priority Payer Name',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 340
+                :position       => 340,
+                :defaults => {
+                  'NM101' => 'PR',
+                  'NM102' => '2'
+                }
 
       #Other Subscriber Name
       segment Hippo::Segments::NM1,
                 :name           => 'Other Subscriber Name',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 350
+                :position       => 350,
+                :defaults => {
+                  'NM101' => 'GB'
+                }
 
       #Inpatient Adjudication Information
       segment Hippo::Segments::MIA,
@@ -107,21 +132,31 @@ module Hippo::TransactionSets
                 :name           => 'Coverage Expiration Date',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 505
+                :position       => 505,
+                :defaults => {
+                  'DTM01' => '036'
+                }
 
       #Claim Received Date
       segment Hippo::Segments::DTM,
                 :name           => 'Claim Received Date',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 510
+                :position       => 510,
+                :defaults => {
+                  'DTM01' => '050'
+                }
 
       #Claim Contact Information
       segment Hippo::Segments::PER,
                 :name           => 'Claim Contact Information',
                 :minimum        => 0,
                 :maximum        => 2,
-                :position       => 600
+                :position       => 600,
+                :defaults => {
+                  'PER01' => 'CX',
+                  'PER07' => 'EX'
+                }
 
       #Claim Supplemental Information
       segment Hippo::Segments::AMT,

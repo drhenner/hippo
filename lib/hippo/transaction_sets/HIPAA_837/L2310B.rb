@@ -9,14 +9,22 @@ module Hippo::TransactionSets
                 :name           => 'Rendering Provider Name',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 2500
+                :position       => 2500,
+                :defaults => {
+                  'NM101' => '82',
+                  'NM108' => 'XX'
+                }
 
       #Rendering Provider Specialty Information
       segment Hippo::Segments::PRV,
                 :name           => 'Rendering Provider Specialty Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 2550
+                :position       => 2550,
+                :defaults => {
+                  'PRV01' => 'PE',
+                  'PRV02' => 'PXC'
+                }
 
       #Rendering Provider Secondary Identification
       segment Hippo::Segments::REF,

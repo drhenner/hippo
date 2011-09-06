@@ -16,14 +16,20 @@ module Hippo::TransactionSets
                 :name           => 'Service Line Item Identification',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 1400
+                :position       => 1400,
+                :defaults => {
+                  'REF01' => 'FJ'
+                }
 
       #Service Line Date
       segment Hippo::Segments::DTP,
                 :name           => 'Service Line Date',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 1500
+                :position       => 1500,
+                :defaults => {
+                  'DTP01' => '472'
+                }
 
     end
   end

@@ -23,14 +23,21 @@ module Hippo::TransactionSets
                 :name           => 'Line Check or Remittance Date',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 5500
+                :position       => 5500,
+                :defaults => {
+                  'DTP01' => '573',
+                  'DTP02' => 'D8'
+                }
 
       #Remaining Patient Liability
       segment Hippo::Segments::AMT,
                 :name           => 'Remaining Patient Liability',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 5505
+                :position       => 5505,
+                :defaults => {
+                  'AMT01' => 'EAF'
+                }
 
     end
   end

@@ -9,7 +9,11 @@ module Hippo::TransactionSets
                 :name           => 'Information Source Level',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 100
+                :position       => 100,
+                :defaults => {
+                  'HL03' => '20',
+                  'HL04' => '1'
+                }
 
       #Payer Name
       loop    Hippo::TransactionSets::HIPAA_276::L2100A,

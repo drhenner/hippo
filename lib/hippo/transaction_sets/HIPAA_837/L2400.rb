@@ -16,147 +16,224 @@ module Hippo::TransactionSets
                 :name           => 'Professional Service',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 3700
+                :position       => 3700,
+                :defaults => {
+                  'SV109' => 'Y',
+                  'SV111' => 'Y',
+                  'SV112' => 'Y',
+                  'SV115' => '0'
+                }
 
       #Durable Medical Equipment Service
       segment Hippo::Segments::SV5,
                 :name           => 'Durable Medical Equipment Service',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4000
+                :position       => 4000,
+                :defaults => {
+                  'SV501' => 'HC',
+                  'SV502' => 'DA'
+                }
 
       #Line Supplemental Information
       segment Hippo::Segments::PWK,
                 :name           => 'Line Supplemental Information',
                 :minimum        => 0,
                 :maximum        => 10,
-                :position       => 4200
+                :position       => 4200,
+                :defaults => {
+                  'PWK05' => 'AC'
+                }
 
       #Durable Medical Equipment Certificate of Medical Necessity Indicator
       segment Hippo::Segments::PWK,
                 :name           => 'Durable Medical Equipment Certificate of Medical Necessity Indicator',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4220
+                :position       => 4220,
+                :defaults => {
+                  'PWK01' => 'CT'
+                }
 
       #Ambulance Transport Information
       segment Hippo::Segments::CR1,
                 :name           => 'Ambulance Transport Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4250
+                :position       => 4250,
+                :defaults => {
+                  'CR101' => 'LB',
+                  'CR105' => 'DH'
+                }
 
       #Durable Medical Equipment Certification
       segment Hippo::Segments::CR3,
                 :name           => 'Durable Medical Equipment Certification',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4350
+                :position       => 4350,
+                :defaults => {
+                  'CR302' => 'MO'
+                }
 
       #Ambulance Certification
       segment Hippo::Segments::CRC,
                 :name           => 'Ambulance Certification',
                 :minimum        => 0,
                 :maximum        => 3,
-                :position       => 4500
+                :position       => 4500,
+                :defaults => {
+                  'CRC01' => '07'
+                }
 
       #Hospice Employee Indicator
       segment Hippo::Segments::CRC,
                 :name           => 'Hospice Employee Indicator',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4520
+                :position       => 4520,
+                :defaults => {
+                  'CRC01' => '70',
+                  'CRC03' => '65'
+                }
 
       #Condition Indicator/Durable Medical Equipment
       segment Hippo::Segments::CRC,
                 :name           => 'Condition Indicator/Durable Medical Equipment',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4530
+                :position       => 4530,
+                :defaults => {
+                  'CRC01' => '09'
+                }
 
       #Date - Service Date
       segment Hippo::Segments::DTP,
                 :name           => 'Date - Service Date',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 4550
+                :position       => 4550,
+                :defaults => {
+                  'DTP01' => '472'
+                }
 
       #Date - Prescription Date
       segment Hippo::Segments::DTP,
                 :name           => 'Date - Prescription Date',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4555
+                :position       => 4555,
+                :defaults => {
+                  'DTP01' => '471',
+                  'DTP02' => 'D8'
+                }
 
       #DATE - Certification Revision/Recertification Date
       segment Hippo::Segments::DTP,
                 :name           => 'DATE - Certification Revision/Recertification Date',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4560
+                :position       => 4560,
+                :defaults => {
+                  'DTP01' => '607',
+                  'DTP02' => 'D8'
+                }
 
       #Date - Begin Therapy Date
       segment Hippo::Segments::DTP,
                 :name           => 'Date - Begin Therapy Date',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4580
+                :position       => 4580,
+                :defaults => {
+                  'DTP01' => '463',
+                  'DTP02' => 'D8'
+                }
 
       #Date - Last Certification Date
       segment Hippo::Segments::DTP,
                 :name           => 'Date - Last Certification Date',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4590
+                :position       => 4590,
+                :defaults => {
+                  'DTP01' => '461',
+                  'DTP02' => 'D8'
+                }
 
       #Date - Last Seen Date
       segment Hippo::Segments::DTP,
                 :name           => 'Date - Last Seen Date',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 45
+                :position       => 45,
+                :defaults => {
+                  'DTP01' => '304',
+                  'DTP02' => 'D8'
+                }
 
       #Date - Test Date
       segment Hippo::Segments::DTP,
                 :name           => 'Date - Test Date',
                 :minimum        => 0,
                 :maximum        => 2,
-                :position       => 45
+                :position       => 45,
+                :defaults => {
+                  'DTP02' => 'D8'
+                }
 
       #Date - Shipped Date
       segment Hippo::Segments::DTP,
                 :name           => 'Date - Shipped Date',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 45
+                :position       => 45,
+                :defaults => {
+                  'DTP01' => '011',
+                  'DTP02' => 'D8'
+                }
 
       #Date - Last X-ray Date
       segment Hippo::Segments::DTP,
                 :name           => 'Date - Last X-ray Date',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 45
+                :position       => 45,
+                :defaults => {
+                  'DTP01' => '455',
+                  'DTP02' => 'D8'
+                }
 
       #Date - Initial Treatment Date
       segment Hippo::Segments::DTP,
                 :name           => 'Date - Initial Treatment Date',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 45
+                :position       => 45,
+                :defaults => {
+                  'DTP01' => '454',
+                  'DTP02' => 'D8'
+                }
 
       #Ambulance Patient Count
       segment Hippo::Segments::QTY,
                 :name           => 'Ambulance Patient Count',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4600
+                :position       => 4600,
+                :defaults => {
+                  'QTY01' => 'PT'
+                }
 
       #Obstetric Anesthesia Additional Units
       segment Hippo::Segments::QTY,
                 :name           => 'Obstetric Anesthesia Additional Units',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4610
+                :position       => 4610,
+                :defaults => {
+                  'QTY01' => 'FL'
+                }
 
       #Test Result
       segment Hippo::Segments::MEA,
@@ -177,77 +254,112 @@ module Hippo::TransactionSets
                 :name           => 'Repriced Line Item Reference Number',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4700
+                :position       => 4700,
+                :defaults => {
+                  'REF01' => '9B'
+                }
 
       #Adjusted Repriced Line Item Reference Number
       segment Hippo::Segments::REF,
                 :name           => 'Adjusted Repriced Line Item Reference Number',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4710
+                :position       => 4710,
+                :defaults => {
+                  'REF01' => '9D'
+                }
 
       #Prior Authorization
       segment Hippo::Segments::REF,
                 :name           => 'Prior Authorization',
                 :minimum        => 0,
                 :maximum        => 5,
-                :position       => 4730
+                :position       => 4730,
+                :defaults => {
+                  'REF01' => 'G1',
+                  'REF04' => '2U'
+                }
 
       #Line Item Control Number
       segment Hippo::Segments::REF,
                 :name           => 'Line Item Control Number',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 47
+                :position       => 47,
+                :defaults => {
+                  'REF01' => '6R'
+                }
 
       #Mammography Certification Number
       segment Hippo::Segments::REF,
                 :name           => 'Mammography Certification Number',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 47
+                :position       => 47,
+                :defaults => {
+                  'REF01' => 'EW'
+                }
 
       #Clinical Laboratory Improvement Amendment (CLIA) Number
       segment Hippo::Segments::REF,
                 :name           => 'Clinical Laboratory Improvement Amendment (CLIA) Number',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 47
+                :position       => 47,
+                :defaults => {
+                  'REF01' => 'X4'
+                }
 
       #Referring Clinical Laboratory Improvement Amendment (CLIA) Facility Identification
       segment Hippo::Segments::REF,
                 :name           => 'Referring Clinical Laboratory Improvement Amendment (CLIA) Facility Identification',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 47
+                :position       => 47,
+                :defaults => {
+                  'REF01' => 'F4'
+                }
 
       #Immunization Batch Number
       segment Hippo::Segments::REF,
                 :name           => 'Immunization Batch Number',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 47
+                :position       => 47,
+                :defaults => {
+                  'REF01' => 'BT'
+                }
 
       #Referral Number
       segment Hippo::Segments::REF,
                 :name           => 'Referral Number',
                 :minimum        => 0,
                 :maximum        => 5,
-                :position       => 47
+                :position       => 47,
+                :defaults => {
+                  'REF01' => '9F',
+                  'REF04' => '2U'
+                }
 
       #Sales Tax Amount
       segment Hippo::Segments::AMT,
                 :name           => 'Sales Tax Amount',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4810
+                :position       => 4810,
+                :defaults => {
+                  'AMT01' => 'T'
+                }
 
       #Postage Claimed Amount
       segment Hippo::Segments::AMT,
                 :name           => 'Postage Claimed Amount',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4830
+                :position       => 4830,
+                :defaults => {
+                  'AMT01' => 'F4'
+                }
 
       #File Information
       segment Hippo::Segments::K3,
@@ -268,7 +380,10 @@ module Hippo::TransactionSets
                 :name           => 'Third Party Organization Notes',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 4865
+                :position       => 4865,
+                :defaults => {
+                  'NTE01' => 'TPO'
+                }
 
       #Purchased Service Information
       segment Hippo::Segments::PS1,

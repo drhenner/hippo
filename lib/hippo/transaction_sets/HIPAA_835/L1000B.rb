@@ -9,7 +9,10 @@ module Hippo::TransactionSets
                 :name           => 'Payee Identification',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 1400
+                :position       => 1400,
+                :defaults => {
+                  'N101' => 'PE'
+                }
 
       #Payee Address
       segment Hippo::Segments::N3,

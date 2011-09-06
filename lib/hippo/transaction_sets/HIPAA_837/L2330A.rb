@@ -9,7 +9,10 @@ module Hippo::TransactionSets
                 :name           => 'Other Subscriber Name',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 3250
+                :position       => 3250,
+                :defaults => {
+                  'NM101' => 'IL'
+                }
 
       #Other Subscriber Address
       segment Hippo::Segments::N3,
@@ -30,7 +33,10 @@ module Hippo::TransactionSets
                 :name           => 'Other Subscriber Secondary Identification',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 3550
+                :position       => 3550,
+                :defaults => {
+                  'REF01' => 'SY'
+                }
 
     end
   end

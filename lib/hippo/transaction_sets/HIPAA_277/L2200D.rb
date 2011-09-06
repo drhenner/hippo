@@ -9,7 +9,10 @@ module Hippo::TransactionSets
                 :name           => 'Claim Status Tracking Number',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 900
+                :position       => 900,
+                :defaults => {
+                  'TRN01' => '2'
+                }
 
       #Claim Level Status Information
       segment Hippo::Segments::STC,
@@ -23,28 +26,40 @@ module Hippo::TransactionSets
                 :name           => 'Payer Claim Control Number',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 1100
+                :position       => 1100,
+                :defaults => {
+                  'REF01' => '1K'
+                }
 
       #Claim Identifier Number For Clearinghouse and Other Transmission Intermediaries
       segment Hippo::Segments::REF,
                 :name           => 'Claim Identifier Number For Clearinghouse and Other Transmission Intermediaries',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 1110
+                :position       => 1110,
+                :defaults => {
+                  'REF01' => 'D9'
+                }
 
       #Institutional Bill Type Identification
       segment Hippo::Segments::REF,
                 :name           => 'Institutional Bill Type Identification',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 1120
+                :position       => 1120,
+                :defaults => {
+                  'REF01' => 'BLT'
+                }
 
       #Claim Level Service Date
       segment Hippo::Segments::DTP,
                 :name           => 'Claim Level Service Date',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 1200
+                :position       => 1200,
+                :defaults => {
+                  'DTP01' => '472'
+                }
 
       #Service Line Information
       loop    Hippo::TransactionSets::HIPAA_277::L2220D,

@@ -9,7 +9,11 @@ module Hippo::TransactionSets
                 :name           => 'Payer Name',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 150
+                :position       => 150,
+                :defaults => {
+                  'NM101' => 'PR',
+                  'NM102' => '2'
+                }
 
       #Payer Address
       segment Hippo::Segments::N3,

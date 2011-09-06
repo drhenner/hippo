@@ -9,7 +9,12 @@ module Hippo::TransactionSets
                 :name           => 'Supervising Provider Name',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 2500
+                :position       => 2500,
+                :defaults => {
+                  'NM101' => 'DQ',
+                  'NM102' => '1',
+                  'NM108' => 'XX'
+                }
 
       #Supervising Provider Secondary Identification
       segment Hippo::Segments::REF,

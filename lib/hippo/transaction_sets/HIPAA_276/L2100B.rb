@@ -9,7 +9,11 @@ module Hippo::TransactionSets
                 :name           => 'Information Receiver Name',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 500
+                :position       => 500,
+                :defaults => {
+                  'NM101' => '41',
+                  'NM108' => '46'
+                }
 
     end
   end

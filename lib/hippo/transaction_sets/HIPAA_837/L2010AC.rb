@@ -9,7 +9,11 @@ module Hippo::TransactionSets
                 :name           => 'Pay-To Plan Name',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 450
+                :position       => 450,
+                :defaults => {
+                  'NM101' => 'PE',
+                  'NM102' => '2'
+                }
 
       #Pay-to Plan Address
       segment Hippo::Segments::N3,
@@ -37,7 +41,10 @@ module Hippo::TransactionSets
                 :name           => 'Pay-To Plan Tax Identification Number',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 655
+                :position       => 655,
+                :defaults => {
+                  'REF01' => 'EI'
+                }
 
     end
   end

@@ -8,49 +8,70 @@ module Hippo::TransactionSets
                 :name           => 'Transaction Set Header',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 100
+                :position       => 100,
+                :defaults => {
+                  'ST01' => '835'
+                }
 
       #Financial Information
       segment Hippo::Segments::BPR,
                 :name           => 'Financial Information',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 200
+                :position       => 200,
+                :defaults => {
+                  'BPR08' => 'DA'
+                }
 
       #Reassociation Trace Number
       segment Hippo::Segments::TRN,
                 :name           => 'Reassociation Trace Number',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 400
+                :position       => 400,
+                :defaults => {
+                  'TRN01' => '1'
+                }
 
       #Foreign Currency Information
       segment Hippo::Segments::CUR,
                 :name           => 'Foreign Currency Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 500
+                :position       => 500,
+                :defaults => {
+                  'CUR01' => 'PR'
+                }
 
       #Receiver Identification
       segment Hippo::Segments::REF,
                 :name           => 'Receiver Identification',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 590
+                :position       => 590,
+                :defaults => {
+                  'REF01' => 'EV'
+                }
 
       #Version Identification
       segment Hippo::Segments::REF,
                 :name           => 'Version Identification',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 600
+                :position       => 600,
+                :defaults => {
+                  'REF01' => 'F2'
+                }
 
       #Production Date
       segment Hippo::Segments::DTM,
                 :name           => 'Production Date',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 700
+                :position       => 700,
+                :defaults => {
+                  'DTM01' => '405'
+                }
 
       #Payer Identification
       loop    Hippo::TransactionSets::HIPAA_835::L1000A,

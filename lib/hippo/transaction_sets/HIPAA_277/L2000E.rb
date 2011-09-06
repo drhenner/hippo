@@ -9,7 +9,10 @@ module Hippo::TransactionSets
                 :name           => 'Dependent Level',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 100
+                :position       => 100,
+                :defaults => {
+                  'HL03' => '23'
+                }
 
       #Dependent Name
       loop    Hippo::TransactionSets::HIPAA_277::L2100E,

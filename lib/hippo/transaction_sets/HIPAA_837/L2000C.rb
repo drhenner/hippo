@@ -9,14 +9,23 @@ module Hippo::TransactionSets
                 :name           => 'Patient Hierarchical Level',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 10
+                :position       => 10,
+                :defaults => {
+                  'HL03' => '23',
+                  'HL04' => '0'
+                }
 
       #Patient Information
       segment Hippo::Segments::PAT,
                 :name           => 'Patient Information',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 70
+                :position       => 70,
+                :defaults => {
+                  'PAT05' => 'D8',
+                  'PAT07' => '01',
+                  'PAT09' => 'Y'
+                }
 
       #Patient Name
       loop    Hippo::TransactionSets::HIPAA_837::L2010CA,

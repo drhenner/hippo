@@ -9,7 +9,10 @@ module Hippo::TransactionSets
                 :name           => 'Pay-to Address Name',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 150
+                :position       => 150,
+                :defaults => {
+                  'NM101' => '87'
+                }
 
       #Pay-to Address - ADDRESS
       segment Hippo::Segments::N3,

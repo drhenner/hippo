@@ -9,7 +9,11 @@ module Hippo::TransactionSets
                 :name           => 'Ambulance Drop-off Location',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 2500
+                :position       => 2500,
+                :defaults => {
+                  'NM101' => '45',
+                  'NM102' => '2'
+                }
 
       #Ambulance Drop-off Location Address
       segment Hippo::Segments::N3,

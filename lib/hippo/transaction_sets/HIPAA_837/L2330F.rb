@@ -9,7 +9,11 @@ module Hippo::TransactionSets
                 :name           => 'Other Payer Supervising Provider',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 5650
+                :position       => 5650,
+                :defaults => {
+                  'NM101' => 'DQ',
+                  'NM102' => '1'
+                }
 
       #Other Payer Supervising Provider Secondary Identification
       segment Hippo::Segments::REF,

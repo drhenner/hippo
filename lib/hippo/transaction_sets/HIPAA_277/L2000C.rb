@@ -9,7 +9,10 @@ module Hippo::TransactionSets
                 :name           => 'Billing Provider of Service Level',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 100
+                :position       => 100,
+                :defaults => {
+                  'HL03' => '19'
+                }
 
       #Billing Provider Name
       loop    Hippo::TransactionSets::HIPAA_277::L2100C,

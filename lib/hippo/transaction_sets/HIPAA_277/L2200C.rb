@@ -9,7 +9,10 @@ module Hippo::TransactionSets
                 :name           => 'Provider of Service Information Trace Identifier',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 900
+                :position       => 900,
+                :defaults => {
+                  'TRN01' => '1'
+                }
 
       #Billing Provider Status Information
       segment Hippo::Segments::STC,
@@ -30,28 +33,40 @@ module Hippo::TransactionSets
                 :name           => 'Total Accepted Quantity',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 1210
+                :position       => 1210,
+                :defaults => {
+                  'QTY01' => 'QA'
+                }
 
       #Total Rejected Quantity
       segment Hippo::Segments::QTY,
                 :name           => 'Total Rejected Quantity',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 1215
+                :position       => 1215,
+                :defaults => {
+                  'QTY01' => 'QC'
+                }
 
       #Total Accepted Amount
       segment Hippo::Segments::AMT,
                 :name           => 'Total Accepted Amount',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 1220
+                :position       => 1220,
+                :defaults => {
+                  'AMT01' => 'YU'
+                }
 
       #Total Rejected Amount
       segment Hippo::Segments::AMT,
                 :name           => 'Total Rejected Amount',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 1225
+                :position       => 1225,
+                :defaults => {
+                  'AMT01' => 'YY'
+                }
 
     end
   end

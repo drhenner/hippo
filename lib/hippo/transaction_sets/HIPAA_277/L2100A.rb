@@ -9,7 +9,10 @@ module Hippo::TransactionSets
                 :name           => 'Information Source Name',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 500
+                :position       => 500,
+                :defaults => {
+                  'NM102' => '2'
+                }
 
     end
   end

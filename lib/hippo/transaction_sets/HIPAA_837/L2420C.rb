@@ -9,7 +9,12 @@ module Hippo::TransactionSets
                 :name           => 'Service Facility Location Name',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 5000
+                :position       => 5000,
+                :defaults => {
+                  'NM101' => '77',
+                  'NM102' => '2',
+                  'NM108' => 'XX'
+                }
 
       #Service Facility Location Address
       segment Hippo::Segments::N3,
@@ -30,7 +35,10 @@ module Hippo::TransactionSets
                 :name           => 'Service Facility Location Secondary Identification',
                 :minimum        => 0,
                 :maximum        => 3,
-                :position       => 5250
+                :position       => 5250,
+                :defaults => {
+                  'REF04' => '2U'
+                }
 
     end
   end

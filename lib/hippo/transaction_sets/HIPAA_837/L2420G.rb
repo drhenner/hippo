@@ -9,7 +9,11 @@ module Hippo::TransactionSets
                 :name           => 'Ambulance Pick-up Location',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 5310
+                :position       => 5310,
+                :defaults => {
+                  'NM101' => 'PW',
+                  'NM102' => '2'
+                }
 
       #Ambulance Pick-up Location Address
       segment Hippo::Segments::N3,

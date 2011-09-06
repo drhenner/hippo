@@ -9,7 +9,10 @@ module Hippo::TransactionSets
                 :name           => 'Other Payer Billing Provider',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 6350
+                :position       => 6350,
+                :defaults => {
+                  'NM101' => '85'
+                }
 
       #Other Payer Billing Provider Secondary Identification
       segment Hippo::Segments::REF,

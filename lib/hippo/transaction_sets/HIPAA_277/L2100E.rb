@@ -9,7 +9,11 @@ module Hippo::TransactionSets
                 :name           => 'Dependent Name',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 500
+                :position       => 500,
+                :defaults => {
+                  'NM101' => 'QC',
+                  'NM102' => '1'
+                }
 
     end
   end

@@ -9,14 +9,20 @@ module Hippo::TransactionSets
                 :name           => 'Subscriber Level',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 100
+                :position       => 100,
+                :defaults => {
+                  'HL03' => '22'
+                }
 
       #Subscriber Demographic Information
       segment Hippo::Segments::DMG,
                 :name           => 'Subscriber Demographic Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 400
+                :position       => 400,
+                :defaults => {
+                  'DMG01' => 'D8'
+                }
 
       #Subscriber Name
       loop    Hippo::TransactionSets::HIPAA_276::L2100D,

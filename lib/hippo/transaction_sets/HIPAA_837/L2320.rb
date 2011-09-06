@@ -23,28 +23,40 @@ module Hippo::TransactionSets
                 :name           => 'Coordination of Benefits (COB) Payer Paid Amount',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 3000
+                :position       => 3000,
+                :defaults => {
+                  'AMT01' => 'D'
+                }
 
       #Coordination of Benefits (COB) Total Non-Covered Amount
       segment Hippo::Segments::AMT,
                 :name           => 'Coordination of Benefits (COB) Total Non-Covered Amount',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 3020
+                :position       => 3020,
+                :defaults => {
+                  'AMT01' => 'A8'
+                }
 
       #Remaining Patient Liability
       segment Hippo::Segments::AMT,
                 :name           => 'Remaining Patient Liability',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 3050
+                :position       => 3050,
+                :defaults => {
+                  'AMT01' => 'EAF'
+                }
 
       #Other Insurance Coverage Information
       segment Hippo::Segments::OI,
                 :name           => 'Other Insurance Coverage Information',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 3110
+                :position       => 3110,
+                :defaults => {
+                  'OI04' => 'P'
+                }
 
       #Outpatient Adjudication Information
       segment Hippo::Segments::MOA,

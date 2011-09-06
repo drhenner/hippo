@@ -9,7 +9,11 @@ module Hippo::TransactionSets
                 :name           => 'Patient Name',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 150
+                :position       => 150,
+                :defaults => {
+                  'NM101' => 'QC',
+                  'NM102' => '1'
+                }
 
       #Patient Address
       segment Hippo::Segments::N3,
@@ -30,14 +34,20 @@ module Hippo::TransactionSets
                 :name           => 'Patient Demographic Information',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 320
+                :position       => 320,
+                :defaults => {
+                  'DMG01' => 'D8'
+                }
 
       #Property and Casualty Claim Number
       segment Hippo::Segments::REF,
                 :name           => 'Property and Casualty Claim Number',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 360
+                :position       => 360,
+                :defaults => {
+                  'REF01' => 'Y4'
+                }
 
       #Property and Casualty Patient Identifier
       segment Hippo::Segments::REF,
@@ -51,7 +61,12 @@ module Hippo::TransactionSets
                 :name           => 'Property and Casualty Patient Contact Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 400
+                :position       => 400,
+                :defaults => {
+                  'PER01' => 'IC',
+                  'PER03' => 'TE',
+                  'PER05' => 'EX'
+                }
 
     end
   end

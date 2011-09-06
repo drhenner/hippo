@@ -9,7 +9,11 @@ module Hippo::TransactionSets
                 :name           => 'Billing Provider Name',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 150
+                :position       => 150,
+                :defaults => {
+                  'NM101' => '85',
+                  'NM108' => 'XX'
+                }
 
       #Billing Provider Address
       segment Hippo::Segments::N3,
@@ -44,7 +48,10 @@ module Hippo::TransactionSets
                 :name           => 'Billing Provider Contact Information',
                 :minimum        => 0,
                 :maximum        => 2,
-                :position       => 400
+                :position       => 400,
+                :defaults => {
+                  'PER01' => 'IC'
+                }
 
     end
   end

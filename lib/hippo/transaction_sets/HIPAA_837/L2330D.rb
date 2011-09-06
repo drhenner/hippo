@@ -9,7 +9,10 @@ module Hippo::TransactionSets
                 :name           => 'Other Payer Rendering Provider',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 3650
+                :position       => 3650,
+                :defaults => {
+                  'NM101' => '82'
+                }
 
       #Other Payer Rendering Provider Secondary Identification
       segment Hippo::Segments::REF,

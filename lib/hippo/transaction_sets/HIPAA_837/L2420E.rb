@@ -9,7 +9,12 @@ module Hippo::TransactionSets
                 :name           => 'Ordering Provider Name',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 5000
+                :position       => 5000,
+                :defaults => {
+                  'NM101' => 'DK',
+                  'NM102' => '1',
+                  'NM108' => 'XX'
+                }
 
       #Ordering Provider Address
       segment Hippo::Segments::N3,
@@ -30,14 +35,20 @@ module Hippo::TransactionSets
                 :name           => 'Ordering Provider Secondary Identification',
                 :minimum        => 0,
                 :maximum        => 20,
-                :position       => 5250
+                :position       => 5250,
+                :defaults => {
+                  'REF04' => '2U'
+                }
 
       #Ordering Provider Contact Information
       segment Hippo::Segments::PER,
                 :name           => 'Ordering Provider Contact Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 5300
+                :position       => 5300,
+                :defaults => {
+                  'PER01' => 'IC'
+                }
 
     end
   end

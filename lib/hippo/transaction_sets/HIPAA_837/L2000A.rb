@@ -9,21 +9,32 @@ module Hippo::TransactionSets
                 :name           => 'Billing Provider Hierarchical Level',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 10
+                :position       => 10,
+                :defaults => {
+                  'HL03' => '20',
+                  'HL04' => '1'
+                }
 
       #Billing Provider Specialty Information
       segment Hippo::Segments::PRV,
                 :name           => 'Billing Provider Specialty Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 30
+                :position       => 30,
+                :defaults => {
+                  'PRV01' => 'BI',
+                  'PRV02' => 'PXC'
+                }
 
       #Foreign Currency Information
       segment Hippo::Segments::CUR,
                 :name           => 'Foreign Currency Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 100
+                :position       => 100,
+                :defaults => {
+                  'CUR01' => '85'
+                }
 
       #Billing Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2010AA,

@@ -8,7 +8,10 @@ module Hippo::TransactionSets
                 :name           => 'Transaction Set Header',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 100
+                :position       => 100,
+                :defaults => {
+                  'ST01' => '999'
+                }
 
       #Functional Group Response Header
       segment Hippo::Segments::AK1,

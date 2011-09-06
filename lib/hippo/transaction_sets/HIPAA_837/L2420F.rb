@@ -9,14 +9,21 @@ module Hippo::TransactionSets
                 :name           => 'Referring Provider Name',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 5000
+                :position       => 5000,
+                :defaults => {
+                  'NM102' => '1',
+                  'NM108' => 'XX'
+                }
 
       #Referring Provider Secondary Identification
       segment Hippo::Segments::REF,
                 :name           => 'Referring Provider Secondary Identification',
                 :minimum        => 0,
                 :maximum        => 20,
-                :position       => 5250
+                :position       => 5250,
+                :defaults => {
+                  'REF04' => '2U'
+                }
 
     end
   end

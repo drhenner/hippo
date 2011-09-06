@@ -37,7 +37,10 @@ module Hippo::TransactionSets
                 :name           => 'Line Item Control Number',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 1010
+                :position       => 1010,
+                :defaults => {
+                  'REF01' => '6R'
+                }
 
       #Rendering Provider Information
       segment Hippo::Segments::REF,
@@ -51,7 +54,10 @@ module Hippo::TransactionSets
                 :name           => 'HealthCare Policy Identification',
                 :minimum        => 0,
                 :maximum        => 5,
-                :position       => 1060
+                :position       => 1060,
+                :defaults => {
+                  'REF01' => '0K'
+                }
 
       #Service Supplemental Amount
       segment Hippo::Segments::AMT,
