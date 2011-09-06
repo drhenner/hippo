@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'FRM'
 
-    field :name                 => 'AssignedIdentification'
+    field :name                 => 'AssignedIdentification',
           :sequence             => 01,
           :datatype             => :string,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 350
 
-    field :name                 => 'YesNoConditionOrResponseCode'
+    field :name                 => 'YesNoConditionOrResponseCode',
           :sequence             => 02,
           :datatype             => :list,
           :minimum              => 1,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1073
 
-    field :name                 => 'ReferenceIdentification'
+    field :name                 => 'ReferenceIdentification',
           :sequence             => 03,
           :datatype             => :string,
           :minimum              => 1,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 127
 
-    field :name                 => 'Date'
+    field :name                 => 'Date',
           :sequence             => 04,
           :datatype             => :date,
           :minimum              => 8,
@@ -35,7 +35,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 373
 
-    field :name                 => 'PercentDecimalFormat'
+    field :name                 => 'PercentDecimalFormat',
           :sequence             => 05,
           :datatype             => :numeric,
           :minimum              => 1,

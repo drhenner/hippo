@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'DTM'
 
-    field :name                 => 'DateTimeQualifier'
+    field :name                 => 'DateTimeQualifier',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 3,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 374
 
-    field :name                 => 'Date'
+    field :name                 => 'Date',
           :sequence             => 02,
           :datatype             => :date,
           :minimum              => 8,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 373
 
-    field :name                 => 'Time'
+    field :name                 => 'Time',
           :sequence             => 03,
           :datatype             => :time,
           :minimum              => 4,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 337
 
-    field :name                 => 'TimeCode'
+    field :name                 => 'TimeCode',
           :sequence             => 04,
           :datatype             => :list,
           :minimum              => 2,
@@ -35,7 +35,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 623
 
-    field :name                 => 'DateTimePeriodFormatQualifier'
+    field :name                 => 'DateTimePeriodFormatQualifier',
           :sequence             => 05,
           :datatype             => :list,
           :minimum              => 2,
@@ -43,7 +43,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1250
 
-    field :name                 => 'DateTimePeriod'
+    field :name                 => 'DateTimePeriod',
           :sequence             => 06,
           :datatype             => :string,
           :minimum              => 1,

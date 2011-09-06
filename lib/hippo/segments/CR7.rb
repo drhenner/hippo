@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'CR7'
 
-    field :name                 => 'DisciplineTypeCode'
+    field :name                 => 'DisciplineTypeCode',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 2,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 921
 
-    field :name                 => 'Number'
+    field :name                 => 'Number',
           :sequence             => 02,
           :datatype             => :numeric,
           :decimal              => 0,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 1470
 
-    field :name                 => 'Number'
+    field :name                 => 'Number',
           :sequence             => 03,
           :datatype             => :numeric,
           :decimal              => 0,

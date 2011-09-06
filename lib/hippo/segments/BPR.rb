@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'BPR'
 
-    field :name                 => 'TransactionHandlingCode'
+    field :name                 => 'TransactionHandlingCode',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 305
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 02,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 782
 
-    field :name                 => 'CreditDebitFlagCode'
+    field :name                 => 'CreditDebitFlagCode',
           :sequence             => 03,
           :datatype             => :list,
           :minimum              => 1,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 478
 
-    field :name                 => 'PaymentMethodCode'
+    field :name                 => 'PaymentMethodCode',
           :sequence             => 04,
           :datatype             => :list,
           :minimum              => 3,
@@ -35,7 +35,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 591
 
-    field :name                 => 'PaymentFormatCode'
+    field :name                 => 'PaymentFormatCode',
           :sequence             => 05,
           :datatype             => :list,
           :minimum              => 1,
@@ -43,7 +43,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 812
 
-    field :name                 => 'DfiIdNumberQualifier'
+    field :name                 => 'DfiIdNumberQualifier',
           :sequence             => 06,
           :datatype             => :list,
           :minimum              => 2,
@@ -51,7 +51,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 506
 
-    field :name                 => 'DfiIdentificationNumber'
+    field :name                 => 'DfiIdentificationNumber',
           :sequence             => 07,
           :datatype             => :string,
           :minimum              => 3,
@@ -59,7 +59,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 507
 
-    field :name                 => 'AccountNumberQualifier'
+    field :name                 => 'AccountNumberQualifier',
           :sequence             => 08,
           :datatype             => :list,
           :minimum              => 1,
@@ -67,7 +67,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 569
 
-    field :name                 => 'AccountNumber'
+    field :name                 => 'AccountNumber',
           :sequence             => 09,
           :datatype             => :string,
           :minimum              => 1,
@@ -75,7 +75,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 508
 
-    field :name                 => 'OriginatingCompanyIdentifier'
+    field :name                 => 'OriginatingCompanyIdentifier',
           :sequence             => 10,
           :datatype             => :string,
           :minimum              => 10,
@@ -83,7 +83,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 509
 
-    field :name                 => 'OriginatingCompanySupplementalCode'
+    field :name                 => 'OriginatingCompanySupplementalCode',
           :sequence             => 11,
           :datatype             => :string,
           :minimum              => 9,
@@ -91,7 +91,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 510
 
-    field :name                 => 'DfiIdNumberQualifier'
+    field :name                 => 'DfiIdNumberQualifier',
           :sequence             => 12,
           :datatype             => :list,
           :minimum              => 2,
@@ -99,7 +99,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 506
 
-    field :name                 => 'DfiIdentificationNumber'
+    field :name                 => 'DfiIdentificationNumber',
           :sequence             => 13,
           :datatype             => :string,
           :minimum              => 3,
@@ -107,7 +107,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 507
 
-    field :name                 => 'AccountNumberQualifier'
+    field :name                 => 'AccountNumberQualifier',
           :sequence             => 14,
           :datatype             => :list,
           :minimum              => 1,
@@ -115,7 +115,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 569
 
-    field :name                 => 'AccountNumber'
+    field :name                 => 'AccountNumber',
           :sequence             => 15,
           :datatype             => :string,
           :minimum              => 1,
@@ -123,7 +123,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 508
 
-    field :name                 => 'Date'
+    field :name                 => 'Date',
           :sequence             => 16,
           :datatype             => :date,
           :minimum              => 8,
@@ -131,7 +131,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 373
 
-    field :name                 => 'BusinessFunctionCode'
+    field :name                 => 'BusinessFunctionCode',
           :sequence             => 17,
           :datatype             => :list,
           :minimum              => 1,
@@ -139,7 +139,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1048
 
-    field :name                 => 'DfiIdNumberQualifier'
+    field :name                 => 'DfiIdNumberQualifier',
           :sequence             => 18,
           :datatype             => :list,
           :minimum              => 2,
@@ -147,7 +147,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 506
 
-    field :name                 => 'DfiIdentificationNumber'
+    field :name                 => 'DfiIdentificationNumber',
           :sequence             => 19,
           :datatype             => :string,
           :minimum              => 3,
@@ -155,7 +155,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 507
 
-    field :name                 => 'AccountNumberQualifier'
+    field :name                 => 'AccountNumberQualifier',
           :sequence             => 20,
           :datatype             => :list,
           :minimum              => 1,
@@ -163,7 +163,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 569
 
-    field :name                 => 'AccountNumber'
+    field :name                 => 'AccountNumber',
           :sequence             => 21,
           :datatype             => :string,
           :minimum              => 1,

@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'AK1'
 
-    field :name                 => 'FunctionalIdentifierCode'
+    field :name                 => 'FunctionalIdentifierCode',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 2,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 479
 
-    field :name                 => 'GroupControlNumber'
+    field :name                 => 'GroupControlNumber',
           :sequence             => 02,
           :datatype             => :numeric,
           :decimal              => 0,
@@ -20,7 +20,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 28
 
-    field :name                 => 'VersionReleaseIndustryIdentifierCode'
+    field :name                 => 'VersionReleaseIndustryIdentifierCode',
           :sequence             => 03,
           :datatype             => :string,
           :minimum              => 1,

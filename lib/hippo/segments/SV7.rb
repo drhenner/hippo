@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'SV7'
 
-    field :name                 => 'ReferenceIdentification'
+    field :name                 => 'ReferenceIdentification',
           :sequence             => 01,
           :datatype             => :string,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 127
 
-    field :name                 => 'ReferenceIdentification'
+    field :name                 => 'ReferenceIdentification',
           :sequence             => 02,
           :datatype             => :string,
           :minimum              => 1,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 127
 
-    field :name                 => 'PrescriptionDenialOverrideCode'
+    field :name                 => 'PrescriptionDenialOverrideCode',
           :sequence             => 03,
           :datatype             => :list,
           :minimum              => 2,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1355
 
-    field :name                 => 'CoverageLevelCode'
+    field :name                 => 'CoverageLevelCode',
           :sequence             => 04,
           :datatype             => :list,
           :minimum              => 3,
@@ -35,7 +35,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 1207
 
-    field :name                 => 'ProductProcessCharacteristicCode'
+    field :name                 => 'ProductProcessCharacteristicCode',
           :sequence             => 05,
           :datatype             => :list,
           :minimum              => 2,
@@ -43,7 +43,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 750
 
-    field :name                 => 'YesNoConditionOrResponseCode'
+    field :name                 => 'YesNoConditionOrResponseCode',
           :sequence             => 06,
           :datatype             => :list,
           :minimum              => 1,

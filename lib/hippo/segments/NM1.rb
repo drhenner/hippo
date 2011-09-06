@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'NM1'
 
-    field :name                 => 'EntityIdentifierCode'
+    field :name                 => 'EntityIdentifierCode',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 2,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 98
 
-    field :name                 => 'EntityTypeQualifier'
+    field :name                 => 'EntityTypeQualifier',
           :sequence             => 02,
           :datatype             => :list,
           :minimum              => 1,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 1065
 
-    field :name                 => 'NameLastOrOrganizationName'
+    field :name                 => 'NameLastOrOrganizationName',
           :sequence             => 03,
           :datatype             => :string,
           :minimum              => 1,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1035
 
-    field :name                 => 'NameFirst'
+    field :name                 => 'NameFirst',
           :sequence             => 04,
           :datatype             => :string,
           :minimum              => 1,
@@ -35,7 +35,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1036
 
-    field :name                 => 'NameMiddle'
+    field :name                 => 'NameMiddle',
           :sequence             => 05,
           :datatype             => :string,
           :minimum              => 1,
@@ -43,7 +43,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1037
 
-    field :name                 => 'NamePrefix'
+    field :name                 => 'NamePrefix',
           :sequence             => 06,
           :datatype             => :string,
           :minimum              => 1,
@@ -51,7 +51,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1038
 
-    field :name                 => 'NameSuffix'
+    field :name                 => 'NameSuffix',
           :sequence             => 07,
           :datatype             => :string,
           :minimum              => 1,
@@ -59,7 +59,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1039
 
-    field :name                 => 'IdentificationCodeQualifier'
+    field :name                 => 'IdentificationCodeQualifier',
           :sequence             => 08,
           :datatype             => :list,
           :minimum              => 1,
@@ -67,7 +67,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 66
 
-    field :name                 => 'IdentificationCode'
+    field :name                 => 'IdentificationCode',
           :sequence             => 09,
           :datatype             => :string,
           :minimum              => 2,
@@ -75,7 +75,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 67
 
-    field :name                 => 'EntityRelationshipCode'
+    field :name                 => 'EntityRelationshipCode',
           :sequence             => 10,
           :datatype             => :list,
           :minimum              => 2,
@@ -83,7 +83,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 706
 
-    field :name                 => 'EntityIdentifierCode'
+    field :name                 => 'EntityIdentifierCode',
           :sequence             => 11,
           :datatype             => :list,
           :minimum              => 2,
@@ -91,7 +91,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 98
 
-    field :name                 => 'NameLastOrOrganizationName'
+    field :name                 => 'NameLastOrOrganizationName',
           :sequence             => 12,
           :datatype             => :string,
           :minimum              => 1,

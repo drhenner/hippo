@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'IMM'
 
-    field :name                 => 'IndustryCode'
+    field :name                 => 'IndustryCode',
           :sequence             => 01,
           :datatype             => :string,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 1271
 
-    field :name                 => 'DateTimePeriodFormatQualifier'
+    field :name                 => 'DateTimePeriodFormatQualifier',
           :sequence             => 02,
           :datatype             => :list,
           :minimum              => 2,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1250
 
-    field :name                 => 'DateTimePeriod'
+    field :name                 => 'DateTimePeriod',
           :sequence             => 03,
           :datatype             => :string,
           :minimum              => 1,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1251
 
-    field :name                 => 'ImmunizationStatusCode'
+    field :name                 => 'ImmunizationStatusCode',
           :sequence             => 04,
           :datatype             => :list,
           :minimum              => 1,
@@ -35,7 +35,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1254
 
-    field :name                 => 'ReportTypeCode'
+    field :name                 => 'ReportTypeCode',
           :sequence             => 05,
           :datatype             => :list,
           :minimum              => 2,
@@ -43,7 +43,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 755
 
-    field :name                 => 'CodeListQualifierCode'
+    field :name                 => 'CodeListQualifierCode',
           :sequence             => 06,
           :datatype             => :list,
           :minimum              => 1,

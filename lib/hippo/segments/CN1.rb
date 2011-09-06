@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'CN1'
 
-    field :name                 => 'ContractTypeCode'
+    field :name                 => 'ContractTypeCode',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 2,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 1166
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 02,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 782
 
-    field :name                 => 'PercentDecimalFormat'
+    field :name                 => 'PercentDecimalFormat',
           :sequence             => 03,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 332
 
-    field :name                 => 'ReferenceIdentification'
+    field :name                 => 'ReferenceIdentification',
           :sequence             => 04,
           :datatype             => :string,
           :minimum              => 1,
@@ -35,7 +35,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 127
 
-    field :name                 => 'TermsDiscountPercent'
+    field :name                 => 'TermsDiscountPercent',
           :sequence             => 05,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -43,7 +43,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 338
 
-    field :name                 => 'VersionIdentifier'
+    field :name                 => 'VersionIdentifier',
           :sequence             => 06,
           :datatype             => :string,
           :minimum              => 1,

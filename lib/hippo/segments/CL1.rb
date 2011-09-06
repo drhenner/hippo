@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'CL1'
 
-    field :name                 => 'AdmissionTypeCode'
+    field :name                 => 'AdmissionTypeCode',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1315
 
-    field :name                 => 'AdmissionSourceCode'
+    field :name                 => 'AdmissionSourceCode',
           :sequence             => 02,
           :datatype             => :list,
           :minimum              => 1,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1314
 
-    field :name                 => 'PatientStatusCode'
+    field :name                 => 'PatientStatusCode',
           :sequence             => 03,
           :datatype             => :list,
           :minimum              => 1,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1352
 
-    field :name                 => 'NursingHomeResidentialStatusCode'
+    field :name                 => 'NursingHomeResidentialStatusCode',
           :sequence             => 04,
           :datatype             => :list,
           :minimum              => 1,

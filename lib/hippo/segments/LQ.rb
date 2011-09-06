@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'LQ'
 
-    field :name                 => 'CodeListQualifierCode'
+    field :name                 => 'CodeListQualifierCode',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1270
 
-    field :name                 => 'IndustryCode'
+    field :name                 => 'IndustryCode',
           :sequence             => 02,
           :datatype             => :string,
           :minimum              => 1,

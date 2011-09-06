@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'HL'
 
-    field :name                 => 'HierarchicalIdNumber'
+    field :name                 => 'HierarchicalIdNumber',
           :sequence             => 01,
           :datatype             => :string,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 628
 
-    field :name                 => 'HierarchicalParentIdNumber'
+    field :name                 => 'HierarchicalParentIdNumber',
           :sequence             => 02,
           :datatype             => :string,
           :minimum              => 1,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 734
 
-    field :name                 => 'HierarchicalLevelCode'
+    field :name                 => 'HierarchicalLevelCode',
           :sequence             => 03,
           :datatype             => :list,
           :minimum              => 1,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 735
 
-    field :name                 => 'HierarchicalChildCode'
+    field :name                 => 'HierarchicalChildCode',
           :sequence             => 04,
           :datatype             => :list,
           :minimum              => 1,

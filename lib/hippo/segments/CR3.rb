@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'CR3'
 
-    field :name                 => 'CertificationTypeCode'
+    field :name                 => 'CertificationTypeCode',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1322
 
-    field :name                 => 'UnitOrBasisForMeasurementCode'
+    field :name                 => 'UnitOrBasisForMeasurementCode',
           :sequence             => 02,
           :datatype             => :list,
           :minimum              => 2,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 355
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 03,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 380
 
-    field :name                 => 'InsulinDependentCode'
+    field :name                 => 'InsulinDependentCode',
           :sequence             => 04,
           :datatype             => :list,
           :minimum              => 1,
@@ -35,7 +35,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1335
 
-    field :name                 => 'Description'
+    field :name                 => 'Description',
           :sequence             => 05,
           :datatype             => :string,
           :minimum              => 1,

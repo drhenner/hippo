@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'BHT'
 
-    field :name                 => 'HierarchicalStructureCode'
+    field :name                 => 'HierarchicalStructureCode',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 4,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 1005
 
-    field :name                 => 'TransactionSetPurposeCode'
+    field :name                 => 'TransactionSetPurposeCode',
           :sequence             => 02,
           :datatype             => :list,
           :minimum              => 2,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 353
 
-    field :name                 => 'ReferenceIdentification'
+    field :name                 => 'ReferenceIdentification',
           :sequence             => 03,
           :datatype             => :string,
           :minimum              => 1,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 127
 
-    field :name                 => 'Date'
+    field :name                 => 'Date',
           :sequence             => 04,
           :datatype             => :date,
           :minimum              => 8,
@@ -35,7 +35,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 373
 
-    field :name                 => 'Time'
+    field :name                 => 'Time',
           :sequence             => 05,
           :datatype             => :time,
           :minimum              => 4,
@@ -43,7 +43,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 337
 
-    field :name                 => 'TransactionTypeCode'
+    field :name                 => 'TransactionTypeCode',
           :sequence             => 06,
           :datatype             => :list,
           :minimum              => 2,

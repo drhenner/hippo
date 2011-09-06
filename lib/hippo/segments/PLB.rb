@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'PLB'
 
-    field :name                 => 'ReferenceIdentification'
+    field :name                 => 'ReferenceIdentification',
           :sequence             => 01,
           :datatype             => :string,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 127
 
-    field :name                 => 'Date'
+    field :name                 => 'Date',
           :sequence             => 02,
           :datatype             => :date,
           :minimum              => 8,
@@ -21,7 +21,7 @@ module Hippo::Segments
 
     composite_field 'AdjustmentIdentifier' do
 
-      field :name                 => 'AdjustmentReasonCode'
+      field :name                 => 'AdjustmentReasonCode',
             :sequence             => 01,
             :datatype             => :list,
             :minimum              => 2,
@@ -29,7 +29,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 426
 
-      field :name                 => 'ReferenceIdentification'
+      field :name                 => 'ReferenceIdentification',
             :sequence             => 02,
             :datatype             => :string,
             :minimum              => 1,
@@ -39,7 +39,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 04,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -49,7 +49,7 @@ module Hippo::Segments
 
     composite_field 'AdjustmentIdentifier' do
 
-      field :name                 => 'AdjustmentReasonCode'
+      field :name                 => 'AdjustmentReasonCode',
             :sequence             => 01,
             :datatype             => :list,
             :minimum              => 2,
@@ -57,7 +57,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 426
 
-      field :name                 => 'ReferenceIdentification'
+      field :name                 => 'ReferenceIdentification',
             :sequence             => 02,
             :datatype             => :string,
             :minimum              => 1,
@@ -67,7 +67,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 06,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -77,7 +77,7 @@ module Hippo::Segments
 
     composite_field 'AdjustmentIdentifier' do
 
-      field :name                 => 'AdjustmentReasonCode'
+      field :name                 => 'AdjustmentReasonCode',
             :sequence             => 01,
             :datatype             => :list,
             :minimum              => 2,
@@ -85,7 +85,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 426
 
-      field :name                 => 'ReferenceIdentification'
+      field :name                 => 'ReferenceIdentification',
             :sequence             => 02,
             :datatype             => :string,
             :minimum              => 1,
@@ -95,7 +95,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 08,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -105,7 +105,7 @@ module Hippo::Segments
 
     composite_field 'AdjustmentIdentifier' do
 
-      field :name                 => 'AdjustmentReasonCode'
+      field :name                 => 'AdjustmentReasonCode',
             :sequence             => 01,
             :datatype             => :list,
             :minimum              => 2,
@@ -113,7 +113,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 426
 
-      field :name                 => 'ReferenceIdentification'
+      field :name                 => 'ReferenceIdentification',
             :sequence             => 02,
             :datatype             => :string,
             :minimum              => 1,
@@ -123,7 +123,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 10,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -133,7 +133,7 @@ module Hippo::Segments
 
     composite_field 'AdjustmentIdentifier' do
 
-      field :name                 => 'AdjustmentReasonCode'
+      field :name                 => 'AdjustmentReasonCode',
             :sequence             => 01,
             :datatype             => :list,
             :minimum              => 2,
@@ -141,7 +141,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 426
 
-      field :name                 => 'ReferenceIdentification'
+      field :name                 => 'ReferenceIdentification',
             :sequence             => 02,
             :datatype             => :string,
             :minimum              => 1,
@@ -151,7 +151,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 12,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -161,7 +161,7 @@ module Hippo::Segments
 
     composite_field 'AdjustmentIdentifier' do
 
-      field :name                 => 'AdjustmentReasonCode'
+      field :name                 => 'AdjustmentReasonCode',
             :sequence             => 01,
             :datatype             => :list,
             :minimum              => 2,
@@ -169,7 +169,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 426
 
-      field :name                 => 'ReferenceIdentification'
+      field :name                 => 'ReferenceIdentification',
             :sequence             => 02,
             :datatype             => :string,
             :minimum              => 1,
@@ -179,7 +179,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 14,
           :datatype             => :numeric,
           :minimum              => 1,

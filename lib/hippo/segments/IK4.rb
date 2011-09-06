@@ -5,7 +5,7 @@ module Hippo::Segments
 
     composite_field 'PositionInSegment' do
 
-      field :name                 => 'ElementPositionInSegment'
+      field :name                 => 'ElementPositionInSegment',
             :sequence             => 01,
             :datatype             => :numeric,
             :decimal              => 0,
@@ -14,7 +14,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 722
 
-      field :name                 => 'ComponentDataElementPositionInComposite'
+      field :name                 => 'ComponentDataElementPositionInComposite',
             :sequence             => 02,
             :datatype             => :numeric,
             :decimal              => 0,
@@ -23,7 +23,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 1528
 
-      field :name                 => 'RepeatingDataElementPosition'
+      field :name                 => 'RepeatingDataElementPosition',
             :sequence             => 03,
             :datatype             => :numeric,
             :decimal              => 0,
@@ -34,7 +34,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'DataElementReferenceNumber'
+    field :name                 => 'DataElementReferenceNumber',
           :sequence             => 02,
           :datatype             => :numeric,
           :decimal              => 0,
@@ -43,7 +43,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 725
 
-    field :name                 => 'ImplementationDataElementSyntaxErrorCode'
+    field :name                 => 'ImplementationDataElementSyntaxErrorCode',
           :sequence             => 03,
           :datatype             => :list,
           :minimum              => 1,
@@ -51,7 +51,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 621
 
-    field :name                 => 'CopyOfBadDataElement'
+    field :name                 => 'CopyOfBadDataElement',
           :sequence             => 04,
           :datatype             => :string,
           :minimum              => 1,

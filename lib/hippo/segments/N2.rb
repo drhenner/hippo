@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'N2'
 
-    field :name                 => 'Name'
+    field :name                 => 'Name',
           :sequence             => 01,
           :datatype             => :string,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 93
 
-    field :name                 => 'Name'
+    field :name                 => 'Name',
           :sequence             => 02,
           :datatype             => :string,
           :minimum              => 1,

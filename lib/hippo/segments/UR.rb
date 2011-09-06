@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'UR'
 
-    field :name                 => 'ApprovalCode'
+    field :name                 => 'ApprovalCode',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 1318
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 02,
           :datatype             => :numeric,
           :minimum              => 1,

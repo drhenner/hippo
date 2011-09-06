@@ -5,7 +5,7 @@ module Hippo::Segments
 
     composite_field 'ContextIdentification' do
 
-      field :name                 => 'ContextName'
+      field :name                 => 'ContextName',
             :sequence             => 01,
             :datatype             => :string,
             :minimum              => 1,
@@ -13,7 +13,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 9999
 
-      field :name                 => 'ContextReference'
+      field :name                 => 'ContextReference',
             :sequence             => 02,
             :datatype             => :string,
             :minimum              => 1,
@@ -23,7 +23,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'SegmentIdCode'
+    field :name                 => 'SegmentIdCode',
           :sequence             => 02,
           :datatype             => :list,
           :minimum              => 2,
@@ -31,7 +31,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 721
 
-    field :name                 => 'SegmentPositionInTransactionSet'
+    field :name                 => 'SegmentPositionInTransactionSet',
           :sequence             => 03,
           :datatype             => :numeric,
           :decimal              => 0,
@@ -40,7 +40,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 719
 
-    field :name                 => 'LoopIdentifierCode'
+    field :name                 => 'LoopIdentifierCode',
           :sequence             => 04,
           :datatype             => :string,
           :minimum              => 1,
@@ -50,7 +50,7 @@ module Hippo::Segments
 
     composite_field 'PositionInSegment' do
 
-      field :name                 => 'ElementPositionInSegment'
+      field :name                 => 'ElementPositionInSegment',
             :sequence             => 01,
             :datatype             => :numeric,
             :decimal              => 0,
@@ -59,7 +59,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 722
 
-      field :name                 => 'ComponentDataElementPositionInComposite'
+      field :name                 => 'ComponentDataElementPositionInComposite',
             :sequence             => 02,
             :datatype             => :numeric,
             :decimal              => 0,
@@ -68,7 +68,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 1528
 
-      field :name                 => 'RepeatingDataElementPosition'
+      field :name                 => 'RepeatingDataElementPosition',
             :sequence             => 03,
             :datatype             => :numeric,
             :decimal              => 0,
@@ -81,7 +81,7 @@ module Hippo::Segments
 
     composite_field 'ReferenceInSegment' do
 
-      field :name                 => 'DataElementReferenceNumber'
+      field :name                 => 'DataElementReferenceNumber',
             :sequence             => 01,
             :datatype             => :numeric,
             :decimal              => 0,
@@ -90,7 +90,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 725
 
-      field :name                 => 'DataElementReferenceNumber'
+      field :name                 => 'DataElementReferenceNumber',
             :sequence             => 02,
             :datatype             => :numeric,
             :decimal              => 0,

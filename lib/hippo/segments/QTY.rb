@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'QTY'
 
-    field :name                 => 'QuantityQualifier'
+    field :name                 => 'QuantityQualifier',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 2,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 673
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 02,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -21,7 +21,7 @@ module Hippo::Segments
 
     composite_field 'CompositeUnitOfMeasure' do
 
-      field :name                 => 'UnitOrBasisForMeasurementCode'
+      field :name                 => 'UnitOrBasisForMeasurementCode',
             :sequence             => 01,
             :datatype             => :list,
             :minimum              => 2,
@@ -29,7 +29,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 355
 
-      field :name                 => 'Exponent'
+      field :name                 => 'Exponent',
             :sequence             => 02,
             :datatype             => :numeric,
             :minimum              => 1,
@@ -37,7 +37,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 1018
 
-      field :name                 => 'Multiplier'
+      field :name                 => 'Multiplier',
             :sequence             => 03,
             :datatype             => :numeric,
             :minimum              => 1,
@@ -45,7 +45,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 649
 
-      field :name                 => 'UnitOrBasisForMeasurementCode'
+      field :name                 => 'UnitOrBasisForMeasurementCode',
             :sequence             => 04,
             :datatype             => :list,
             :minimum              => 2,
@@ -53,7 +53,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 355
 
-      field :name                 => 'Exponent'
+      field :name                 => 'Exponent',
             :sequence             => 05,
             :datatype             => :numeric,
             :minimum              => 1,
@@ -61,7 +61,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 1018
 
-      field :name                 => 'Multiplier'
+      field :name                 => 'Multiplier',
             :sequence             => 06,
             :datatype             => :numeric,
             :minimum              => 1,
@@ -69,7 +69,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 649
 
-      field :name                 => 'UnitOrBasisForMeasurementCode'
+      field :name                 => 'UnitOrBasisForMeasurementCode',
             :sequence             => 07,
             :datatype             => :list,
             :minimum              => 2,
@@ -77,7 +77,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 355
 
-      field :name                 => 'Exponent'
+      field :name                 => 'Exponent',
             :sequence             => 08,
             :datatype             => :numeric,
             :minimum              => 1,
@@ -85,7 +85,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 1018
 
-      field :name                 => 'Multiplier'
+      field :name                 => 'Multiplier',
             :sequence             => 09,
             :datatype             => :numeric,
             :minimum              => 1,
@@ -93,7 +93,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 649
 
-      field :name                 => 'UnitOrBasisForMeasurementCode'
+      field :name                 => 'UnitOrBasisForMeasurementCode',
             :sequence             => 10,
             :datatype             => :list,
             :minimum              => 2,
@@ -101,7 +101,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 355
 
-      field :name                 => 'Exponent'
+      field :name                 => 'Exponent',
             :sequence             => 11,
             :datatype             => :numeric,
             :minimum              => 1,
@@ -109,7 +109,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 1018
 
-      field :name                 => 'Multiplier'
+      field :name                 => 'Multiplier',
             :sequence             => 12,
             :datatype             => :numeric,
             :minimum              => 1,
@@ -117,7 +117,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 649
 
-      field :name                 => 'UnitOrBasisForMeasurementCode'
+      field :name                 => 'UnitOrBasisForMeasurementCode',
             :sequence             => 13,
             :datatype             => :list,
             :minimum              => 2,
@@ -125,7 +125,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 355
 
-      field :name                 => 'Exponent'
+      field :name                 => 'Exponent',
             :sequence             => 14,
             :datatype             => :numeric,
             :minimum              => 1,
@@ -133,7 +133,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 1018
 
-      field :name                 => 'Multiplier'
+      field :name                 => 'Multiplier',
             :sequence             => 15,
             :datatype             => :numeric,
             :minimum              => 1,
@@ -143,7 +143,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'FreeFormInformation'
+    field :name                 => 'FreeFormInformation',
           :sequence             => 04,
           :datatype             => :string,
           :minimum              => 1,

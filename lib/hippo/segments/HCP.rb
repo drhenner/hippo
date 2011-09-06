@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'HCP'
 
-    field :name                 => 'PricingMethodology'
+    field :name                 => 'PricingMethodology',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 2,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1473
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 02,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 782
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 03,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 782
 
-    field :name                 => 'ReferenceIdentification'
+    field :name                 => 'ReferenceIdentification',
           :sequence             => 04,
           :datatype             => :string,
           :minimum              => 1,
@@ -35,7 +35,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 127
 
-    field :name                 => 'Rate'
+    field :name                 => 'Rate',
           :sequence             => 05,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -43,7 +43,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 118
 
-    field :name                 => 'ReferenceIdentification'
+    field :name                 => 'ReferenceIdentification',
           :sequence             => 06,
           :datatype             => :string,
           :minimum              => 1,
@@ -51,7 +51,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 127
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 07,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -59,7 +59,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 782
 
-    field :name                 => 'ProductServiceId'
+    field :name                 => 'ProductServiceId',
           :sequence             => 08,
           :datatype             => :string,
           :minimum              => 1,
@@ -67,7 +67,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 234
 
-    field :name                 => 'ProductServiceIdQualifier'
+    field :name                 => 'ProductServiceIdQualifier',
           :sequence             => 09,
           :datatype             => :list,
           :minimum              => 2,
@@ -75,7 +75,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 235
 
-    field :name                 => 'ProductServiceId'
+    field :name                 => 'ProductServiceId',
           :sequence             => 10,
           :datatype             => :string,
           :minimum              => 1,
@@ -83,7 +83,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 234
 
-    field :name                 => 'UnitOrBasisForMeasurementCode'
+    field :name                 => 'UnitOrBasisForMeasurementCode',
           :sequence             => 11,
           :datatype             => :list,
           :minimum              => 2,
@@ -91,7 +91,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 355
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 12,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -99,7 +99,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 380
 
-    field :name                 => 'RejectReasonCode'
+    field :name                 => 'RejectReasonCode',
           :sequence             => 13,
           :datatype             => :list,
           :minimum              => 2,
@@ -107,7 +107,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 901
 
-    field :name                 => 'PolicyComplianceCode'
+    field :name                 => 'PolicyComplianceCode',
           :sequence             => 14,
           :datatype             => :list,
           :minimum              => 1,
@@ -115,7 +115,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1526
 
-    field :name                 => 'ExceptionCode'
+    field :name                 => 'ExceptionCode',
           :sequence             => 15,
           :datatype             => :list,
           :minimum              => 1,

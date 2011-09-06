@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'PS1'
 
-    field :name                 => 'ReferenceIdentification'
+    field :name                 => 'ReferenceIdentification',
           :sequence             => 01,
           :datatype             => :string,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 127
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 02,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 782
 
-    field :name                 => 'StateOrProvinceCode'
+    field :name                 => 'StateOrProvinceCode',
           :sequence             => 03,
           :datatype             => :list,
           :minimum              => 2,

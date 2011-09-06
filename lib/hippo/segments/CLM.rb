@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'CLM'
 
-    field :name                 => 'ClaimSubmitterSIdentifier'
+    field :name                 => 'ClaimSubmitterSIdentifier',
           :sequence             => 01,
           :datatype             => :string,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 1028
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 02,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 782
 
-    field :name                 => 'ClaimFilingIndicatorCode'
+    field :name                 => 'ClaimFilingIndicatorCode',
           :sequence             => 03,
           :datatype             => :list,
           :minimum              => 1,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1032
 
-    field :name                 => 'NonInstitutionalClaimTypeCode'
+    field :name                 => 'NonInstitutionalClaimTypeCode',
           :sequence             => 04,
           :datatype             => :list,
           :minimum              => 1,
@@ -37,7 +37,7 @@ module Hippo::Segments
 
     composite_field 'HealthCareServiceLocationInformation' do
 
-      field :name                 => 'FacilityCodeValue'
+      field :name                 => 'FacilityCodeValue',
             :sequence             => 01,
             :datatype             => :string,
             :minimum              => 1,
@@ -45,7 +45,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 1331
 
-      field :name                 => 'FacilityCodeQualifier'
+      field :name                 => 'FacilityCodeQualifier',
             :sequence             => 02,
             :datatype             => :list,
             :minimum              => 1,
@@ -53,7 +53,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 1332
 
-      field :name                 => 'ClaimFrequencyTypeCode'
+      field :name                 => 'ClaimFrequencyTypeCode',
             :sequence             => 03,
             :datatype             => :list,
             :minimum              => 1,
@@ -63,7 +63,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'YesNoConditionOrResponseCode'
+    field :name                 => 'YesNoConditionOrResponseCode',
           :sequence             => 06,
           :datatype             => :list,
           :minimum              => 1,
@@ -71,7 +71,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1073
 
-    field :name                 => 'ProviderAcceptAssignmentCode'
+    field :name                 => 'ProviderAcceptAssignmentCode',
           :sequence             => 07,
           :datatype             => :list,
           :minimum              => 1,
@@ -79,7 +79,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1359
 
-    field :name                 => 'YesNoConditionOrResponseCode'
+    field :name                 => 'YesNoConditionOrResponseCode',
           :sequence             => 08,
           :datatype             => :list,
           :minimum              => 1,
@@ -87,7 +87,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1073
 
-    field :name                 => 'ReleaseOfInformationCode'
+    field :name                 => 'ReleaseOfInformationCode',
           :sequence             => 09,
           :datatype             => :list,
           :minimum              => 1,
@@ -95,7 +95,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1363
 
-    field :name                 => 'PatientSignatureSourceCode'
+    field :name                 => 'PatientSignatureSourceCode',
           :sequence             => 10,
           :datatype             => :list,
           :minimum              => 1,
@@ -105,7 +105,7 @@ module Hippo::Segments
 
     composite_field 'RelatedCausesInformation' do
 
-      field :name                 => 'RelatedCausesCode'
+      field :name                 => 'RelatedCausesCode',
             :sequence             => 01,
             :datatype             => :list,
             :minimum              => 2,
@@ -113,7 +113,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 1362
 
-      field :name                 => 'RelatedCausesCode'
+      field :name                 => 'RelatedCausesCode',
             :sequence             => 02,
             :datatype             => :list,
             :minimum              => 2,
@@ -121,7 +121,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 1362
 
-      field :name                 => 'RelatedCausesCode'
+      field :name                 => 'RelatedCausesCode',
             :sequence             => 03,
             :datatype             => :list,
             :minimum              => 2,
@@ -129,7 +129,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 1362
 
-      field :name                 => 'StateOrProvinceCode'
+      field :name                 => 'StateOrProvinceCode',
             :sequence             => 04,
             :datatype             => :list,
             :minimum              => 2,
@@ -137,7 +137,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 156
 
-      field :name                 => 'CountryCode'
+      field :name                 => 'CountryCode',
             :sequence             => 05,
             :datatype             => :list,
             :minimum              => 2,
@@ -147,7 +147,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'SpecialProgramCode'
+    field :name                 => 'SpecialProgramCode',
           :sequence             => 12,
           :datatype             => :list,
           :minimum              => 2,
@@ -155,7 +155,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1366
 
-    field :name                 => 'YesNoConditionOrResponseCode'
+    field :name                 => 'YesNoConditionOrResponseCode',
           :sequence             => 13,
           :datatype             => :list,
           :minimum              => 1,
@@ -163,7 +163,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1073
 
-    field :name                 => 'LevelOfServiceCode'
+    field :name                 => 'LevelOfServiceCode',
           :sequence             => 14,
           :datatype             => :list,
           :minimum              => 1,
@@ -171,7 +171,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1338
 
-    field :name                 => 'YesNoConditionOrResponseCode'
+    field :name                 => 'YesNoConditionOrResponseCode',
           :sequence             => 15,
           :datatype             => :list,
           :minimum              => 1,
@@ -179,7 +179,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1073
 
-    field :name                 => 'ProviderAgreementCode'
+    field :name                 => 'ProviderAgreementCode',
           :sequence             => 16,
           :datatype             => :list,
           :minimum              => 1,
@@ -187,7 +187,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1360
 
-    field :name                 => 'ClaimStatusCode'
+    field :name                 => 'ClaimStatusCode',
           :sequence             => 17,
           :datatype             => :list,
           :minimum              => 1,
@@ -195,7 +195,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1029
 
-    field :name                 => 'YesNoConditionOrResponseCode'
+    field :name                 => 'YesNoConditionOrResponseCode',
           :sequence             => 18,
           :datatype             => :list,
           :minimum              => 1,
@@ -203,7 +203,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1073
 
-    field :name                 => 'ClaimSubmissionReasonCode'
+    field :name                 => 'ClaimSubmissionReasonCode',
           :sequence             => 19,
           :datatype             => :list,
           :minimum              => 2,
@@ -211,7 +211,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1383
 
-    field :name                 => 'DelayReasonCode'
+    field :name                 => 'DelayReasonCode',
           :sequence             => 20,
           :datatype             => :list,
           :minimum              => 1,

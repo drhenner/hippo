@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'REF'
 
-    field :name                 => 'ReferenceIdentificationQualifier'
+    field :name                 => 'ReferenceIdentificationQualifier',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 2,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 128
 
-    field :name                 => 'ReferenceIdentification'
+    field :name                 => 'ReferenceIdentification',
           :sequence             => 02,
           :datatype             => :string,
           :minimum              => 1,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 127
 
-    field :name                 => 'Description'
+    field :name                 => 'Description',
           :sequence             => 03,
           :datatype             => :string,
           :minimum              => 1,
@@ -29,7 +29,7 @@ module Hippo::Segments
 
     composite_field 'ReferenceIdentifier' do
 
-      field :name                 => 'ReferenceIdentificationQualifier'
+      field :name                 => 'ReferenceIdentificationQualifier',
             :sequence             => 01,
             :datatype             => :list,
             :minimum              => 2,
@@ -37,7 +37,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 128
 
-      field :name                 => 'ReferenceIdentification'
+      field :name                 => 'ReferenceIdentification',
             :sequence             => 02,
             :datatype             => :string,
             :minimum              => 1,
@@ -45,7 +45,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 127
 
-      field :name                 => 'ReferenceIdentificationQualifier'
+      field :name                 => 'ReferenceIdentificationQualifier',
             :sequence             => 03,
             :datatype             => :list,
             :minimum              => 2,
@@ -53,7 +53,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 128
 
-      field :name                 => 'ReferenceIdentification'
+      field :name                 => 'ReferenceIdentification',
             :sequence             => 04,
             :datatype             => :string,
             :minimum              => 1,
@@ -61,7 +61,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 127
 
-      field :name                 => 'ReferenceIdentificationQualifier'
+      field :name                 => 'ReferenceIdentificationQualifier',
             :sequence             => 05,
             :datatype             => :list,
             :minimum              => 2,
@@ -69,7 +69,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 128
 
-      field :name                 => 'ReferenceIdentification'
+      field :name                 => 'ReferenceIdentification',
             :sequence             => 06,
             :datatype             => :string,
             :minimum              => 1,

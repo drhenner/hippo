@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'CR4'
 
-    field :name                 => 'YesNoConditionOrResponseCode'
+    field :name                 => 'YesNoConditionOrResponseCode',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 1073
 
-    field :name                 => 'CertificationTypeCode'
+    field :name                 => 'CertificationTypeCode',
           :sequence             => 02,
           :datatype             => :list,
           :minimum              => 1,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1322
 
-    field :name                 => 'UnitOrBasisForMeasurementCode'
+    field :name                 => 'UnitOrBasisForMeasurementCode',
           :sequence             => 03,
           :datatype             => :list,
           :minimum              => 2,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 355
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 04,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -35,7 +35,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 380
 
-    field :name                 => 'UnitOrBasisForMeasurementCode'
+    field :name                 => 'UnitOrBasisForMeasurementCode',
           :sequence             => 05,
           :datatype             => :list,
           :minimum              => 2,
@@ -43,7 +43,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 355
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 06,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -51,7 +51,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 380
 
-    field :name                 => 'NonVisitCode'
+    field :name                 => 'NonVisitCode',
           :sequence             => 07,
           :datatype             => :list,
           :minimum              => 1,
@@ -59,7 +59,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1344
 
-    field :name                 => 'UnitOrBasisForMeasurementCode'
+    field :name                 => 'UnitOrBasisForMeasurementCode',
           :sequence             => 08,
           :datatype             => :list,
           :minimum              => 2,
@@ -67,7 +67,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 355
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 09,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -75,7 +75,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 380
 
-    field :name                 => 'UnitOrBasisForMeasurementCode'
+    field :name                 => 'UnitOrBasisForMeasurementCode',
           :sequence             => 10,
           :datatype             => :list,
           :minimum              => 2,
@@ -83,7 +83,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 355
 
-    field :name                 => 'Height'
+    field :name                 => 'Height',
           :sequence             => 11,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -91,7 +91,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 65
 
-    field :name                 => 'UnitOrBasisForMeasurementCode'
+    field :name                 => 'UnitOrBasisForMeasurementCode',
           :sequence             => 12,
           :datatype             => :list,
           :minimum              => 2,
@@ -99,7 +99,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 355
 
-    field :name                 => 'Weight'
+    field :name                 => 'Weight',
           :sequence             => 13,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -107,7 +107,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 81
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 14,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -115,7 +115,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 380
 
-    field :name                 => 'Description'
+    field :name                 => 'Description',
           :sequence             => 15,
           :datatype             => :string,
           :minimum              => 1,
@@ -123,7 +123,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 352
 
-    field :name                 => 'NutrientAdministrationMethodCode'
+    field :name                 => 'NutrientAdministrationMethodCode',
           :sequence             => 16,
           :datatype             => :list,
           :minimum              => 1,
@@ -131,7 +131,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1346
 
-    field :name                 => 'NutrientAdministrationTechniqueCode'
+    field :name                 => 'NutrientAdministrationTechniqueCode',
           :sequence             => 17,
           :datatype             => :list,
           :minimum              => 1,
@@ -139,7 +139,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1347
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 18,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -147,7 +147,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 380
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 19,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -155,7 +155,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 380
 
-    field :name                 => 'Description'
+    field :name                 => 'Description',
           :sequence             => 20,
           :datatype             => :string,
           :minimum              => 1,
@@ -163,7 +163,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 352
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 21,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -171,7 +171,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 380
 
-    field :name                 => 'PercentageAsDecimal'
+    field :name                 => 'PercentageAsDecimal',
           :sequence             => 22,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -179,7 +179,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 954
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 23,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -187,7 +187,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 380
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 24,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -195,7 +195,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 380
 
-    field :name                 => 'PercentageAsDecimal'
+    field :name                 => 'PercentageAsDecimal',
           :sequence             => 25,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -203,7 +203,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 954
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 26,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -211,7 +211,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 380
 
-    field :name                 => 'PercentageAsDecimal'
+    field :name                 => 'PercentageAsDecimal',
           :sequence             => 27,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -219,7 +219,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 954
 
-    field :name                 => 'Quantity'
+    field :name                 => 'Quantity',
           :sequence             => 28,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -227,7 +227,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 380
 
-    field :name                 => 'Description'
+    field :name                 => 'Description',
           :sequence             => 29,
           :datatype             => :string,
           :minimum              => 1,

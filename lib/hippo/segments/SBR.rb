@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'SBR'
 
-    field :name                 => 'PayerResponsibilitySequenceNumberCode'
+    field :name                 => 'PayerResponsibilitySequenceNumberCode',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 1138
 
-    field :name                 => 'IndividualRelationshipCode'
+    field :name                 => 'IndividualRelationshipCode',
           :sequence             => 02,
           :datatype             => :list,
           :minimum              => 2,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1069
 
-    field :name                 => 'ReferenceIdentification'
+    field :name                 => 'ReferenceIdentification',
           :sequence             => 03,
           :datatype             => :string,
           :minimum              => 1,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 127
 
-    field :name                 => 'Name'
+    field :name                 => 'Name',
           :sequence             => 04,
           :datatype             => :string,
           :minimum              => 1,
@@ -35,7 +35,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 93
 
-    field :name                 => 'InsuranceTypeCode'
+    field :name                 => 'InsuranceTypeCode',
           :sequence             => 05,
           :datatype             => :list,
           :minimum              => 1,
@@ -43,7 +43,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1336
 
-    field :name                 => 'CoordinationOfBenefitsCode'
+    field :name                 => 'CoordinationOfBenefitsCode',
           :sequence             => 06,
           :datatype             => :list,
           :minimum              => 1,
@@ -51,7 +51,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1143
 
-    field :name                 => 'YesNoConditionOrResponseCode'
+    field :name                 => 'YesNoConditionOrResponseCode',
           :sequence             => 07,
           :datatype             => :list,
           :minimum              => 1,
@@ -59,7 +59,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 1073
 
-    field :name                 => 'EmploymentStatusCode'
+    field :name                 => 'EmploymentStatusCode',
           :sequence             => 08,
           :datatype             => :list,
           :minimum              => 2,
@@ -67,7 +67,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 584
 
-    field :name                 => 'ClaimFilingIndicatorCode'
+    field :name                 => 'ClaimFilingIndicatorCode',
           :sequence             => 09,
           :datatype             => :list,
           :minimum              => 1,

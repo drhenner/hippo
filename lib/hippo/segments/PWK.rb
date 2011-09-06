@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'PWK'
 
-    field :name                 => 'ReportTypeCode'
+    field :name                 => 'ReportTypeCode',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 2,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 755
 
-    field :name                 => 'ReportTransmissionCode'
+    field :name                 => 'ReportTransmissionCode',
           :sequence             => 02,
           :datatype             => :list,
           :minimum              => 1,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 756
 
-    field :name                 => 'ReportCopiesNeeded'
+    field :name                 => 'ReportCopiesNeeded',
           :sequence             => 03,
           :datatype             => :numeric,
           :decimal              => 0,
@@ -28,7 +28,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 757
 
-    field :name                 => 'EntityIdentifierCode'
+    field :name                 => 'EntityIdentifierCode',
           :sequence             => 04,
           :datatype             => :list,
           :minimum              => 2,
@@ -36,7 +36,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 98
 
-    field :name                 => 'IdentificationCodeQualifier'
+    field :name                 => 'IdentificationCodeQualifier',
           :sequence             => 05,
           :datatype             => :list,
           :minimum              => 1,
@@ -44,7 +44,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 66
 
-    field :name                 => 'IdentificationCode'
+    field :name                 => 'IdentificationCode',
           :sequence             => 06,
           :datatype             => :string,
           :minimum              => 2,
@@ -52,7 +52,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 67
 
-    field :name                 => 'Description'
+    field :name                 => 'Description',
           :sequence             => 07,
           :datatype             => :string,
           :minimum              => 1,
@@ -62,7 +62,7 @@ module Hippo::Segments
 
     composite_field 'ActionsIndicated' do
 
-      field :name                 => 'PaperworkReportActionCode'
+      field :name                 => 'PaperworkReportActionCode',
             :sequence             => 01,
             :datatype             => :list,
             :minimum              => 1,
@@ -70,7 +70,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 704
 
-      field :name                 => 'PaperworkReportActionCode'
+      field :name                 => 'PaperworkReportActionCode',
             :sequence             => 02,
             :datatype             => :list,
             :minimum              => 1,
@@ -78,7 +78,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 704
 
-      field :name                 => 'PaperworkReportActionCode'
+      field :name                 => 'PaperworkReportActionCode',
             :sequence             => 03,
             :datatype             => :list,
             :minimum              => 1,
@@ -86,7 +86,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 704
 
-      field :name                 => 'PaperworkReportActionCode'
+      field :name                 => 'PaperworkReportActionCode',
             :sequence             => 04,
             :datatype             => :list,
             :minimum              => 1,
@@ -94,7 +94,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 704
 
-      field :name                 => 'PaperworkReportActionCode'
+      field :name                 => 'PaperworkReportActionCode',
             :sequence             => 05,
             :datatype             => :list,
             :minimum              => 1,
@@ -104,7 +104,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'RequestCategoryCode'
+    field :name                 => 'RequestCategoryCode',
           :sequence             => 09,
           :datatype             => :list,
           :minimum              => 1,

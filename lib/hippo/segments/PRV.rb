@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'PRV'
 
-    field :name                 => 'ProviderCode'
+    field :name                 => 'ProviderCode',
           :sequence             => 01,
           :datatype             => :list,
           :minimum              => 1,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => true,
           :data_element_number  => 1221
 
-    field :name                 => 'ReferenceIdentificationQualifier'
+    field :name                 => 'ReferenceIdentificationQualifier',
           :sequence             => 02,
           :datatype             => :list,
           :minimum              => 2,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 128
 
-    field :name                 => 'ReferenceIdentification'
+    field :name                 => 'ReferenceIdentification',
           :sequence             => 03,
           :datatype             => :string,
           :minimum              => 1,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 127
 
-    field :name                 => 'StateOrProvinceCode'
+    field :name                 => 'StateOrProvinceCode',
           :sequence             => 04,
           :datatype             => :list,
           :minimum              => 2,
@@ -37,7 +37,7 @@ module Hippo::Segments
 
     composite_field 'ProviderSpecialtyInformation' do
 
-      field :name                 => 'ProviderSpecialtyCode'
+      field :name                 => 'ProviderSpecialtyCode',
             :sequence             => 01,
             :datatype             => :string,
             :minimum              => 1,
@@ -45,7 +45,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 1222
 
-      field :name                 => 'AgencyQualifierCode'
+      field :name                 => 'AgencyQualifierCode',
             :sequence             => 02,
             :datatype             => :list,
             :minimum              => 2,
@@ -53,7 +53,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 559
 
-      field :name                 => 'YesNoConditionOrResponseCode'
+      field :name                 => 'YesNoConditionOrResponseCode',
             :sequence             => 03,
             :datatype             => :list,
             :minimum              => 1,
@@ -63,7 +63,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'ProviderOrganizationCode'
+    field :name                 => 'ProviderOrganizationCode',
           :sequence             => 06,
           :datatype             => :list,
           :minimum              => 3,

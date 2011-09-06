@@ -5,7 +5,7 @@ module Hippo::Segments
 
     composite_field 'HealthCareClaimStatus' do
 
-      field :name                 => 'IndustryCode'
+      field :name                 => 'IndustryCode',
             :sequence             => 01,
             :datatype             => :string,
             :minimum              => 1,
@@ -13,7 +13,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 1271
 
-      field :name                 => 'IndustryCode'
+      field :name                 => 'IndustryCode',
             :sequence             => 02,
             :datatype             => :string,
             :minimum              => 1,
@@ -21,7 +21,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 1271
 
-      field :name                 => 'EntityIdentifierCode'
+      field :name                 => 'EntityIdentifierCode',
             :sequence             => 03,
             :datatype             => :list,
             :minimum              => 2,
@@ -29,7 +29,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 98
 
-      field :name                 => 'CodeListQualifierCode'
+      field :name                 => 'CodeListQualifierCode',
             :sequence             => 04,
             :datatype             => :list,
             :minimum              => 1,
@@ -39,7 +39,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'Date'
+    field :name                 => 'Date',
           :sequence             => 02,
           :datatype             => :date,
           :minimum              => 8,
@@ -47,7 +47,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 373
 
-    field :name                 => 'ActionCode'
+    field :name                 => 'ActionCode',
           :sequence             => 03,
           :datatype             => :list,
           :minimum              => 1,
@@ -55,7 +55,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 306
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 04,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -63,7 +63,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 782
 
-    field :name                 => 'MonetaryAmount'
+    field :name                 => 'MonetaryAmount',
           :sequence             => 05,
           :datatype             => :numeric,
           :minimum              => 1,
@@ -71,7 +71,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 782
 
-    field :name                 => 'Date'
+    field :name                 => 'Date',
           :sequence             => 06,
           :datatype             => :date,
           :minimum              => 8,
@@ -79,7 +79,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 373
 
-    field :name                 => 'PaymentMethodCode'
+    field :name                 => 'PaymentMethodCode',
           :sequence             => 07,
           :datatype             => :list,
           :minimum              => 3,
@@ -87,7 +87,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 591
 
-    field :name                 => 'Date'
+    field :name                 => 'Date',
           :sequence             => 08,
           :datatype             => :date,
           :minimum              => 8,
@@ -95,7 +95,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 373
 
-    field :name                 => 'CheckNumber'
+    field :name                 => 'CheckNumber',
           :sequence             => 09,
           :datatype             => :string,
           :minimum              => 1,
@@ -105,7 +105,7 @@ module Hippo::Segments
 
     composite_field 'HealthCareClaimStatus' do
 
-      field :name                 => 'IndustryCode'
+      field :name                 => 'IndustryCode',
             :sequence             => 01,
             :datatype             => :string,
             :minimum              => 1,
@@ -113,7 +113,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 1271
 
-      field :name                 => 'IndustryCode'
+      field :name                 => 'IndustryCode',
             :sequence             => 02,
             :datatype             => :string,
             :minimum              => 1,
@@ -121,7 +121,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 1271
 
-      field :name                 => 'EntityIdentifierCode'
+      field :name                 => 'EntityIdentifierCode',
             :sequence             => 03,
             :datatype             => :list,
             :minimum              => 2,
@@ -129,7 +129,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 98
 
-      field :name                 => 'CodeListQualifierCode'
+      field :name                 => 'CodeListQualifierCode',
             :sequence             => 04,
             :datatype             => :list,
             :minimum              => 1,
@@ -141,7 +141,7 @@ module Hippo::Segments
 
     composite_field 'HealthCareClaimStatus' do
 
-      field :name                 => 'IndustryCode'
+      field :name                 => 'IndustryCode',
             :sequence             => 01,
             :datatype             => :string,
             :minimum              => 1,
@@ -149,7 +149,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 1271
 
-      field :name                 => 'IndustryCode'
+      field :name                 => 'IndustryCode',
             :sequence             => 02,
             :datatype             => :string,
             :minimum              => 1,
@@ -157,7 +157,7 @@ module Hippo::Segments
             :required             => true,
             :data_element_number  => 1271
 
-      field :name                 => 'EntityIdentifierCode'
+      field :name                 => 'EntityIdentifierCode',
             :sequence             => 03,
             :datatype             => :list,
             :minimum              => 2,
@@ -165,7 +165,7 @@ module Hippo::Segments
             :required             => false,
             :data_element_number  => 98
 
-      field :name                 => 'CodeListQualifierCode'
+      field :name                 => 'CodeListQualifierCode',
             :sequence             => 04,
             :datatype             => :list,
             :minimum              => 1,
@@ -175,7 +175,7 @@ module Hippo::Segments
 
     end
 
-    field :name                 => 'FreeFormMessageText'
+    field :name                 => 'FreeFormMessageText',
           :sequence             => 12,
           :datatype             => :string,
           :minimum              => 1,

@@ -3,7 +3,7 @@ module Hippo::Segments
 
     segment_identifier 'N4'
 
-    field :name                 => 'CityName'
+    field :name                 => 'CityName',
           :sequence             => 01,
           :datatype             => :string,
           :minimum              => 2,
@@ -11,7 +11,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 19
 
-    field :name                 => 'StateOrProvinceCode'
+    field :name                 => 'StateOrProvinceCode',
           :sequence             => 02,
           :datatype             => :list,
           :minimum              => 2,
@@ -19,7 +19,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 156
 
-    field :name                 => 'PostalCode'
+    field :name                 => 'PostalCode',
           :sequence             => 03,
           :datatype             => :list,
           :minimum              => 3,
@@ -27,7 +27,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 116
 
-    field :name                 => 'CountryCode'
+    field :name                 => 'CountryCode',
           :sequence             => 04,
           :datatype             => :list,
           :minimum              => 2,
@@ -35,7 +35,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 26
 
-    field :name                 => 'LocationQualifier'
+    field :name                 => 'LocationQualifier',
           :sequence             => 05,
           :datatype             => :list,
           :minimum              => 1,
@@ -43,7 +43,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 309
 
-    field :name                 => 'LocationIdentifier'
+    field :name                 => 'LocationIdentifier',
           :sequence             => 06,
           :datatype             => :string,
           :minimum              => 1,
@@ -51,7 +51,7 @@ module Hippo::Segments
           :required             => false,
           :data_element_number  => 310
 
-    field :name                 => 'CountrySubdivisionCode'
+    field :name                 => 'CountrySubdivisionCode',
           :sequence             => 07,
           :datatype             => :list,
           :minimum              => 1,
