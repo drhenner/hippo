@@ -1,24 +1,33 @@
 module Hippo::Segments
-  class CR7 < Base
+  class CR7 < Hippo::Segments::Base
 
-    segment_identifier  'CR7'
+    segment_identifier 'CR7'
 
-    field   :name     => 'DisciplineTypeCode',
-            :datatype => :list,
-            :list     => [ 'AI','MS','OT','PT','SN','ST'],
-            :required => true
+    field :name                 => 'DisciplineTypeCode'
+          :sequence             => 01,
+          :datatype             => :list,
+          :minimum              => 2,
+          :maximum              => 2,
+          :required             => true,
+          :data_element_number  => 921
 
-    field   :name     => 'Number1',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 9,
-            :required => true
+    field :name                 => 'Number'
+          :sequence             => 02,
+          :datatype             => :numeric,
+          :decimal              => 0,
+          :minimum              => 1,
+          :maximum              => 9,
+          :required             => true,
+          :data_element_number  => 1470
 
-    field   :name     => 'Number2',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 9,
-            :required => true
+    field :name                 => 'Number'
+          :sequence             => 03,
+          :datatype             => :numeric,
+          :decimal              => 0,
+          :minimum              => 1,
+          :maximum              => 9,
+          :required             => true,
+          :data_element_number  => 1470
 
   end
 end

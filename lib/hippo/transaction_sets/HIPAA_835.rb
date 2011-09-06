@@ -1,7 +1,7 @@
 module Hippo::TransactionSets
   module HIPAA_835
 
-    autoload :base,      'hippo/transaction_sets/HIPAA_835/base'
+    autoload :Base,      'hippo/transaction_sets/HIPAA_835/base'
     autoload :L1000A,    'hippo/transaction_sets/HIPAA_835/L1000A'
     autoload :L1000B,    'hippo/transaction_sets/HIPAA_835/L1000B'
     autoload :L2000,     'hippo/transaction_sets/HIPAA_835/L2000'

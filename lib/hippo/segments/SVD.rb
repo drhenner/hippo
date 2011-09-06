@@ -1,43 +1,116 @@
 module Hippo::Segments
-  class SVD < Base
+  class SVD < Hippo::Segments::Base
 
-    segment_identifier  'SVD'
+    segment_identifier 'SVD'
 
-    field   :name     => 'IdentificationCode',
-            :datatype => :alpha_numeric,
-            :minimum  => 2,
-            :maximum  => 80,
-            :required => true
+    field :name                 => 'IdentificationCode'
+          :sequence             => 01,
+          :datatype             => :string,
+          :minimum              => 2,
+          :maximum              => 80,
+          :required             => true,
+          :data_element_number  => 67
 
-    field   :name     => 'MonetaryAmount',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 18,
-            :required => true
+    field :name                 => 'MonetaryAmount'
+          :sequence             => 02,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 18,
+          :required             => true,
+          :data_element_number  => 782
 
-    field   :name     => 'CompositeMedicalProcedureIdentifier',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => nil,
-            :required => false
+    composite_field 'CompositeMedicalProcedureIdentifier' do
 
-    field   :name     => 'ProductServiceId',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 48,
-            :required => false
+      field :name                 => 'ProductServiceIdQualifier'
+            :sequence             => 01,
+            :datatype             => :list,
+            :minimum              => 2,
+            :maximum              => 2,
+            :required             => true,
+            :data_element_number  => 235
 
-    field   :name     => 'Quantity',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+      field :name                 => 'ProductServiceId'
+            :sequence             => 02,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 48,
+            :required             => true,
+            :data_element_number  => 234
 
-    field   :name     => 'AssignedNumber',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 6,
-            :required => false
+      field :name                 => 'ProcedureModifier'
+            :sequence             => 03,
+            :datatype             => :string,
+            :minimum              => 2,
+            :maximum              => 2,
+            :required             => false,
+            :data_element_number  => 1339
+
+      field :name                 => 'ProcedureModifier'
+            :sequence             => 04,
+            :datatype             => :string,
+            :minimum              => 2,
+            :maximum              => 2,
+            :required             => false,
+            :data_element_number  => 1339
+
+      field :name                 => 'ProcedureModifier'
+            :sequence             => 05,
+            :datatype             => :string,
+            :minimum              => 2,
+            :maximum              => 2,
+            :required             => false,
+            :data_element_number  => 1339
+
+      field :name                 => 'ProcedureModifier'
+            :sequence             => 06,
+            :datatype             => :string,
+            :minimum              => 2,
+            :maximum              => 2,
+            :required             => false,
+            :data_element_number  => 1339
+
+      field :name                 => 'Description'
+            :sequence             => 07,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 80,
+            :required             => false,
+            :data_element_number  => 352
+
+      field :name                 => 'ProductServiceId'
+            :sequence             => 08,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 48,
+            :required             => false,
+            :data_element_number  => 234
+
+    end
+
+    field :name                 => 'ProductServiceId'
+          :sequence             => 04,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 48,
+          :required             => false,
+          :data_element_number  => 234
+
+    field :name                 => 'Quantity'
+          :sequence             => 05,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
+
+    field :name                 => 'AssignedNumber'
+          :sequence             => 06,
+          :datatype             => :numeric,
+          :decimal              => 0,
+          :minimum              => 1,
+          :maximum              => 6,
+          :required             => false,
+          :data_element_number  => 554
 
   end
 end

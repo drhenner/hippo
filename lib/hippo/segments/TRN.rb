@@ -1,31 +1,39 @@
 module Hippo::Segments
-  class TRN < Base
+  class TRN < Hippo::Segments::Base
 
-    segment_identifier  'TRN'
+    segment_identifier 'TRN'
 
-    field   :name     => 'TraceTypeCode',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 2,
-            :required => true
+    field :name                 => 'TraceTypeCode'
+          :sequence             => 01,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 2,
+          :required             => true,
+          :data_element_number  => 481
 
-    field   :name     => 'ReferenceIdentification1',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 50,
-            :required => true
+    field :name                 => 'ReferenceIdentification'
+          :sequence             => 02,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 50,
+          :required             => true,
+          :data_element_number  => 127
 
-    field   :name     => 'OriginatingCompanyIdentifier',
-            :datatype => :alpha_numeric,
-            :minimum  => 10,
-            :maximum  => 10,
-            :required => false
+    field :name                 => 'OriginatingCompanyIdentifier'
+          :sequence             => 03,
+          :datatype             => :string,
+          :minimum              => 10,
+          :maximum              => 10,
+          :required             => false,
+          :data_element_number  => 509
 
-    field   :name     => 'ReferenceIdentification2',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 50,
-            :required => false
+    field :name                 => 'ReferenceIdentification'
+          :sequence             => 04,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 50,
+          :required             => false,
+          :data_element_number  => 127
 
   end
 end

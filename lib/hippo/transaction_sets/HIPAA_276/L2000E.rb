@@ -4,18 +4,40 @@ module Hippo::TransactionSets
     class L2000E < Hippo::TransactionSets::Base
       loop_name 'L2000E'    #Dependent Level
 
+      #Dependent Level
+      segment Hippo::Segments::HL,
+                :name           => 'Dependent Level',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 100
+
+      #Dependent Demographic Information
       segment Hippo::Segments::DMG,
-                :position       => 6
+                :name           => 'Dependent Demographic Information',
+                :minimum        => 1,
+                :maximum        => 1,
+                :position       => 400
 
       #Dependent Name
       loop    Hippo::TransactionSets::HIPAA_837::L2100E,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => 'QC'},
-                :position       => 7
+                :name           => 'Dependent Name',
+                :identified_by  => {
+                  'NM1.NM101' => 'QC',
+                  'NM1.NM102' => '1'
+                },
+                :minimum        => 1,
+                :maximum        => 1,
+                :position       => 500
 
       #Claim Status Tracking Number
       loop    Hippo::TransactionSets::HIPAA_837::L2200E,
-                :identified_by  => {'CLM' => '*'},
-                :position       => 8
+                :name           => 'Claim Status Tracking Number',
+                :identified_by  => {
+                  'TRN.TRN01' => '1'
+                },
+                :minimum        => 1,
+                :maximum        => nil,
+                :position       => 900
 
     end
   end

@@ -4,15 +4,12 @@ module Hippo::TransactionSets
     class L1000B < Hippo::TransactionSets::Base
       loop_name 'L1000B'    #Receiver Name
 
+      #Receiver Name
       segment Hippo::Segments::NM1,
+                :name           => 'Receiver Name',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 3
-
-      segment Hippo::Segments::PER,
-                :minimum        => 1,
-                :maximum        => 2,
-                :position       => 4
+                :position       => 500
 
     end
   end

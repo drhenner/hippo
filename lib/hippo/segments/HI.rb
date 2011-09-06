@@ -1,79 +1,919 @@
 module Hippo::Segments
-  class HI < Base
+  class HI < Hippo::Segments::Base
 
-    segment_identifier  'HI'
+    segment_identifier 'HI'
 
-    field   :name     => 'HealthCareCodeInformation1',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => nil,
-            :required => true
+    composite_field 'HealthCareCodeInformation' do
 
-    field   :name     => 'HealthCareCodeInformation2',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => nil,
-            :required => false
+      field :name                 => 'CodeListQualifierCode'
+            :sequence             => 01,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 3,
+            :required             => true,
+            :data_element_number  => 1270
 
-    field   :name     => 'HealthCareCodeInformation3',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => nil,
-            :required => false
+      field :name                 => 'IndustryCode'
+            :sequence             => 02,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => true,
+            :data_element_number  => 1271
 
-    field   :name     => 'HealthCareCodeInformation4',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => nil,
-            :required => false
+      field :name                 => 'DateTimePeriodFormatQualifier'
+            :sequence             => 03,
+            :datatype             => :list,
+            :minimum              => 2,
+            :maximum              => 3,
+            :required             => false,
+            :data_element_number  => 1250
 
-    field   :name     => 'HealthCareCodeInformation5',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => nil,
-            :required => false
+      field :name                 => 'DateTimePeriod'
+            :sequence             => 04,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 35,
+            :required             => false,
+            :data_element_number  => 1251
 
-    field   :name     => 'HealthCareCodeInformation6',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => nil,
-            :required => false
+      field :name                 => 'MonetaryAmount'
+            :sequence             => 05,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 18,
+            :required             => false,
+            :data_element_number  => 782
 
-    field   :name     => 'HealthCareCodeInformation7',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => nil,
-            :required => false
+      field :name                 => 'Quantity'
+            :sequence             => 06,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 15,
+            :required             => false,
+            :data_element_number  => 380
 
-    field   :name     => 'HealthCareCodeInformation8',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => nil,
-            :required => false
+      field :name                 => 'VersionIdentifier'
+            :sequence             => 07,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 799
 
-    field   :name     => 'HealthCareCodeInformation9',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => nil,
-            :required => false
+      field :name                 => 'IndustryCode'
+            :sequence             => 08,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 1271
 
-    field   :name     => 'HealthCareCodeInformation10',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => nil,
-            :required => false
+      field :name                 => 'YesNoConditionOrResponseCode'
+            :sequence             => 09,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 1,
+            :required             => false,
+            :data_element_number  => 1073
 
-    field   :name     => 'HealthCareCodeInformation11',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => nil,
-            :required => false
+    end
 
-    field   :name     => 'HealthCareCodeInformation12',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => nil,
-            :required => false
+    composite_field 'HealthCareCodeInformation' do
+
+      field :name                 => 'CodeListQualifierCode'
+            :sequence             => 01,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 3,
+            :required             => true,
+            :data_element_number  => 1270
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 02,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => true,
+            :data_element_number  => 1271
+
+      field :name                 => 'DateTimePeriodFormatQualifier'
+            :sequence             => 03,
+            :datatype             => :list,
+            :minimum              => 2,
+            :maximum              => 3,
+            :required             => false,
+            :data_element_number  => 1250
+
+      field :name                 => 'DateTimePeriod'
+            :sequence             => 04,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 35,
+            :required             => false,
+            :data_element_number  => 1251
+
+      field :name                 => 'MonetaryAmount'
+            :sequence             => 05,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 18,
+            :required             => false,
+            :data_element_number  => 782
+
+      field :name                 => 'Quantity'
+            :sequence             => 06,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 15,
+            :required             => false,
+            :data_element_number  => 380
+
+      field :name                 => 'VersionIdentifier'
+            :sequence             => 07,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 799
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 08,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 1271
+
+      field :name                 => 'YesNoConditionOrResponseCode'
+            :sequence             => 09,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 1,
+            :required             => false,
+            :data_element_number  => 1073
+
+    end
+
+    composite_field 'HealthCareCodeInformation' do
+
+      field :name                 => 'CodeListQualifierCode'
+            :sequence             => 01,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 3,
+            :required             => true,
+            :data_element_number  => 1270
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 02,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => true,
+            :data_element_number  => 1271
+
+      field :name                 => 'DateTimePeriodFormatQualifier'
+            :sequence             => 03,
+            :datatype             => :list,
+            :minimum              => 2,
+            :maximum              => 3,
+            :required             => false,
+            :data_element_number  => 1250
+
+      field :name                 => 'DateTimePeriod'
+            :sequence             => 04,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 35,
+            :required             => false,
+            :data_element_number  => 1251
+
+      field :name                 => 'MonetaryAmount'
+            :sequence             => 05,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 18,
+            :required             => false,
+            :data_element_number  => 782
+
+      field :name                 => 'Quantity'
+            :sequence             => 06,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 15,
+            :required             => false,
+            :data_element_number  => 380
+
+      field :name                 => 'VersionIdentifier'
+            :sequence             => 07,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 799
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 08,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 1271
+
+      field :name                 => 'YesNoConditionOrResponseCode'
+            :sequence             => 09,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 1,
+            :required             => false,
+            :data_element_number  => 1073
+
+    end
+
+    composite_field 'HealthCareCodeInformation' do
+
+      field :name                 => 'CodeListQualifierCode'
+            :sequence             => 01,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 3,
+            :required             => true,
+            :data_element_number  => 1270
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 02,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => true,
+            :data_element_number  => 1271
+
+      field :name                 => 'DateTimePeriodFormatQualifier'
+            :sequence             => 03,
+            :datatype             => :list,
+            :minimum              => 2,
+            :maximum              => 3,
+            :required             => false,
+            :data_element_number  => 1250
+
+      field :name                 => 'DateTimePeriod'
+            :sequence             => 04,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 35,
+            :required             => false,
+            :data_element_number  => 1251
+
+      field :name                 => 'MonetaryAmount'
+            :sequence             => 05,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 18,
+            :required             => false,
+            :data_element_number  => 782
+
+      field :name                 => 'Quantity'
+            :sequence             => 06,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 15,
+            :required             => false,
+            :data_element_number  => 380
+
+      field :name                 => 'VersionIdentifier'
+            :sequence             => 07,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 799
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 08,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 1271
+
+      field :name                 => 'YesNoConditionOrResponseCode'
+            :sequence             => 09,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 1,
+            :required             => false,
+            :data_element_number  => 1073
+
+    end
+
+    composite_field 'HealthCareCodeInformation' do
+
+      field :name                 => 'CodeListQualifierCode'
+            :sequence             => 01,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 3,
+            :required             => true,
+            :data_element_number  => 1270
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 02,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => true,
+            :data_element_number  => 1271
+
+      field :name                 => 'DateTimePeriodFormatQualifier'
+            :sequence             => 03,
+            :datatype             => :list,
+            :minimum              => 2,
+            :maximum              => 3,
+            :required             => false,
+            :data_element_number  => 1250
+
+      field :name                 => 'DateTimePeriod'
+            :sequence             => 04,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 35,
+            :required             => false,
+            :data_element_number  => 1251
+
+      field :name                 => 'MonetaryAmount'
+            :sequence             => 05,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 18,
+            :required             => false,
+            :data_element_number  => 782
+
+      field :name                 => 'Quantity'
+            :sequence             => 06,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 15,
+            :required             => false,
+            :data_element_number  => 380
+
+      field :name                 => 'VersionIdentifier'
+            :sequence             => 07,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 799
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 08,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 1271
+
+      field :name                 => 'YesNoConditionOrResponseCode'
+            :sequence             => 09,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 1,
+            :required             => false,
+            :data_element_number  => 1073
+
+    end
+
+    composite_field 'HealthCareCodeInformation' do
+
+      field :name                 => 'CodeListQualifierCode'
+            :sequence             => 01,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 3,
+            :required             => true,
+            :data_element_number  => 1270
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 02,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => true,
+            :data_element_number  => 1271
+
+      field :name                 => 'DateTimePeriodFormatQualifier'
+            :sequence             => 03,
+            :datatype             => :list,
+            :minimum              => 2,
+            :maximum              => 3,
+            :required             => false,
+            :data_element_number  => 1250
+
+      field :name                 => 'DateTimePeriod'
+            :sequence             => 04,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 35,
+            :required             => false,
+            :data_element_number  => 1251
+
+      field :name                 => 'MonetaryAmount'
+            :sequence             => 05,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 18,
+            :required             => false,
+            :data_element_number  => 782
+
+      field :name                 => 'Quantity'
+            :sequence             => 06,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 15,
+            :required             => false,
+            :data_element_number  => 380
+
+      field :name                 => 'VersionIdentifier'
+            :sequence             => 07,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 799
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 08,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 1271
+
+      field :name                 => 'YesNoConditionOrResponseCode'
+            :sequence             => 09,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 1,
+            :required             => false,
+            :data_element_number  => 1073
+
+    end
+
+    composite_field 'HealthCareCodeInformation' do
+
+      field :name                 => 'CodeListQualifierCode'
+            :sequence             => 01,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 3,
+            :required             => true,
+            :data_element_number  => 1270
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 02,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => true,
+            :data_element_number  => 1271
+
+      field :name                 => 'DateTimePeriodFormatQualifier'
+            :sequence             => 03,
+            :datatype             => :list,
+            :minimum              => 2,
+            :maximum              => 3,
+            :required             => false,
+            :data_element_number  => 1250
+
+      field :name                 => 'DateTimePeriod'
+            :sequence             => 04,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 35,
+            :required             => false,
+            :data_element_number  => 1251
+
+      field :name                 => 'MonetaryAmount'
+            :sequence             => 05,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 18,
+            :required             => false,
+            :data_element_number  => 782
+
+      field :name                 => 'Quantity'
+            :sequence             => 06,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 15,
+            :required             => false,
+            :data_element_number  => 380
+
+      field :name                 => 'VersionIdentifier'
+            :sequence             => 07,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 799
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 08,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 1271
+
+      field :name                 => 'YesNoConditionOrResponseCode'
+            :sequence             => 09,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 1,
+            :required             => false,
+            :data_element_number  => 1073
+
+    end
+
+    composite_field 'HealthCareCodeInformation' do
+
+      field :name                 => 'CodeListQualifierCode'
+            :sequence             => 01,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 3,
+            :required             => true,
+            :data_element_number  => 1270
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 02,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => true,
+            :data_element_number  => 1271
+
+      field :name                 => 'DateTimePeriodFormatQualifier'
+            :sequence             => 03,
+            :datatype             => :list,
+            :minimum              => 2,
+            :maximum              => 3,
+            :required             => false,
+            :data_element_number  => 1250
+
+      field :name                 => 'DateTimePeriod'
+            :sequence             => 04,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 35,
+            :required             => false,
+            :data_element_number  => 1251
+
+      field :name                 => 'MonetaryAmount'
+            :sequence             => 05,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 18,
+            :required             => false,
+            :data_element_number  => 782
+
+      field :name                 => 'Quantity'
+            :sequence             => 06,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 15,
+            :required             => false,
+            :data_element_number  => 380
+
+      field :name                 => 'VersionIdentifier'
+            :sequence             => 07,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 799
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 08,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 1271
+
+      field :name                 => 'YesNoConditionOrResponseCode'
+            :sequence             => 09,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 1,
+            :required             => false,
+            :data_element_number  => 1073
+
+    end
+
+    composite_field 'HealthCareCodeInformation' do
+
+      field :name                 => 'CodeListQualifierCode'
+            :sequence             => 01,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 3,
+            :required             => true,
+            :data_element_number  => 1270
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 02,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => true,
+            :data_element_number  => 1271
+
+      field :name                 => 'DateTimePeriodFormatQualifier'
+            :sequence             => 03,
+            :datatype             => :list,
+            :minimum              => 2,
+            :maximum              => 3,
+            :required             => false,
+            :data_element_number  => 1250
+
+      field :name                 => 'DateTimePeriod'
+            :sequence             => 04,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 35,
+            :required             => false,
+            :data_element_number  => 1251
+
+      field :name                 => 'MonetaryAmount'
+            :sequence             => 05,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 18,
+            :required             => false,
+            :data_element_number  => 782
+
+      field :name                 => 'Quantity'
+            :sequence             => 06,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 15,
+            :required             => false,
+            :data_element_number  => 380
+
+      field :name                 => 'VersionIdentifier'
+            :sequence             => 07,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 799
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 08,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 1271
+
+      field :name                 => 'YesNoConditionOrResponseCode'
+            :sequence             => 09,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 1,
+            :required             => false,
+            :data_element_number  => 1073
+
+    end
+
+    composite_field 'HealthCareCodeInformation' do
+
+      field :name                 => 'CodeListQualifierCode'
+            :sequence             => 01,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 3,
+            :required             => true,
+            :data_element_number  => 1270
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 02,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => true,
+            :data_element_number  => 1271
+
+      field :name                 => 'DateTimePeriodFormatQualifier'
+            :sequence             => 03,
+            :datatype             => :list,
+            :minimum              => 2,
+            :maximum              => 3,
+            :required             => false,
+            :data_element_number  => 1250
+
+      field :name                 => 'DateTimePeriod'
+            :sequence             => 04,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 35,
+            :required             => false,
+            :data_element_number  => 1251
+
+      field :name                 => 'MonetaryAmount'
+            :sequence             => 05,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 18,
+            :required             => false,
+            :data_element_number  => 782
+
+      field :name                 => 'Quantity'
+            :sequence             => 06,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 15,
+            :required             => false,
+            :data_element_number  => 380
+
+      field :name                 => 'VersionIdentifier'
+            :sequence             => 07,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 799
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 08,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 1271
+
+      field :name                 => 'YesNoConditionOrResponseCode'
+            :sequence             => 09,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 1,
+            :required             => false,
+            :data_element_number  => 1073
+
+    end
+
+    composite_field 'HealthCareCodeInformation' do
+
+      field :name                 => 'CodeListQualifierCode'
+            :sequence             => 01,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 3,
+            :required             => true,
+            :data_element_number  => 1270
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 02,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => true,
+            :data_element_number  => 1271
+
+      field :name                 => 'DateTimePeriodFormatQualifier'
+            :sequence             => 03,
+            :datatype             => :list,
+            :minimum              => 2,
+            :maximum              => 3,
+            :required             => false,
+            :data_element_number  => 1250
+
+      field :name                 => 'DateTimePeriod'
+            :sequence             => 04,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 35,
+            :required             => false,
+            :data_element_number  => 1251
+
+      field :name                 => 'MonetaryAmount'
+            :sequence             => 05,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 18,
+            :required             => false,
+            :data_element_number  => 782
+
+      field :name                 => 'Quantity'
+            :sequence             => 06,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 15,
+            :required             => false,
+            :data_element_number  => 380
+
+      field :name                 => 'VersionIdentifier'
+            :sequence             => 07,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 799
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 08,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 1271
+
+      field :name                 => 'YesNoConditionOrResponseCode'
+            :sequence             => 09,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 1,
+            :required             => false,
+            :data_element_number  => 1073
+
+    end
+
+    composite_field 'HealthCareCodeInformation' do
+
+      field :name                 => 'CodeListQualifierCode'
+            :sequence             => 01,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 3,
+            :required             => true,
+            :data_element_number  => 1270
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 02,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => true,
+            :data_element_number  => 1271
+
+      field :name                 => 'DateTimePeriodFormatQualifier'
+            :sequence             => 03,
+            :datatype             => :list,
+            :minimum              => 2,
+            :maximum              => 3,
+            :required             => false,
+            :data_element_number  => 1250
+
+      field :name                 => 'DateTimePeriod'
+            :sequence             => 04,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 35,
+            :required             => false,
+            :data_element_number  => 1251
+
+      field :name                 => 'MonetaryAmount'
+            :sequence             => 05,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 18,
+            :required             => false,
+            :data_element_number  => 782
+
+      field :name                 => 'Quantity'
+            :sequence             => 06,
+            :datatype             => :numeric,
+            :minimum              => 1,
+            :maximum              => 15,
+            :required             => false,
+            :data_element_number  => 380
+
+      field :name                 => 'VersionIdentifier'
+            :sequence             => 07,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 799
+
+      field :name                 => 'IndustryCode'
+            :sequence             => 08,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 30,
+            :required             => false,
+            :data_element_number  => 1271
+
+      field :name                 => 'YesNoConditionOrResponseCode'
+            :sequence             => 09,
+            :datatype             => :list,
+            :minimum              => 1,
+            :maximum              => 1,
+            :required             => false,
+            :data_element_number  => 1073
+
+    end
 
   end
 end

@@ -4,30 +4,54 @@ module Hippo::TransactionSets
     class L1000A < Hippo::TransactionSets::Base
       loop_name 'L1000A'    #Payer Identification
 
+      #Payer Identification
       segment Hippo::Segments::N1,
+                :name           => 'Payer Identification',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 6
+                :position       => 800
 
+      #Payer Address
       segment Hippo::Segments::N3,
+                :name           => 'Payer Address',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 7
+                :position       => 1000
 
+      #Payer City, State, ZIP Code
       segment Hippo::Segments::N4,
+                :name           => 'Payer City, State, ZIP Code',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 8
+                :position       => 1100
 
+      #Additional Payer Identification
       segment Hippo::Segments::REF,
+                :name           => 'Additional Payer Identification',
                 :minimum        => 0,
                 :maximum        => 4,
-                :position       => 9
+                :position       => 1200
 
+      #Payer Business Contact Information
       segment Hippo::Segments::PER,
+                :name           => 'Payer Business Contact Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 10
+                :position       => 1300
+
+      #Payer Technical Contact Information
+      segment Hippo::Segments::PER,
+                :name           => 'Payer Technical Contact Information',
+                :minimum        => 1,
+                :maximum        => >1,
+                :position       => 1303
+
+      #Payer WEB Site
+      segment Hippo::Segments::PER,
+                :name           => 'Payer WEB Site',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1305
 
     end
   end

@@ -1,101 +1,211 @@
 module Hippo::Segments
-  class SV4 < Base
+  class SV4 < Hippo::Segments::Base
 
-    segment_identifier  'SV4'
+    segment_identifier 'SV4'
 
-    field   :name     => 'ReferenceIdentification1',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 50,
-            :required => true
+    field :name                 => 'ReferenceIdentification'
+          :sequence             => 01,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 50,
+          :required             => true,
+          :data_element_number  => 127
 
-    field   :name     => 'CompositeMedicalProcedureIdentifier',
-            :datatype => :alpha_numeric,
-            :minimum  => 0,
-            :maximum  => inf,
-            :required => false
+    composite_field 'CompositeMedicalProcedureIdentifier' do
 
-    field   :name     => 'ReferenceIdentification2',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 50,
-            :required => false
+      field :name                 => 'ProductServiceIdQualifier'
+            :sequence             => 01,
+            :datatype             => :list,
+            :minimum              => 2,
+            :maximum              => 2,
+            :required             => true,
+            :data_element_number  => 235
 
-    field   :name     => 'YesNoConditionOrResponseCode1',
-            :datatype => :list,
-            :list     => [ 'N','U','W','Y']
-            :required => false
+      field :name                 => 'ProductServiceId'
+            :sequence             => 02,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 48,
+            :required             => true,
+            :data_element_number  => 234
 
-    field   :name     => 'DispenseAsWrittenCode',
-            :datatype => :list,
-            :list     => [ '0','1','2','3','4','5','6','7','8','9']
-            :required => false
+      field :name                 => 'ProcedureModifier'
+            :sequence             => 03,
+            :datatype             => :string,
+            :minimum              => 2,
+            :maximum              => 2,
+            :required             => false,
+            :data_element_number  => 1339
 
-    field   :name     => 'LevelOfServiceCode',
-            :datatype => :list,
-            :list     => [ 'I','L','R','U','00','01','02','03','04','05','06','09','10','11','F1','F2','NBC']
-            :required => false
+      field :name                 => 'ProcedureModifier'
+            :sequence             => 04,
+            :datatype             => :string,
+            :minimum              => 2,
+            :maximum              => 2,
+            :required             => false,
+            :data_element_number  => 1339
 
-    field   :name     => 'PrescriptionOriginCode',
-            :datatype => :list,
-            :list     => [ '0','1','2','3']
-            :required => false
+      field :name                 => 'ProcedureModifier'
+            :sequence             => 05,
+            :datatype             => :string,
+            :minimum              => 2,
+            :maximum              => 2,
+            :required             => false,
+            :data_element_number  => 1339
 
-    field   :name     => 'Description',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 80,
-            :required => false
+      field :name                 => 'ProcedureModifier'
+            :sequence             => 06,
+            :datatype             => :string,
+            :minimum              => 2,
+            :maximum              => 2,
+            :required             => false,
+            :data_element_number  => 1339
 
-    field   :name     => 'YesNoConditionOrResponseCode2',
-            :datatype => :list,
-            :list     => [ 'N','U','W','Y']
-            :required => false
+      field :name                 => 'Description'
+            :sequence             => 07,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 80,
+            :required             => false,
+            :data_element_number  => 352
 
-    field   :name     => 'YesNoConditionOrResponseCode3',
-            :datatype => :list,
-            :list     => [ 'N','U','W','Y']
-            :required => false
+      field :name                 => 'ProductServiceId'
+            :sequence             => 08,
+            :datatype             => :string,
+            :minimum              => 1,
+            :maximum              => 48,
+            :required             => false,
+            :data_element_number  => 234
 
-    field   :name     => 'UnitDoseCode',
-            :datatype => :list,
-            :list     => [ '0','1','2','3','4','5','6','7','8','Z']
-            :required => false
+    end
 
-    field   :name     => 'BasisOfCostDeterminationCode',
-            :datatype => :list,
-            :list     => [ '0','1','2','3','4','5','6','7','8','9']
-            :required => false
+    field :name                 => 'ReferenceIdentification'
+          :sequence             => 03,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 50,
+          :required             => false,
+          :data_element_number  => 127
 
-    field   :name     => 'BasisOfDaysSupplyDeterminationCode',
-            :datatype => :list,
-            :list     => [ '0','1','2','3']
-            :required => false
+    field :name                 => 'YesNoConditionOrResponseCode'
+          :sequence             => 04,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1073
 
-    field   :name     => 'DosageFormCode',
-            :datatype => :list,
-            :list     => [ '01','02','03','04','05','06','07','10','11','12','13','14','15','16','20','21','22','23','24','25','30','31','32','33','34','40','41','42','43','50','51','52','53','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99']
-            :required => false
+    field :name                 => 'DispenseAsWrittenCode'
+          :sequence             => 05,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1329
 
-    field   :name     => 'CopayStatusCode',
-            :datatype => :list,
-            :list     => [ '0','1','2','3']
-            :required => false
+    field :name                 => 'LevelOfServiceCode'
+          :sequence             => 06,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 3,
+          :required             => false,
+          :data_element_number  => 1338
 
-    field   :name     => 'PatientLocationCode',
-            :datatype => :list,
-            :list     => [ 'A','B','C','D','E','F','G','H','L','M','O','P','R','S','T']
-            :required => false
+    field :name                 => 'PrescriptionOriginCode'
+          :sequence             => 07,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1356
 
-    field   :name     => 'LevelOfCareCode',
-            :datatype => :list,
-            :list     => [ '1','2','3','4','5','6','7','8']
-            :required => false
+    field :name                 => 'Description'
+          :sequence             => 08,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 80,
+          :required             => false,
+          :data_element_number  => 352
 
-    field   :name     => 'PriorAuthorizationTypeCode',
-            :datatype => :list,
-            :list     => [ '0','1','2','3','4','5','6','7']
-            :required => false
+    field :name                 => 'YesNoConditionOrResponseCode'
+          :sequence             => 09,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1073
+
+    field :name                 => 'YesNoConditionOrResponseCode'
+          :sequence             => 10,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1073
+
+    field :name                 => 'UnitDoseCode'
+          :sequence             => 11,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1370
+
+    field :name                 => 'BasisOfCostDeterminationCode'
+          :sequence             => 12,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 2,
+          :required             => false,
+          :data_element_number  => 1319
+
+    field :name                 => 'BasisOfDaysSupplyDeterminationCode'
+          :sequence             => 13,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1320
+
+    field :name                 => 'DosageFormCode'
+          :sequence             => 14,
+          :datatype             => :list,
+          :minimum              => 2,
+          :maximum              => 2,
+          :required             => false,
+          :data_element_number  => 1330
+
+    field :name                 => 'CopayStatusCode'
+          :sequence             => 15,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1327
+
+    field :name                 => 'PatientLocationCode'
+          :sequence             => 16,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1384
+
+    field :name                 => 'LevelOfCareCode'
+          :sequence             => 17,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1337
+
+    field :name                 => 'PriorAuthorizationTypeCode'
+          :sequence             => 18,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1357
 
   end
 end

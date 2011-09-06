@@ -3,50 +3,81 @@ module Hippo::TransactionSets
 
     class Base < Hippo::TransactionSets::Base
 
-      segment Hippo::Segments::BHT,
+      #Transaction Set Header
+      segment Hippo::Segments::ST,
+                :name           => 'Transaction Set Header',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 0
+                :position       => 50
 
-      segment Hippo::Segments::REF,
+      #Beginning of Hierarchical Transaction
+      segment Hippo::Segments::BHT,
+                :name           => 'Beginning of Hierarchical Transaction',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 1
+                :position       => 100
 
       #Submitter Name
       loop    Hippo::TransactionSets::HIPAA_837::L1000A,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => '41'},
+                :name           => 'Submitter Name',
+                :identified_by  => {
+                  'NM1.NM101' => '41',
+                  'NM1.NM108' => '46'
+                },
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 2
+                :position       => 200
 
       #Receiver Name
       loop    Hippo::TransactionSets::HIPAA_837::L1000B,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => '40'},
+                :name           => 'Receiver Name',
+                :identified_by  => {
+                  'NM1.NM101' => '40',
+                  'NM1.NM102' => '2',
+                  'NM1.NM108' => '46'
+                },
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 3
+                :position       => 500
 
       #Billing Provider Hierarchical Level
       loop    Hippo::TransactionSets::HIPAA_837::L2000A,
-                :identified_by  => {'HL.HierarchicalLevelCode' => '20'},
+                :name           => 'Billing Provider Hierarchical Level',
+                :identified_by  => {
+                  'HL.HL03' => '20',
+                  'HL.HL04' => '1'
+                },
                 :minimum        => 1,
                 :maximum        => nil,
-                :position       => 4
+                :position       => 10
 
       #Subscriber Hierarchical Level
       loop    Hippo::TransactionSets::HIPAA_837::L2000B,
-                :identified_by  => {'HL.HierarchicalLevelCode' => '22'},
+                :name           => 'Subscriber Hierarchical Level',
+                :identified_by  => {
+                  'HL.HL03' => '22'
+                },
                 :minimum        => 1,
                 :maximum        => nil,
-                :position       => 5
+                :position       => 10
 
-      #Patient Hierarchical Loop
+      #Patient Hierarchical Level
       loop    Hippo::TransactionSets::HIPAA_837::L2000C,
-                :identified_by  => {'HL.HierarchicalLevelCode' => '23'},
+                :name           => 'Patient Hierarchical Level',
+                :identified_by  => {
+                  'HL.HL03' => '23',
+                  'HL.HL04' => '0'
+                },
                 :minimum        => 0,
                 :maximum        => nil,
-                :position       => 6
+                :position       => 10
+
+      #Transaction Set Trailer
+      segment Hippo::Segments::SE,
+                :name           => 'Transaction Set Trailer',
+                :minimum        => 1,
+                :maximum        => 1,
+                :position       => 5550
 
     end
   end

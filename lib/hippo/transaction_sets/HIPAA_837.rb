@@ -14,7 +14,6 @@ module Hippo::TransactionSets
     autoload :L2010BB,   'hippo/transaction_sets/HIPAA_837/L2010BB'
     autoload :L2010CA,   'hippo/transaction_sets/HIPAA_837/L2010CA'
     autoload :L2300,     'hippo/transaction_sets/HIPAA_837/L2300'
-    autoload :L2305,     'hippo/transaction_sets/HIPAA_837/L2305'
     autoload :L2310A,    'hippo/transaction_sets/HIPAA_837/L2310A'
     autoload :L2310B,    'hippo/transaction_sets/HIPAA_837/L2310B'
     autoload :L2310C,    'hippo/transaction_sets/HIPAA_837/L2310C'

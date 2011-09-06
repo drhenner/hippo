@@ -1,88 +1,119 @@
 module Hippo::Segments
-  class CLP < Base
+  class CLP < Hippo::Segments::Base
 
-    segment_identifier  'CLP'
+    segment_identifier 'CLP'
 
-    field   :name     => 'ClaimSubmittersIdentifier',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 38,
-            :required => true
+    field :name                 => 'ClaimSubmitterSIdentifier'
+          :sequence             => 01,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 38,
+          :required             => true,
+          :data_element_number  => 1028
 
-    field   :name     => 'ClaimStatusCode',
-            :datatype => :list,
-            :list     => [ '1','2','3','4','5','6','7','8','9','I','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','AD','AP','CC','CL','CP','RA','RB','RC','RD','RO'],
-            :required => true
+    field :name                 => 'ClaimStatusCode'
+          :sequence             => 02,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 2,
+          :required             => true,
+          :data_element_number  => 1029
 
-    field   :name     => 'MonetaryAmount1',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 18,
-            :required => true
+    field :name                 => 'MonetaryAmount'
+          :sequence             => 03,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 18,
+          :required             => true,
+          :data_element_number  => 782
 
-    field   :name     => 'MonetaryAmount2',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 18,
-            :required => true
+    field :name                 => 'MonetaryAmount'
+          :sequence             => 04,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 18,
+          :required             => true,
+          :data_element_number  => 782
 
-    field   :name     => 'MonetaryAmount3',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 18,
-            :required => false
+    field :name                 => 'MonetaryAmount'
+          :sequence             => 05,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 18,
+          :required             => false,
+          :data_element_number  => 782
 
-    field   :name     => 'ClaimFilingIndicatorCode',
-            :datatype => :list,
-            :list     => [ '01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','31','32','33','AM','BL','CH','CI','CN','DS','FI','HM','LI','LM','MA','MB','MC','MH','OF','SA','TV','VA','WB','WC','WD','WE','ZZ'],
-            :required => false
+    field :name                 => 'ClaimFilingIndicatorCode'
+          :sequence             => 06,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 2,
+          :required             => false,
+          :data_element_number  => 1032
 
-    field   :name     => 'ReferenceIdentification',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 50,
-            :required => false
+    field :name                 => 'ReferenceIdentification'
+          :sequence             => 07,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 50,
+          :required             => false,
+          :data_element_number  => 127
 
-    field   :name     => 'FacilityCodeValue',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 2,
-            :required => false
+    field :name                 => 'FacilityCodeValue'
+          :sequence             => 08,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 2,
+          :required             => false,
+          :data_element_number  => 1331
 
-    field   :name     => 'ClaimFrequencyTypeCode',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 1,
-            :required => false
+    field :name                 => 'ClaimFrequencyTypeCode'
+          :sequence             => 09,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1325
 
-    field   :name     => 'PatientStatusCode',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 2,
-            :required => false
+    field :name                 => 'PatientStatusCode'
+          :sequence             => 10,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 2,
+          :required             => false,
+          :data_element_number  => 1352
 
-    field   :name     => 'DiagnosisRelatedGroup',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 4,
-            :required => false
+    field :name                 => 'DiagnosisRelatedGroupDrgCode'
+          :sequence             => 11,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 4,
+          :required             => false,
+          :data_element_number  => 1354
 
-    field   :name     => 'Quantity',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+    field :name                 => 'Quantity'
+          :sequence             => 12,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
 
-    field   :name     => 'Percent',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 10,
-            :required => false
+    field :name                 => 'PercentageAsDecimal'
+          :sequence             => 13,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 10,
+          :required             => false,
+          :data_element_number  => 954
 
-    field   :name     => 'YesNoConditionOrResponseCode',
-            :datatype => :list,
-            :list     => [ 'N','U','W','Y'],
-            :required => false
+    field :name                 => 'YesNoConditionOrResponseCode'
+          :sequence             => 14,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1073
 
   end
 end

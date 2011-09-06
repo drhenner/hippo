@@ -4,41 +4,58 @@ module Hippo::TransactionSets
     class L2000A < Hippo::TransactionSets::Base
       loop_name 'L2000A'    #Billing Provider Hierarchical Level
 
+      #Billing Provider Hierarchical Level
       segment Hippo::Segments::HL,
+                :name           => 'Billing Provider Hierarchical Level',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 4
+                :position       => 10
 
+      #Billing Provider Specialty Information
       segment Hippo::Segments::PRV,
+                :name           => 'Billing Provider Specialty Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 5
+                :position       => 30
 
+      #Foreign Currency Information
       segment Hippo::Segments::CUR,
+                :name           => 'Foreign Currency Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 6
+                :position       => 100
 
       #Billing Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2010AA,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => '85'},
+                :name           => 'Billing Provider Name',
+                :identified_by  => {
+                  'NM1.NM101' => '85',
+                  'NM1.NM108' => 'XX'
+                },
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 7
+                :position       => 150
 
       #Pay-to Address Name
       loop    Hippo::TransactionSets::HIPAA_837::L2010AB,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => '87'},
+                :name           => 'Pay-to Address Name',
+                :identified_by  => {
+                  'NM1.NM101' => '87'
+                },
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 8
+                :position       => 150
 
-      #Pay-to Plan Name
+      #Pay-To Plan Name
       loop    Hippo::TransactionSets::HIPAA_837::L2010AC,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => 'PE'},
+                :name           => 'Pay-To Plan Name',
+                :identified_by  => {
+                  'NM1.NM101' => 'PE',
+                  'NM1.NM102' => '2'
+                },
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 9
+                :position       => 450
 
     end
   end

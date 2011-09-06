@@ -1,120 +1,159 @@
 module Hippo::Segments
-  class CAS < Base
+  class CAS < Hippo::Segments::Base
 
-    segment_identifier  'CAS'
+    segment_identifier 'CAS'
 
-    field   :name     => 'ClaimAdjustmentGroupCode',
-            :datatype => :list,
-            :list     => [ 'CO','CR','DE','MA','NC','OA','PI','PR','RR'],
-            :required => true
+    field :name                 => 'ClaimAdjustmentGroupCode'
+          :sequence             => 01,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 2,
+          :required             => true,
+          :data_element_number  => 1033
 
-    field   :name     => 'ClaimAdjustmentReasonCode1',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 5,
-            :required => true
+    field :name                 => 'ClaimAdjustmentReasonCode'
+          :sequence             => 02,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 5,
+          :required             => true,
+          :data_element_number  => 1034
 
-    field   :name     => 'MonetaryAmount1',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 18,
-            :required => true
+    field :name                 => 'MonetaryAmount'
+          :sequence             => 03,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 18,
+          :required             => true,
+          :data_element_number  => 782
 
-    field   :name     => 'Quantity1',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+    field :name                 => 'Quantity'
+          :sequence             => 04,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
 
-    field   :name     => 'ClaimAdjustmentReasonCode2',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 5,
-            :required => false
+    field :name                 => 'ClaimAdjustmentReasonCode'
+          :sequence             => 05,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 5,
+          :required             => false,
+          :data_element_number  => 1034
 
-    field   :name     => 'MonetaryAmount2',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 18,
-            :required => false
+    field :name                 => 'MonetaryAmount'
+          :sequence             => 06,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 18,
+          :required             => false,
+          :data_element_number  => 782
 
-    field   :name     => 'Quantity2',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+    field :name                 => 'Quantity'
+          :sequence             => 07,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
 
-    field   :name     => 'ClaimAdjustmentReasonCode3',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 5,
-            :required => false
+    field :name                 => 'ClaimAdjustmentReasonCode'
+          :sequence             => 08,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 5,
+          :required             => false,
+          :data_element_number  => 1034
 
-    field   :name     => 'MonetaryAmount3',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 18,
-            :required => false
+    field :name                 => 'MonetaryAmount'
+          :sequence             => 09,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 18,
+          :required             => false,
+          :data_element_number  => 782
 
-    field   :name     => 'Quantity3',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+    field :name                 => 'Quantity'
+          :sequence             => 10,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
 
-    field   :name     => 'ClaimAdjustmentReasonCode4',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 5,
-            :required => false
+    field :name                 => 'ClaimAdjustmentReasonCode'
+          :sequence             => 11,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 5,
+          :required             => false,
+          :data_element_number  => 1034
 
-    field   :name     => 'MonetaryAmount4',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 18,
-            :required => false
+    field :name                 => 'MonetaryAmount'
+          :sequence             => 12,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 18,
+          :required             => false,
+          :data_element_number  => 782
 
-    field   :name     => 'Quantity4',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+    field :name                 => 'Quantity'
+          :sequence             => 13,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
 
-    field   :name     => 'ClaimAdjustmentReasonCode5',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 5,
-            :required => false
+    field :name                 => 'ClaimAdjustmentReasonCode'
+          :sequence             => 14,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 5,
+          :required             => false,
+          :data_element_number  => 1034
 
-    field   :name     => 'MonetaryAmount5',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 18,
-            :required => false
+    field :name                 => 'MonetaryAmount'
+          :sequence             => 15,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 18,
+          :required             => false,
+          :data_element_number  => 782
 
-    field   :name     => 'Quantity5',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+    field :name                 => 'Quantity'
+          :sequence             => 16,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
 
-    field   :name     => 'ClaimAdjustmentReasonCode6',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 5,
-            :required => false
+    field :name                 => 'ClaimAdjustmentReasonCode'
+          :sequence             => 17,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 5,
+          :required             => false,
+          :data_element_number  => 1034
 
-    field   :name     => 'MonetaryAmount6',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 18,
-            :required => false
+    field :name                 => 'MonetaryAmount'
+          :sequence             => 18,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 18,
+          :required             => false,
+          :data_element_number  => 782
 
-    field   :name     => 'Quantity6',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+    field :name                 => 'Quantity'
+          :sequence             => 19,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
 
   end
 end

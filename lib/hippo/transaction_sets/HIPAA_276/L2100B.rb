@@ -4,8 +4,12 @@ module Hippo::TransactionSets
     class L2100B < Hippo::TransactionSets::Base
       loop_name 'L2100B'    #Information Receiver Name
 
+      #Information Receiver Name
       segment Hippo::Segments::NM1,
-                :position       => 3
+                :name           => 'Information Receiver Name',
+                :minimum        => 1,
+                :maximum        => 1,
+                :position       => 500
 
     end
   end

@@ -4,342 +4,409 @@ module Hippo::TransactionSets
     class L2300 < Hippo::TransactionSets::Base
       loop_name 'L2300'    #Claim Information
 
+      #Claim Information
       segment Hippo::Segments::CLM,
+                :name           => 'Claim Information',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 8
+                :position       => 1300
 
-
+      #Date - Onset of Current Illness or Symptom
       segment Hippo::Segments::DTP,
+                :name           => 'Date - Onset of Current Illness or Symptom',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 10
+                :position       => 1350
 
+      #Date - Initial Treatment Date
       segment Hippo::Segments::DTP,
+                :name           => 'Date - Initial Treatment Date',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 11
+                :position       => 1370
 
+      #Date - Last Seen Date
       segment Hippo::Segments::DTP,
+                :name           => 'Date - Last Seen Date',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 12
+                :position       => 1390
 
+      #Date - Acute Manifestation
       segment Hippo::Segments::DTP,
+                :name           => 'Date - Acute Manifestation',
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 13
 
+      #Date - Accident
       segment Hippo::Segments::DTP,
+                :name           => 'Date - Accident',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 14
+                :position       => 13
 
+      #Date - Last Menstrual Period
       segment Hippo::Segments::DTP,
+                :name           => 'Date - Last Menstrual Period',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 15
+                :position       => 13
 
+      #Date - Last X-ray Date
       segment Hippo::Segments::DTP,
+                :name           => 'Date - Last X-ray Date',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 16
+                :position       => 13
 
+      #Date - Hearing and Vision Prescription Date
       segment Hippo::Segments::DTP,
+                :name           => 'Date - Hearing and Vision Prescription Date',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 13
+
+      #Date - Disability Dates
+      segment Hippo::Segments::DTP,
+                :name           => 'Date - Disability Dates',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 13
+
+      #Date - Last Worked
+      segment Hippo::Segments::DTP,
+                :name           => 'Date - Last Worked',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 13
+
+      #Date - Authorized Return to Work
+      segment Hippo::Segments::DTP,
+                :name           => 'Date - Authorized Return to Work',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 13
+
+      #Date - Admission
+      segment Hippo::Segments::DTP,
+                :name           => 'Date - Admission',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 13
+
+      #Date - Discharge
+      segment Hippo::Segments::DTP,
+                :name           => 'Date - Discharge',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 13
+
+      #Date - Assumed and Relinquished Care Dates
+      segment Hippo::Segments::DTP,
+                :name           => 'Date - Assumed and Relinquished Care Dates',
+                :minimum        => 0,
+                :maximum        => 2,
+                :position       => 13
+
+      #Date - Property and Casualty Date of First Contact
+      segment Hippo::Segments::DTP,
+                :name           => 'Date - Property and Casualty Date of First Contact',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 13
+
+      #Date - Repricer Received Date
+      segment Hippo::Segments::DTP,
+                :name           => 'Date - Repricer Received Date',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 13
+
+      #Claim Supplemental Information
+      segment Hippo::Segments::PWK,
+                :name           => 'Claim Supplemental Information',
+                :minimum        => 0,
+                :maximum        => 10,
+                :position       => 1550
+
+      #Contract Information
+      segment Hippo::Segments::CN1,
+                :name           => 'Contract Information',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1600
+
+      #Patient Amount Paid
+      segment Hippo::Segments::AMT,
+                :name           => 'Patient Amount Paid',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1760
+
+      #Service Authorization Exception Code
+      segment Hippo::Segments::REF,
+                :name           => 'Service Authorization Exception Code',
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 17
 
-      segment Hippo::Segments::DTP,
+      #Mandatory Medicare (Section 4081) Crossover Indicator
+      segment Hippo::Segments::REF,
+                :name           => 'Mandatory Medicare (Section 4081) Crossover Indicator',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 17
+
+      #Mammography Certification Number
+      segment Hippo::Segments::REF,
+                :name           => 'Mammography Certification Number',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 17
+
+      #Referral Number
+      segment Hippo::Segments::REF,
+                :name           => 'Referral Number',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 17
+
+      #Prior Authorization
+      segment Hippo::Segments::REF,
+                :name           => 'Prior Authorization',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1800
+
+      #Payer Claim Control Number
+      segment Hippo::Segments::REF,
+                :name           => 'Payer Claim Control Number',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1810
+
+      #Clinical Laboratory Improvement Amendment (CLIA) Number
+      segment Hippo::Segments::REF,
+                :name           => 'Clinical Laboratory Improvement Amendment (CLIA) Number',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1820
+
+      #Repriced Claim Number
+      segment Hippo::Segments::REF,
+                :name           => 'Repriced Claim Number',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1830
+
+      #Adjusted Repriced Claim Number
+      segment Hippo::Segments::REF,
+                :name           => 'Adjusted Repriced Claim Number',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1840
+
+      #Investigational Device Exemption Number
+      segment Hippo::Segments::REF,
+                :name           => 'Investigational Device Exemption Number',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1850
+
+      #Claim Identifier For Transmission Intermediaries
+      segment Hippo::Segments::REF,
+                :name           => 'Claim Identifier For Transmission Intermediaries',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1860
+
+      #Medical Record Number
+      segment Hippo::Segments::REF,
+                :name           => 'Medical Record Number',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1890
+
+      #Demonstration Project Identifier
+      segment Hippo::Segments::REF,
+                :name           => 'Demonstration Project Identifier',
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 18
 
-      segment Hippo::Segments::DTP,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 19
-
-      segment Hippo::Segments::DTP,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 20
-
-      segment Hippo::Segments::DTP,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 21
-
-      segment Hippo::Segments::DTP,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 22
-
-      segment Hippo::Segments::DTP,
-                :minimum        => 0,
-                :maximum        => 2,
-                :position       => 23
-
-      segment Hippo::Segments::DTP,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 24
-
-      segment Hippo::Segments::DTP,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 25
-
-      segment Hippo::Segments::PWK,
-                :minimum        => 0,
-                :maximum        => 10,
-                :position       => 26
-
-      segment Hippo::Segments::CN1,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 27
-
-      segment Hippo::Segments::AMT,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 28
-
+      #Care Plan Oversight
       segment Hippo::Segments::REF,
+                :name           => 'Care Plan Oversight',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 29
+                :position       => 18
 
-      segment Hippo::Segments::REF,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 30
-
-      segment Hippo::Segments::REF,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 31
-
-      segment Hippo::Segments::REF,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 32
-
-      segment Hippo::Segments::REF,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 33
-
-      segment Hippo::Segments::REF,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 34
-
-      segment Hippo::Segments::REF,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 35
-
-      segment Hippo::Segments::REF,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 36
-
-      segment Hippo::Segments::REF,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 37
-
-      segment Hippo::Segments::REF,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 38
-
-      segment Hippo::Segments::REF,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 39
-
-      segment Hippo::Segments::REF,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 40
-
-      segment Hippo::Segments::REF,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 41
-
-      segment Hippo::Segments::REF,
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 42
-
+      #File Information
       segment Hippo::Segments::K3,
+                :name           => 'File Information',
                 :minimum        => 0,
                 :maximum        => 10,
-                :position       => 43
+                :position       => 18
 
+      #Claim Note
       segment Hippo::Segments::NTE,
+                :name           => 'Claim Note',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 44
+                :position       => 1900
 
+      #Ambulance Transport Information
       segment Hippo::Segments::CR1,
+                :name           => 'Ambulance Transport Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 45
+                :position       => 1950
 
+      #Spinal Manipulation Service Information
       segment Hippo::Segments::CR2,
+                :name           => 'Spinal Manipulation Service Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 46
+                :position       => 2000
 
+      #Ambulance Certification
       segment Hippo::Segments::CRC,
+                :name           => 'Ambulance Certification',
                 :minimum        => 0,
                 :maximum        => 3,
-                :position       => 47
+                :position       => 2200
 
+      #Patient Condition Information: Vision
       segment Hippo::Segments::CRC,
+                :name           => 'Patient Condition Information: Vision',
                 :minimum        => 0,
                 :maximum        => 3,
-                :position       => 48
+                :position       => 2210
 
+      #Homebound Indicator
       segment Hippo::Segments::CRC,
+                :name           => 'Homebound Indicator',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 49
+                :position       => 2220
 
+      #EPSDT Referral
       segment Hippo::Segments::CRC,
+                :name           => 'EPSDT Referral',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 50
+                :position       => 2230
 
+      #Health Care Diagnosis Code
       segment Hippo::Segments::HI,
+                :name           => 'Health Care Diagnosis Code',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 51
+                :position       => 2310
 
+      #Anesthesia Related Procedure
       segment Hippo::Segments::HI,
+                :name           => 'Anesthesia Related Procedure',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 52
+                :position       => 2313
 
+      #Condition Information
       segment Hippo::Segments::HI,
+                :name           => 'Condition Information',
                 :minimum        => 0,
                 :maximum        => 2,
-                :position       => 53
+                :position       => 2320
 
+      #Claim Pricing/Repricing Information
       segment Hippo::Segments::HCP,
+                :name           => 'Claim Pricing/Repricing Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 54
-
-
-      segment Hippo::Segments::QTY,
-                :minimum        => 0,
-                :maximum        => 4,
-                :position       => 60
-
-      #Home Health Care Plan Information
-      loop    Hippo::TransactionSets::HIPAA_837::L2305,
-                :identified_by  => {'CLM' => '*'},
-                :minimum        => 0,
-                :maximum        => 6,
-                :position       => 61
+                :position       => 2410
 
       #Referring Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2310A,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => 'DN'},
+                :name           => 'Referring Provider Name',
+                :identified_by  => {
+                  'NM1.NM102' => '1',
+                  'NM1.NM108' => 'XX'
+                },
                 :minimum        => 0,
                 :maximum        => 2,
-                :position       => 62
+                :position       => 2500
 
       #Rendering Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2310B,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => '82'},
+                :name           => 'Rendering Provider Name',
+                :identified_by  => {
+                  'NM1.NM101' => '82',
+                  'NM1.NM108' => 'XX'
+                },
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 63
+                :position       => 2500
 
-      #Service Facility Location
+      #Service Facility Location Name
       loop    Hippo::TransactionSets::HIPAA_837::L2310C,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => '77'},
+                :name           => 'Service Facility Location Name',
+                :identified_by  => {
+                  'NM1.NM101' => '77',
+                  'NM1.NM102' => '2',
+                  'NM1.NM108' => 'XX'
+                },
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 64
+                :position       => 2500
 
       #Supervising Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2310D,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => 'DQ'},
+                :name           => 'Supervising Provider Name',
+                :identified_by  => {
+                  'NM1.NM101' => 'DQ',
+                  'NM1.NM102' => '1',
+                  'NM1.NM108' => 'XX'
+                },
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 65
+                :position       => 2500
 
       #Ambulance Pick-up Location
       loop    Hippo::TransactionSets::HIPAA_837::L2310E,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => 'DQ'},
+                :name           => 'Ambulance Pick-up Location',
+                :identified_by  => {
+                  'NM1.NM101' => 'PW',
+                  'NM1.NM102' => '2'
+                },
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 66
+                :position       => 2500
 
       #Ambulance Drop-off Location
       loop    Hippo::TransactionSets::HIPAA_837::L2310F,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => 'DQ'},
+                :name           => 'Ambulance Drop-off Location',
+                :identified_by  => {
+                  'NM1.NM101' => '45',
+                  'NM1.NM102' => '2'
+                },
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 67
+                :position       => 2500
 
       #Other Subscriber Information
       loop    Hippo::TransactionSets::HIPAA_837::L2320,
-                :identified_by  => {'CLM' => '*'},
+                :name           => 'Other Subscriber Information',
                 :minimum        => 0,
                 :maximum        => 10,
-                :position       => 68
-
-      #Other Payer Supervising Provider
-      loop    Hippo::TransactionSets::HIPAA_837::L2330F,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => 'DQ'},
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 69
-
-      #Other Payer Billing Provider
-      loop    Hippo::TransactionSets::HIPAA_837::L2330G,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => 'DQ'},
-                :minimum        => 0,
-                :maximum        => 1,
-                :position       => 70
-
-
-      #Attending Physician Name
-      loop    Hippo::TransactionSets::HIPAA_837::L2310A,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => '71'},
-                :minimum        => 0,
-                :maximum        => 2,
-                :position       => 72
-
-      #Operating Physician Name
-      loop    Hippo::TransactionSets::HIPAA_837::L2310B,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => '72'},
-                :minimum        => 0,
-                :maximum        => 2,
-                :position       => 73
-
-      #Other Provider Name
-      loop    Hippo::TransactionSets::HIPAA_837::L2310C,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => '73'},
-                :minimum        => 0,
-                :maximum        => 2,
-                :position       => 74
-
+                :position       => 2900
 
       #Service Line Number
       loop    Hippo::TransactionSets::HIPAA_837::L2400,
-                :identified_by  => {'CLM' => '*'},
+                :name           => 'Service Line Number',
                 :minimum        => 1,
                 :maximum        => 50,
-                :position       => 76
+                :position       => 3650
 
     end
   end

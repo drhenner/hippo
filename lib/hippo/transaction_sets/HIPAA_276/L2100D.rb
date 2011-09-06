@@ -4,8 +4,12 @@ module Hippo::TransactionSets
     class L2100D < Hippo::TransactionSets::Base
       loop_name 'L2100D'    #Subscriber Name
 
+      #Subscriber Name
       segment Hippo::Segments::NM1,
-                :position       => 6
+                :name           => 'Subscriber Name',
+                :minimum        => 1,
+                :maximum        => 1,
+                :position       => 500
 
     end
   end

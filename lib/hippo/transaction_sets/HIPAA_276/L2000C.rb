@@ -4,15 +4,22 @@ module Hippo::TransactionSets
     class L2000C < Hippo::TransactionSets::Base
       loop_name 'L2000C'    #Service Provider Level
 
+      #Service Provider Level
+      segment Hippo::Segments::HL,
+                :name           => 'Service Provider Level',
+                :minimum        => 1,
+                :maximum        => 1,
+                :position       => 100
+
       #Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2100C,
-                :identified_by  => {'NM1.EntityIdentifierCode1' => '1P'},
-                :position       => 4
-
-      #Provider Of Service Trace Identifier
-      loop    Hippo::TransactionSets::HIPAA_837::L2200C,
-                :identified_by  => {'CLM' => '*'},
-                :position       => 5
+                :name           => 'Provider Name',
+                :identified_by  => {
+                  'NM1.NM101' => '1P'
+                },
+                :minimum        => 1,
+                :maximum        => 2,
+                :position       => 500
 
     end
   end

@@ -2,19 +2,28 @@ module Hippo::TransactionSets
   module HIPAA_276
 
     class L2210D < Hippo::TransactionSets::Base
-      loop_name 'L2210D'    #Service Level Information
+      loop_name 'L2210D'    #Service Line Information
 
+      #Service Line Information
       segment Hippo::Segments::SVC,
-                :position       => 12
+                :name           => 'Service Line Information',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1300
 
-      segment Hippo::Segments::STC,
-                :position       => 13
-
+      #Service Line Item Identification
       segment Hippo::Segments::REF,
-                :position       => 14
+                :name           => 'Service Line Item Identification',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1400
 
+      #Service Line Date
       segment Hippo::Segments::DTP,
-                :position       => 15
+                :name           => 'Service Line Date',
+                :minimum        => 1,
+                :maximum        => 1,
+                :position       => 1500
 
     end
   end

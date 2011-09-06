@@ -1,122 +1,175 @@
 module Hippo::Segments
-  class BPR < Base
+  class BPR < Hippo::Segments::Base
 
-    segment_identifier  'BPR'
+    segment_identifier 'BPR'
 
-    field   :name     => 'TransactionHandlingCode',
-            :datatype => :list,
-            :list     => [ 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','X','Z'],
-            :required => true
+    field :name                 => 'TransactionHandlingCode'
+          :sequence             => 01,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 2,
+          :required             => true,
+          :data_element_number  => 305
 
-    field   :name     => 'MonetaryAmount',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 18,
-            :required => true
+    field :name                 => 'MonetaryAmount'
+          :sequence             => 02,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 18,
+          :required             => true,
+          :data_element_number  => 782
 
-    field   :name     => 'CreditDebitFlagCode',
-            :datatype => :list,
-            :list     => [ 'C','D'],
-            :required => true
+    field :name                 => 'CreditDebitFlagCode'
+          :sequence             => 03,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => true,
+          :data_element_number  => 478
 
-    field   :name     => 'PaymentMethodCode',
-            :datatype => :list,
-            :list     => [ 'ACH','BKW','BOP','CAS','CCC','CCF','CCH','CDA','CHK','CLH','CPC','CWT','DCC','DCD','DDP','DEB','DLC','DLD','DXC','DXD','DYC','DYD','DZC','DZD','EBX','EXC','FEW','FWT','FXP','IWT','NON','PAC','PBD','PDC','PDD','PDE','PRO','QDR','QIR','REV','SCC','SCD','SDC','SDD','SWT','SXC','SXD','SYC','SZC','SZD','TRA','VIS','X12','ZZZ'],
-            :required => true
+    field :name                 => 'PaymentMethodCode'
+          :sequence             => 04,
+          :datatype             => :list,
+          :minimum              => 3,
+          :maximum              => 3,
+          :required             => true,
+          :data_element_number  => 591
 
-    field   :name     => 'PaymentFormatCode',
-            :datatype => :list,
-            :list     => [ 'BPT','CBC','CCD','CCP','CIE','CIP','CTX','PBC','PPD','PPP','PRD'],
-            :required => false
+    field :name                 => 'PaymentFormatCode'
+          :sequence             => 05,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 10,
+          :required             => false,
+          :data_element_number  => 812
 
-    field   :name     => 'DFIIdNumberQualifier1',
-            :datatype => :list,
-            :list     => [ '01','02','03','04','ZZ'],
-            :required => false
+    field :name                 => 'DfiIdNumberQualifier'
+          :sequence             => 06,
+          :datatype             => :list,
+          :minimum              => 2,
+          :maximum              => 2,
+          :required             => false,
+          :data_element_number  => 506
 
-    field   :name     => 'DFIIdentificationNumber1',
-            :datatype => :alpha_numeric,
-            :minimum  => 3,
-            :maximum  => 12,
-            :required => false
+    field :name                 => 'DfiIdentificationNumber'
+          :sequence             => 07,
+          :datatype             => :string,
+          :minimum              => 3,
+          :maximum              => 12,
+          :required             => false,
+          :data_element_number  => 507
 
-    field   :name     => 'AccountNumberQualifier1',
-            :datatype => :list,
-            :list     => [ '1','2','3','4','5','6','7','8','9','Z','01','03','05','06','07','08','10','11','12','13','14','AG','AP','BA','CB','CC','CM','DA','DC','EC','RD','RS','SG','ALC','ANN','CDM','CDS','CRU','EPC','LTD','MUT','PRI','REL','SKA','ZB1','ZB2'],
-            :required => false
+    field :name                 => 'AccountNumberQualifier'
+          :sequence             => 08,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 3,
+          :required             => false,
+          :data_element_number  => 569
 
-    field   :name     => 'AccountNumber1',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 35,
-            :required => false
+    field :name                 => 'AccountNumber'
+          :sequence             => 09,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 35,
+          :required             => false,
+          :data_element_number  => 508
 
-    field   :name     => 'OriginatingCompanyIdentifier',
-            :datatype => :alpha_numeric,
-            :minimum  => 10,
-            :maximum  => 10,
-            :required => false
+    field :name                 => 'OriginatingCompanyIdentifier'
+          :sequence             => 10,
+          :datatype             => :string,
+          :minimum              => 10,
+          :maximum              => 10,
+          :required             => false,
+          :data_element_number  => 509
 
-    field   :name     => 'OriginatingCompanySupplementalCode',
-            :datatype => :alpha_numeric,
-            :minimum  => 9,
-            :maximum  => 9,
-            :required => false
+    field :name                 => 'OriginatingCompanySupplementalCode'
+          :sequence             => 11,
+          :datatype             => :string,
+          :minimum              => 9,
+          :maximum              => 9,
+          :required             => false,
+          :data_element_number  => 510
 
-    field   :name     => 'DFIIdNumberQualifier2',
-            :datatype => :list,
-            :list     => [ '01','02','03','04','ZZ'],
-            :required => false
+    field :name                 => 'DfiIdNumberQualifier'
+          :sequence             => 12,
+          :datatype             => :list,
+          :minimum              => 2,
+          :maximum              => 2,
+          :required             => false,
+          :data_element_number  => 506
 
-    field   :name     => 'DFIIdentificationNumber2',
-            :datatype => :alpha_numeric,
-            :minimum  => 3,
-            :maximum  => 12,
-            :required => false
+    field :name                 => 'DfiIdentificationNumber'
+          :sequence             => 13,
+          :datatype             => :string,
+          :minimum              => 3,
+          :maximum              => 12,
+          :required             => false,
+          :data_element_number  => 507
 
-    field   :name     => 'AccountNumberQualifier2',
-            :datatype => :list,
-            :list     => [ '1','2','3','4','5','6','7','8','9','Z','01','03','05','06','07','08','10','11','12','13','14','AG','AP','BA','CB','CC','CM','DA','DC','EC','RD','RS','SG','ALC','ANN','CDM','CDS','CRU','EPC','LTD','MUT','PRI','REL','SKA','ZB1','ZB2'],
-            :required => false
+    field :name                 => 'AccountNumberQualifier'
+          :sequence             => 14,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 3,
+          :required             => false,
+          :data_element_number  => 569
 
-    field   :name     => 'AccountNumber2',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 35,
-            :required => false
+    field :name                 => 'AccountNumber'
+          :sequence             => 15,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 35,
+          :required             => false,
+          :data_element_number  => 508
 
-    field   :name     => 'Date',
-            :datatype => :alpha_numeric,
-            :minimum  => 8,
-            :maximum  => 8,
-            :required => false
+    field :name                 => 'Date'
+          :sequence             => 16,
+          :datatype             => :date,
+          :minimum              => 8,
+          :maximum              => 8,
+          :required             => false,
+          :data_element_number  => 373
 
-    field   :name     => 'BusinessFunctionCode',
-            :datatype => :list,
-            :list     => [ 'COL','CON','DBT','PCS','PEN','PRL','RYL','TAX','VEN'],
-            :required => false
+    field :name                 => 'BusinessFunctionCode'
+          :sequence             => 17,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 3,
+          :required             => false,
+          :data_element_number  => 1048
 
-    field   :name     => 'DFIIdNumberQualifier3',
-            :datatype => :list,
-            :list     => [ '01','02','03','04','ZZ'],
-            :required => false
+    field :name                 => 'DfiIdNumberQualifier'
+          :sequence             => 18,
+          :datatype             => :list,
+          :minimum              => 2,
+          :maximum              => 2,
+          :required             => false,
+          :data_element_number  => 506
 
-    field   :name     => 'DFIIdentificationNumber3',
-            :datatype => :alpha_numeric,
-            :minimum  => 3,
-            :maximum  => 12,
-            :required => false
+    field :name                 => 'DfiIdentificationNumber'
+          :sequence             => 19,
+          :datatype             => :string,
+          :minimum              => 3,
+          :maximum              => 12,
+          :required             => false,
+          :data_element_number  => 507
 
-    field   :name     => 'AccountNumberQualifier3',
-            :datatype => :list,
-            :list     => [ '1','2','3','4','5','6','7','8','9','Z','01','03','05','06','07','08','10','11','12','13','14','AG','AP','BA','CB','CC','CM','DA','DC','EC','RD','RS','SG','ALC','ANN','CDM','CDS','CRU','EPC','LTD','MUT','PRI','REL','SKA','ZB1','ZB2'],
-            :required => false
+    field :name                 => 'AccountNumberQualifier'
+          :sequence             => 20,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 3,
+          :required             => false,
+          :data_element_number  => 569
 
-    field   :name     => 'AccountNumber3',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 35,
-            :required => false
+    field :name                 => 'AccountNumber'
+          :sequence             => 21,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 35,
+          :required             => false,
+          :data_element_number  => 508
 
   end
 end

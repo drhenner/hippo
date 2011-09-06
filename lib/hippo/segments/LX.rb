@@ -1,13 +1,16 @@
 module Hippo::Segments
-  class LX < Base
+  class LX < Hippo::Segments::Base
 
-    segment_identifier  'LX'
+    segment_identifier 'LX'
 
-    field   :name     => 'AssignedNumber',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 6,
-            :required => true
+    field :name                 => 'AssignedNumber'
+          :sequence             => 01,
+          :datatype             => :numeric,
+          :decimal              => 0,
+          :minimum              => 1,
+          :maximum              => 6,
+          :required             => true,
+          :data_element_number  => 554
 
   end
 end

@@ -4,25 +4,82 @@ module Hippo::TransactionSets
     class L2200E < Hippo::TransactionSets::Base
       loop_name 'L2200E'    #Claim Status Tracking Number
 
+      #Claim Status Tracking Number
       segment Hippo::Segments::TRN,
-                :position       => 8
+                :name           => 'Claim Status Tracking Number',
+                :minimum        => 1,
+                :maximum        => 1,
+                :position       => 900
 
-      segment Hippo::Segments::STC,
-                :position       => 9
-
+      #Payer Claim Control Number
       segment Hippo::Segments::REF,
-                :position       => 10
+                :name           => 'Payer Claim Control Number',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1000
 
+      #Institutional Bill Type Identification
+      segment Hippo::Segments::REF,
+                :name           => 'Institutional Bill Type Identification',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1010
+
+      #Application or Location System Identifier
+      segment Hippo::Segments::REF,
+                :name           => 'Application or Location System Identifier',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1030
+
+      #Group Number
+      segment Hippo::Segments::REF,
+                :name           => 'Group Number',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1035
+
+      #Patient Control Number
+      segment Hippo::Segments::REF,
+                :name           => 'Patient Control Number',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1040
+
+      #Pharmacy Prescription Number
+      segment Hippo::Segments::REF,
+                :name           => 'Pharmacy Prescription Number',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1045
+
+      #Claim Identification Number For Clearinghouses and Other Transmission Intermediaries
+      segment Hippo::Segments::REF,
+                :name           => 'Claim Identification Number For Clearinghouses and Other Transmission Intermediaries',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1050
+
+      #Claim Submitted Charges
       segment Hippo::Segments::AMT,
-                :position       => 11
+                :name           => 'Claim Submitted Charges',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1100
 
+      #Claim Service Date
       segment Hippo::Segments::DTP,
-                :position       => 12
+                :name           => 'Claim Service Date',
+                :minimum        => 0,
+                :maximum        => 1,
+                :position       => 1200
 
       #Service Line Information
       loop    Hippo::TransactionSets::HIPAA_837::L2210E,
-                :identified_by  => {'CLM' => '*'},
-                :position       => 13
+                :name           => 'Service Line Information',
+                :minimum        => 0,
+                :maximum        => nil,
+                :position       => 1300
 
     end
   end

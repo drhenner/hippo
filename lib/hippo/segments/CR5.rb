@@ -1,106 +1,151 @@
 module Hippo::Segments
-  class CR5 < Base
+  class CR5 < Hippo::Segments::Base
 
-    segment_identifier  'CR5'
+    segment_identifier 'CR5'
 
-    field   :name     => 'CertificationTypeCode',
-            :datatype => :list,
-            :list     => [ '1','2','3','4','5','6','A','B','C','D','E','I','R','S']
-            :required => false
+    field :name                 => 'CertificationTypeCode'
+          :sequence             => 01,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1322
 
-    field   :name     => 'Quantity1',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+    field :name                 => 'Quantity'
+          :sequence             => 02,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
 
-    field   :name     => 'OxygenEquipmentTypeCode1',
-            :datatype => :list,
-            :list     => [ 'A','B','C','D','E','O']
-            :required => false
+    field :name                 => 'OxygenEquipmentTypeCode'
+          :sequence             => 03,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1348
 
-    field   :name     => 'OxygenEquipmentTypeCode2',
-            :datatype => :list,
-            :list     => [ 'A','B','C','D','E','O']
-            :required => false
+    field :name                 => 'OxygenEquipmentTypeCode'
+          :sequence             => 04,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1348
 
-    field   :name     => 'Description1',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 80,
-            :required => false
+    field :name                 => 'Description'
+          :sequence             => 05,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 80,
+          :required             => false,
+          :data_element_number  => 352
 
-    field   :name     => 'Quantity2',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+    field :name                 => 'Quantity'
+          :sequence             => 06,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
 
-    field   :name     => 'Quantity3',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+    field :name                 => 'Quantity'
+          :sequence             => 07,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
 
-    field   :name     => 'Quantity4',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+    field :name                 => 'Quantity'
+          :sequence             => 08,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
 
-    field   :name     => 'Description2',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 80,
-            :required => false
+    field :name                 => 'Description'
+          :sequence             => 09,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 80,
+          :required             => false,
+          :data_element_number  => 352
 
-    field   :name     => 'Quantity5',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+    field :name                 => 'Quantity'
+          :sequence             => 10,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
 
-    field   :name     => 'Quantity6',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+    field :name                 => 'Quantity'
+          :sequence             => 11,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
 
-    field   :name     => 'OxygenTestConditionCode',
-            :datatype => :list,
-            :list     => [ 'E','N','O','R','S','W','X']
-            :required => false
+    field :name                 => 'OxygenTestConditionCode'
+          :sequence             => 12,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1349
 
-    field   :name     => 'OxygenTestFindingsCode1',
-            :datatype => :list,
-            :list     => [ '1','2','3']
-            :required => false
+    field :name                 => 'OxygenTestFindingsCode'
+          :sequence             => 13,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1350
 
-    field   :name     => 'OxygenTestFindingsCode2',
-            :datatype => :list,
-            :list     => [ '1','2','3']
-            :required => false
+    field :name                 => 'OxygenTestFindingsCode'
+          :sequence             => 14,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1350
 
-    field   :name     => 'OxygenTestFindingsCode3',
-            :datatype => :list,
-            :list     => [ '1','2','3']
-            :required => false
+    field :name                 => 'OxygenTestFindingsCode'
+          :sequence             => 15,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1350
 
-    field   :name     => 'Quantity7',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 15,
-            :required => false
+    field :name                 => 'Quantity'
+          :sequence             => 16,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 15,
+          :required             => false,
+          :data_element_number  => 380
 
-    field   :name     => 'OxygenDeliverySystemCode',
-            :datatype => :list,
-            :list     => [ 'A','B','C','D','E']
-            :required => false
+    field :name                 => 'OxygenDeliverySystemCode'
+          :sequence             => 17,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1382
 
-    field   :name     => 'OxygenEquipmentTypeCode3',
-            :datatype => :list,
-            :list     => [ 'A','B','C','D','E','O']
-            :required => false
+    field :name                 => 'OxygenEquipmentTypeCode'
+          :sequence             => 18,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1348
 
   end
 end

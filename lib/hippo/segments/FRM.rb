@@ -1,36 +1,47 @@
 module Hippo::Segments
-  class FRM < Base
+  class FRM < Hippo::Segments::Base
 
-    segment_identifier  'FRM'
+    segment_identifier 'FRM'
 
-    field   :name     => 'AssignedIdentification',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 20,
-            :required => true
+    field :name                 => 'AssignedIdentification'
+          :sequence             => 01,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 20,
+          :required             => true,
+          :data_element_number  => 350
 
-    field   :name     => 'YesNoConditionOrResponseCode',
-            :datatype => :list,
-            :list     => [ 'N','U','W','Y'],
-            :required => false
+    field :name                 => 'YesNoConditionOrResponseCode'
+          :sequence             => 02,
+          :datatype             => :list,
+          :minimum              => 1,
+          :maximum              => 1,
+          :required             => false,
+          :data_element_number  => 1073
 
-    field   :name     => 'ReferenceIdentification',
-            :datatype => :alpha_numeric,
-            :minimum  => 1,
-            :maximum  => 50,
-            :required => false
+    field :name                 => 'ReferenceIdentification'
+          :sequence             => 03,
+          :datatype             => :string,
+          :minimum              => 1,
+          :maximum              => 50,
+          :required             => false,
+          :data_element_number  => 127
 
-    field   :name     => 'Date',
-            :datatype => :alpha_numeric,
-            :minimum  => 8,
-            :maximum  => 8,
-            :required => false
+    field :name                 => 'Date'
+          :sequence             => 04,
+          :datatype             => :date,
+          :minimum              => 8,
+          :maximum              => 8,
+          :required             => false,
+          :data_element_number  => 373
 
-    field   :name     => 'Percent',
-            :datatype => :numeric,
-            :minimum  => 1,
-            :maximum  => 6,
-            :required => false
+    field :name                 => 'PercentDecimalFormat'
+          :sequence             => 05,
+          :datatype             => :numeric,
+          :minimum              => 1,
+          :maximum              => 6,
+          :required             => false,
+          :data_element_number  => 332
 
   end
 end
