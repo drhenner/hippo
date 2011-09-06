@@ -84,7 +84,7 @@ module Hippo::TransactionSets
       segment Hippo::Segments::PLB,
                 :name           => 'Provider Adjustment',
                 :minimum        => 0,
-                :maximum        => >1,
+                :maximum        => nil,
                 :position       => 100
 
       #Transaction Set Trailer

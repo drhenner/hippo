@@ -43,7 +43,7 @@ module Hippo::TransactionSets
       segment Hippo::Segments::PER,
                 :name           => 'Payer Technical Contact Information',
                 :minimum        => 1,
-                :maximum        => >1,
+                :maximum        => nil,
                 :position       => 1303
 
       #Payer WEB Site

@@ -29,7 +29,7 @@ module Hippo::TransactionSets
       segment Hippo::Segments::REF,
                 :name           => 'Payee Additional Identification',
                 :minimum        => 0,
-                :maximum        => >1,
+                :maximum        => nil,
                 :position       => 1800
 
       #Remittance Delivery Method

@@ -15,7 +15,7 @@ module Hippo::TransactionSets
       segment Hippo::Segments::STC,
                 :name           => 'Claim Level Status Information',
                 :minimum        => 1,
-                :maximum        => >1,
+                :maximum        => nil,
                 :position       => 1000
 
       #Payer Claim Control Number

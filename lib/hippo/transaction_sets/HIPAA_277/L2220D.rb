@@ -15,7 +15,7 @@ module Hippo::TransactionSets
       segment Hippo::Segments::STC,
                 :name           => 'Service Line Level Status Information',
                 :minimum        => 1,
-                :maximum        => >1,
+                :maximum        => nil,
                 :position       => 1900
 
       #Service Line Item Identification
