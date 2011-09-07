@@ -31,4 +31,13 @@ class TestTransactionSetBase < MiniTest::Unit::TestCase
     assert_equal 'TSS*Foo~', ts.to_s
 
   end
+
+  def test_accessing_repeated_segments
+    ts = Hippo::TransactionSets::Test::Base.new
+    ts.TSS.Field2 = 'Bar'
+    ts.TCS.Field1 = 'Foo'
+    ts.TSS_02.Field2 = 'Baz'
+
+    assert_equal 'TSS*Blah*Bar~TCS*Foo**Preset Field 7~TSS*Last Segment*Baz~', ts.to_s
+  end
 end
