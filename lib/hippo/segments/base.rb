@@ -68,7 +68,13 @@ module Hippo::Segments
       if field.class == Numeric || field =~ /\A#{self.class.identifier}(?:(\d+)(?:_(\d+)){0,1})\z/
         self.class.fields[$1.to_i - 1]
       else
-        self.class.fields.flatten.select{|f| f.name == get_field_name(field).to_s}.first
+        fields = self.class.fields.flatten.select{|f| f.name == field.gsub(/_\d{1,2}\z/,'')}
+
+        if field =~ /_(\d{1,2})\z/
+          fields[$1.to_i - 1]
+        else
+          fields.first
+        end
       end
     end
 

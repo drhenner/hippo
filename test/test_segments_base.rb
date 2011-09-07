@@ -48,6 +48,19 @@ class TestSegmentsBase < MiniTest::Unit::TestCase
     assert_equal 'TSS*TestField1*TestField2*TestField3*TestField4~', seg.to_s
   end
 
+  def test_assign_values_with_same_field_names
+    seg = Hippo::Segments::TestSimpleSegment.new
+    seg.CommonName = 'Value1'
+    seg.CommonName_02 = 'Value2'
+
+    assert_equal 'TSS*****Value1*Value2~', seg.to_s
+
+    seg.CommonName_01 = 'Value3'
+    seg.CommonName_02 = 'Value4'
+
+    assert_equal 'TSS*****Value3*Value4~', seg.to_s
+  end
+
   def test_compound_segment
     seg = Hippo::Segments::TestCompoundSegment.new
 
@@ -62,10 +75,26 @@ class TestSegmentsBase < MiniTest::Unit::TestCase
   end
 
   def test_compound_segment_with_empty_initial_fields
-    seg = Hippo::Segments::HI.new
-    seg.IndustryCode           = '0340'
+    seg = Hippo::Segments::TestCompoundSegment.new
 
-    assert_equal 'HI*:0340~', seg.to_s
+    seg.Field2  = 'Comp1Field2'
+
+    assert_equal 'TCS*:Comp1Field2~', seg.to_s
+  end
+
+  def test_compound_segment_assign_values_with_same_field_names
+
+    seg = Hippo::Segments::TestCompoundSegment.new
+
+    seg.CompositeCommonName = 'CompVal1'
+    seg.CompositeCommonName_02 = 'CompVal2'
+
+    assert_equal 'TCS*:::CompVal1*:::CompVal2~', seg.to_s
+
+    seg.CompositeCommonName_1 = 'CompVal3'
+    seg.CompositeCommonName_2 = 'CompVal4'
+
+    assert_equal 'TCS*:::CompVal3*:::CompVal4~', seg.to_s
   end
 
   def test_assign_invalid_field_throws_error

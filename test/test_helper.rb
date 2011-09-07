@@ -9,25 +9,29 @@ module Hippo::Segments
   class TestSimpleSegment < Hippo::Segments::Base
     segment_identifier 'TSS'
 
-    field :name                 => 'Field1'
-    field :name                 => 'Field2'
-    field :name                 => 'Field3'
-    field :name                 => 'Field4'
+    field :name => 'Field1'
+    field :name => 'Field2'
+    field :name => 'Field3'
+    field :name => 'Field4'
+    field :name => 'CommonName'
+    field :name => 'CommonName'
   end
 
   class TestCompoundSegment < Hippo::Segments::Base
     segment_identifier 'TCS'
 
-    composite_field 'CompositeField1' do
+    composite_field 'CompositeField' do
       field :name => 'Field1'
       field :name => 'Field2'
       field :name => 'Field3'
+      field :name => 'CompositeCommonName'
     end
 
-    composite_field 'CompositeField2' do
+    composite_field 'CompositeField' do
       field :name => 'Field4'
       field :name => 'Field5'
       field :name => 'Field6'
+      field :name => 'CompositeCommonName'
     end
 
     field :name => 'Field7'
