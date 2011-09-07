@@ -28,7 +28,14 @@ class TestSegmentsBase < MiniTest::Unit::TestCase
     seg.CodeListQualifierCode  = 'BK'
     seg.IndustryCode           = '0340'
 
-    assert_equal 'EQ**CJ:00100:AA~', seg.to_s
+    assert_equal 'HI*BK:0340~', seg.to_s
+  end
+
+  def test_compound_segment_with_empty_initial_fields
+    seg = Hippo::Segments::HI.new
+    seg.IndustryCode           = '0340'
+
+    assert_equal 'HI*:0340~', seg.to_s
   end
 
   def test_assign_invalid_field_throws_error

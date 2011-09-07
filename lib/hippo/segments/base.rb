@@ -76,14 +76,20 @@ module Hippo::Segments
       output = self.class.identifier + Hippo::FieldSeparator
 
       self.class.fields.each_with_index do |field, index|
-        if field.class == Array
+        if field.class == Array # this is a composite field
           field.each do |comp_field|
-            field_value = values[index + 1][comp_field.sequence].to_s
+            field_value = if values[comp_field.composite_sequence]
+                            # some values exist for this composite field
+                            values[comp_field.composite_sequence][comp_field.sequence].to_s
+                          else
+                            # no values exist for the entire composite field
+                            ''
+                          end
             field_value = field_value.ljust(comp_field.maximum) if self.class.fixed_width
 
             output += field_value + comp_field.separator
           end
-        else
+        else # standard field
           field_value = values[field.sequence].to_s
           field_value = field_value.ljust(field.maximum) if self.class.fixed_width
 
