@@ -12,7 +12,7 @@ class TestSegmentsBase < MiniTest::Unit::TestCase
 
   def test_basic_populated_segment
     seg = Hippo::Segments::NM1.new
-    seg.EntityIdentifierCode1 = '1P'
+    seg.EntityIdentifierCode = '1P'
     seg.EntityTypeQualifier = '1'
     seg.NameLastOrOrganizationName = 'JACKSON'
     seg.NameFirst = 'ROBERT'
@@ -24,10 +24,9 @@ class TestSegmentsBase < MiniTest::Unit::TestCase
   end
 
   def test_compound_segment
-    seg = Hippo::Segments::EQ.new
-    seg.ProductServiceIDQualifier = 'CJ'
-    seg.ProductServiceID = '00100'
-    seg.ProcedureModifier1 = 'AA'
+    seg = Hippo::Segments::HI.new
+    seg.CodeListQualifierCode  = 'BK'
+    seg.IndustryCode           = '0340'
 
     assert_equal 'EQ**CJ:00100:AA~', seg.to_s
   end
