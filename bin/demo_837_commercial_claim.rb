@@ -139,11 +139,6 @@ ts.L2000A do |l2000a|
       n4.StateOrProvinceCode            = 'FL'
       n4.PostalCode                     = '33111'
     end
-
-    l2010ab.REF do |ref|
-      ref.ReferenceIdentificationQualifier = 'EI'
-      ref.ReferenceIdentification          = '587654321'
-    end
   end
 end
 
@@ -178,7 +173,7 @@ ts.L2000B do |l2000b|
     end
 
     # second ref segment in L2010BB
-    l2010bb.REF02 do |ref|
+    l2010bb.REF_02 do |ref|
       ref.ReferenceIdentificationQualifier = 'G2'
       ref.ReferenceIdentification          = 'KA6663'
     end
