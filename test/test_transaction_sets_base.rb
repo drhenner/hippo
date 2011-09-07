@@ -23,4 +23,12 @@ class TestTransactionSetBase < MiniTest::Unit::TestCase
       ts.BLAH {|blah| }
     end
   end
+
+  def test_identified_by_values_are_set
+    ts = Hippo::TransactionSets::Test::Base.new
+    ts.L0001 {|l0001| }
+
+    assert_equal 'TSS*Foo~', ts.to_s
+
+  end
 end

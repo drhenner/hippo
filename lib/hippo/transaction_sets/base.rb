@@ -86,8 +86,12 @@ module Hippo::TransactionSets
           component_entry[sym].each do |key, value|
             next unless key.class == String
 
-
-            component.send((key + '=').to_sym, value)
+            if component_entry[:class].superclass == Hippo::TransactionSets::Base
+              segment, field = key.split('.',2)
+              component.send(segment.to_sym).send((field + '=').to_sym, value)
+            else
+              component.send((key + '=').to_sym, value)
+            end
           end
         end
 
