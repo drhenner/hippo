@@ -23,6 +23,19 @@ class TestSegmentsBase < MiniTest::Unit::TestCase
     assert_equal 'NM1*1P*1*JACKSON*ROBERT*W***34*123456789~', seg.to_s
   end
 
+  def test_segment_orders_properly
+    seg = Hippo::Segments::NM1.new
+    seg.NameMiddle = 'W'
+    seg.IdentificationCode = '123456789'
+    seg.NameFirst = 'ROBERT'
+    seg.EntityIdentifierCode = '1P'
+    seg.EntityTypeQualifier = '1'
+    seg.NameLastOrOrganizationName = 'JACKSON'
+    seg.IdentificationCodeQualifier = '34'
+
+    assert_equal 'NM1*1P*1*JACKSON*ROBERT*W***34*123456789~', seg.to_s
+  end
+
   def test_compound_segment
     seg = Hippo::Segments::HI.new
     seg.CodeListQualifierCode  = 'BK'
