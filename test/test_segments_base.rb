@@ -5,43 +5,60 @@ class TestSegmentsBase < MiniTest::Unit::TestCase
   def teardown; end;
 
   def test_empty_segment
-    seg = Hippo::Segments::NM1.new
+    seg = Hippo::Segments::TestSimpleSegment.new
 
-    assert_equal 'NM1~', seg.to_s
+    assert_equal 'TSS~', seg.to_s
   end
 
   def test_basic_populated_segment
-    seg = Hippo::Segments::NM1.new
-    seg.EntityIdentifierCode = '1P'
-    seg.EntityTypeQualifier = '1'
-    seg.NameLastOrOrganizationName = 'JACKSON'
-    seg.NameFirst = 'ROBERT'
-    seg.NameMiddle = 'W'
-    seg.IdentificationCodeQualifier = '34'
-    seg.IdentificationCode = '123456789'
+    seg = Hippo::Segments::TestSimpleSegment.new
 
-    assert_equal 'NM1*1P*1*JACKSON*ROBERT*W***34*123456789~', seg.to_s
+    seg.Field1 = 'TestField1'
+    seg.Field2 = 'TestField2'
+    seg.Field3 = 'TestField3'
+    seg.Field4 = 'TestField4'
+
+    assert_equal 'TSS*TestField1*TestField2*TestField3*TestField4~', seg.to_s
+  end
+
+  def test_empty_field_in_segment
+    seg = Hippo::Segments::TestSimpleSegment.new
+
+    seg.Field2 = 'TestField2'
+    seg.Field3 = 'TestField3'
+    seg.Field4 = 'TestField4'
+
+    assert_equal 'TSS**TestField2*TestField3*TestField4~', seg.to_s
+
+    seg = Hippo::Segments::TestSimpleSegment.new
+
+    seg.Field2 = 'TestField2'
+
+    assert_equal 'TSS**TestField2~', seg.to_s
   end
 
   def test_segment_orders_properly
-    seg = Hippo::Segments::NM1.new
-    seg.NameMiddle = 'W'
-    seg.IdentificationCode = '123456789'
-    seg.NameFirst = 'ROBERT'
-    seg.EntityIdentifierCode = '1P'
-    seg.EntityTypeQualifier = '1'
-    seg.NameLastOrOrganizationName = 'JACKSON'
-    seg.IdentificationCodeQualifier = '34'
+    seg = Hippo::Segments::TestSimpleSegment.new
 
-    assert_equal 'NM1*1P*1*JACKSON*ROBERT*W***34*123456789~', seg.to_s
+    seg.Field3 = 'TestField3'
+    seg.Field2 = 'TestField2'
+    seg.Field1 = 'TestField1'
+    seg.Field4 = 'TestField4'
+
+    assert_equal 'TSS*TestField1*TestField2*TestField3*TestField4~', seg.to_s
   end
 
   def test_compound_segment
-    seg = Hippo::Segments::HI.new
-    seg.CodeListQualifierCode  = 'BK'
-    seg.IndustryCode           = '0340'
+    seg = Hippo::Segments::TestCompoundSegment.new
 
-    assert_equal 'HI*BK:0340~', seg.to_s
+    seg.Field1  = 'Comp1Field1'
+    seg.Field2  = 'Comp1Field2'
+
+    assert_equal 'TCS*Comp1Field1:Comp1Field2~', seg.to_s
+
+    seg.Field7 = 'Field7'
+
+    assert_equal 'TCS*Comp1Field1:Comp1Field2**Field7~', seg.to_s
   end
 
   def test_compound_segment_with_empty_initial_fields
