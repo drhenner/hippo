@@ -1,0 +1,6 @@
+Pending
+	* Fix issue when no values are set in any subfield of a composite field.
+	* Add more segment tests.
+
+0.0.2
+	* Import all segments and loops from the X12 CSV Table Data
