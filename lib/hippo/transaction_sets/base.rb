@@ -76,10 +76,15 @@ module Hippo::TransactionSets
         # iterate through the hash of defaults
         # and assign them to the component before
         # adding to @values
-        component_entry.each do |key, value|
-          next unless key.class == String
+        [:defaults, :identified_by].each do |sym|
+          next if component_entry[sym].nil?
 
-          component.send((key + '=').to_sym, value)
+          component_entry[sym].each do |key, value|
+            next unless key.class == String
+
+
+            component.send((key + '=').to_sym, value)
+          end
         end
 
         yield component if block_given?

@@ -1,10 +1,18 @@
 require_relative './test_helper'
 
 class TestTransactionSetBase < MiniTest::Unit::TestCase
-  def setup; end;
-  def teardown; end;
+  def test_preset_values_are_set
+    ts = Hippo::TransactionSets::Test::Base.new
+    ts.TCS {|tcs| }
+    ts.TSS {|tss| }
 
-  def test_truth
-    assert true == true
+    assert_equal 'TSS*Blah~TCS***Preset Field 7~', ts.to_s
   end
-end
+
+  def test_segment_ordering_is_correct
+    ts = Hippo::TransactionSets::Test::Base.new
+    ts.TCS.Field1 = 'Foo'
+    ts.TSS.Field2 = 'Bar'
+
+    assert_equal 'TSS*Blah*Bar~TCS*Foo**Preset Field 7~', ts.to_s
+  end

@@ -42,36 +42,32 @@ module Hippo::TransactionSets
   module Test
     class Base < Hippo::TransactionSets::Base
 
-      segment Hippo::Segments::ST,
-                :name           => 'Transaction Set Header',
+      segment Hippo::Segments::TestSimpleSegment,
+                :name           => 'Test Simple Segment #1',
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 50,
                 :defaults => {
-                  'ST01' => '837'
+                  'TSS01' => 'Blah'
                 }
 
-      #Beginning of Hierarchical Transaction
-      segment Hippo::Segments::BHT,
-                :name           => 'Beginning of Hierarchical Transaction',
+      segment Hippo::Segments::TestCompoundSegment,
+                :name           => 'Test Compound Segment #2',
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 100,
                 :defaults => {
-                  'BHT01' => '0019'
+                  'Field7' => 'Preset Field 7'
                 }
 
-      #Submitter Name
-      loop    Hippo::TransactionSets::HIPAA_837::L1000A,
-                :name           => 'Submitter Name',
-                :identified_by  => {
-                  'NM1.NM101' => '41',
-                  'NM1.NM108' => '46'
-                },
+      segment Hippo::Segments::TestSimpleSegment,
+                :name           => 'Test Simple Segment #3',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 200
-      
+                :position       => 50,
+                :defaults => {
+                  'TSS01' => 'Last Segment'
+                }
     end
   end
 end
