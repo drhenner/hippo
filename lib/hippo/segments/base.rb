@@ -111,7 +111,7 @@ module Hippo::Segments
       field = get_field(get_field_name(method_name.to_s))
 
       if field.nil?
-         puts method_name, *args
+         raise Hippo::Exceptions::InvalidField.new("Invalid field '#{method_name.to_s}' specified.")
       end
 
       if method_name.to_s =~ /=\z/

@@ -31,4 +31,11 @@ class TestSegmentsBase < MiniTest::Unit::TestCase
 
     assert_equal 'EQ**CJ:00100:AA~', seg.to_s
   end
+
+  def test_assign_invalid_field_throws_error
+    assert_raises(Hippo::Exceptions::InvalidField) do
+      seg = Hippo::Segments::NM1.new
+      seg.InvalidField = 'Error should be raised.'
+    end
+  end
 end
