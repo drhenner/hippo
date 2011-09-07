@@ -89,6 +89,8 @@ module Hippo::Segments
 
             output += field_value + comp_field.separator
           end
+
+          output += Hippo::FieldSeparator
         else # standard field
           field_value = values[field.sequence].to_s
           field_value = field_value.ljust(field.maximum) if self.class.fixed_width
@@ -99,7 +101,7 @@ module Hippo::Segments
 
       # remove extra field separators that aren't needed
       unless self.class.identifier == 'ISA'
-        output = output.gsub(/:{2,}/,'*').gsub(/:\*/,'*')
+        output = output.gsub(/:{2,}\*/,'*').gsub(/:\*/,'*')
       end
 
       output += Hippo::SegmentSeparator
