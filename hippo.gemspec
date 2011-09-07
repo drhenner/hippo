@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Robert Jackson", 'Jon Jackson']
   s.email       = ["robertj@promedicalinc.com"]
-  s.homepage    = "http://rubygems.org/gems/hippo"
+  s.homepage    = "http://github.com/promedical/hippo"
   s.summary     = %q{HIPAA Transaction Set Generator/Parser}
   s.description = %q{HIPAA Transaction Set Generator/Parser}
 
