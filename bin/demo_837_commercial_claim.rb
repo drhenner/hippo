@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 =begin
 This example file is based on the Commercial Health Insurance example (3.1.1) published in the 5010X222A1 TR3.
 
