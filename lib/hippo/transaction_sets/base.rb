@@ -70,6 +70,10 @@ module Hippo::TransactionSets
       component_name, component_sequence = method_name.to_s.split('_')
       component_entry = get_component(component_name, component_sequence)
 
+      if component_entry.nil?
+        raise Hippo::Exceptions::InvalidSegment.new "Invalid segment specified: '#{method_name.to_s}'."
+      end
+
       if values[component_entry[:sequence]].nil?
         component = component_entry[:class].new :parent => self
 
