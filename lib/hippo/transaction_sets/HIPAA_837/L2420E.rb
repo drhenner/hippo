@@ -35,10 +35,7 @@ module Hippo::TransactionSets
                 :name           => 'Ordering Provider Secondary Identification',
                 :minimum        => 0,
                 :maximum        => 20,
-                :position       => 5250,
-                :defaults => {
-                  'REF04' => '2U'
-                }
+                :position       => 5250
 
       #Ordering Provider Contact Information
       segment Hippo::Segments::PER,

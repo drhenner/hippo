@@ -39,9 +39,7 @@ module Hippo::TransactionSets
       #Subscriber Name
       loop    Hippo::TransactionSets::HIPAA_837::L2010BA,
                 :name           => 'Subscriber Name',
-                :identified_by  => {
-                  'NM1.NM101' => 'IL'
-                },
+                :identified_by  => {'NM1.NM101' => 'IL'},
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 150
@@ -49,10 +47,7 @@ module Hippo::TransactionSets
       #Payer Name
       loop    Hippo::TransactionSets::HIPAA_837::L2010BB,
                 :name           => 'Payer Name',
-                :identified_by  => {
-                  'NM1.NM101' => 'PR',
-                  'NM1.NM102' => '2'
-                },
+                :identified_by  => {'NM1.NM101' => 'PR'},
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 150

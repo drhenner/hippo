@@ -68,9 +68,7 @@ module Hippo::TransactionSets
       #Other Subscriber Name
       loop    Hippo::TransactionSets::HIPAA_837::L2330A,
                 :name           => 'Other Subscriber Name',
-                :identified_by  => {
-                  'NM1.NM101' => 'IL'
-                },
+                :identified_by  => {'NM1.NM101' => 'IL'},
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 3250
@@ -78,10 +76,7 @@ module Hippo::TransactionSets
       #Other Payer Name
       loop    Hippo::TransactionSets::HIPAA_837::L2330B,
                 :name           => 'Other Payer Name',
-                :identified_by  => {
-                  'NM1.NM101' => 'PR',
-                  'NM1.NM102' => '2'
-                },
+                :identified_by  => {'NM1.NM101' => 'PR'},
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 3250
@@ -89,9 +84,6 @@ module Hippo::TransactionSets
       #Other Payer Referring Provider
       loop    Hippo::TransactionSets::HIPAA_837::L2330C,
                 :name           => 'Other Payer Referring Provider',
-                :identified_by  => {
-                  'NM1.NM102' => '1'
-                },
                 :minimum        => 0,
                 :maximum        => 2,
                 :position       => 3250
@@ -99,9 +91,7 @@ module Hippo::TransactionSets
       #Other Payer Rendering Provider
       loop    Hippo::TransactionSets::HIPAA_837::L2330D,
                 :name           => 'Other Payer Rendering Provider',
-                :identified_by  => {
-                  'NM1.NM101' => '82'
-                },
+                :identified_by  => {'NM1.NM101' => '82'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 3650
@@ -109,10 +99,7 @@ module Hippo::TransactionSets
       #Other Payer Service Facility Location
       loop    Hippo::TransactionSets::HIPAA_837::L2330E,
                 :name           => 'Other Payer Service Facility Location',
-                :identified_by  => {
-                  'NM1.NM101' => '77',
-                  'NM1.NM102' => '2'
-                },
+                :identified_by  => {'NM1.NM101' => '77'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 4650
@@ -120,10 +107,7 @@ module Hippo::TransactionSets
       #Other Payer Supervising Provider
       loop    Hippo::TransactionSets::HIPAA_837::L2330F,
                 :name           => 'Other Payer Supervising Provider',
-                :identified_by  => {
-                  'NM1.NM101' => 'DQ',
-                  'NM1.NM102' => '1'
-                },
+                :identified_by  => {'NM1.NM101' => 'DQ'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 5650
@@ -131,9 +115,7 @@ module Hippo::TransactionSets
       #Other Payer Billing Provider
       loop    Hippo::TransactionSets::HIPAA_837::L2330G,
                 :name           => 'Other Payer Billing Provider',
-                :identified_by  => {
-                  'NM1.NM101' => '85'
-                },
+                :identified_by  => {'NM1.NM101' => '85'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 6350

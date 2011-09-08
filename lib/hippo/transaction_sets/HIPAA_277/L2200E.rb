@@ -19,11 +19,7 @@ module Hippo::TransactionSets
                 :name           => 'Claim Level Status Information',
                 :minimum        => 1,
                 :maximum        => nil,
-                :position       => 1000,
-                :defaults => {
-                  'STC10' => 'RX',
-                  'STC11' => 'RX'
-                }
+                :position       => 1000
 
       #Payer Claim Control Number
       segment Hippo::Segments::REF,

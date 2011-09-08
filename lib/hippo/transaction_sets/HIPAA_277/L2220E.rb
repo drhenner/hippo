@@ -16,11 +16,7 @@ module Hippo::TransactionSets
                 :name           => 'Service Line Status Information',
                 :minimum        => 1,
                 :maximum        => nil,
-                :position       => 1900,
-                :defaults => {
-                  'STC10' => 'RX',
-                  'STC11' => 'RX'
-                }
+                :position       => 1900
 
       #Service Line Item Identification
       segment Hippo::Segments::REF,

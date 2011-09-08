@@ -26,10 +26,7 @@ module Hippo::TransactionSets
       #Submitter Name
       loop    Hippo::TransactionSets::HIPAA_837::L1000A,
                 :name           => 'Submitter Name',
-                :identified_by  => {
-                  'NM1.NM101' => '41',
-                  'NM1.NM108' => '46'
-                },
+                :identified_by  => {'NM1.NM101' => '41'},
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 200
@@ -37,11 +34,7 @@ module Hippo::TransactionSets
       #Receiver Name
       loop    Hippo::TransactionSets::HIPAA_837::L1000B,
                 :name           => 'Receiver Name',
-                :identified_by  => {
-                  'NM1.NM101' => '40',
-                  'NM1.NM102' => '2',
-                  'NM1.NM108' => '46'
-                },
+                :identified_by  => {'NM1.NM101' => '40'},
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 500
@@ -49,10 +42,7 @@ module Hippo::TransactionSets
       #Billing Provider Hierarchical Level
       loop    Hippo::TransactionSets::HIPAA_837::L2000A,
                 :name           => 'Billing Provider Hierarchical Level',
-                :identified_by  => {
-                  'HL.HL03' => '20',
-                  'HL.HL04' => '1'
-                },
+                :identified_by  => {'HL.HL03' => '20'},
                 :minimum        => 1,
                 :maximum        => nil,
                 :position       => 10
@@ -60,9 +50,7 @@ module Hippo::TransactionSets
       #Subscriber Hierarchical Level
       loop    Hippo::TransactionSets::HIPAA_837::L2000B,
                 :name           => 'Subscriber Hierarchical Level',
-                :identified_by  => {
-                  'HL.HL03' => '22'
-                },
+                :identified_by  => {'HL.HL03' => '22'},
                 :minimum        => 1,
                 :maximum        => nil,
                 :position       => 10
@@ -70,10 +58,7 @@ module Hippo::TransactionSets
       #Patient Hierarchical Level
       loop    Hippo::TransactionSets::HIPAA_837::L2000C,
                 :name           => 'Patient Hierarchical Level',
-                :identified_by  => {
-                  'HL.HL03' => '23',
-                  'HL.HL04' => '0'
-                },
+                :identified_by  => {'HL.HL03' => '23'},
                 :minimum        => 0,
                 :maximum        => nil,
                 :position       => 10

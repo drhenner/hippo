@@ -21,10 +21,7 @@ module Hippo::TransactionSets
                 :name           => 'Supervising Provider Secondary Identification',
                 :minimum        => 0,
                 :maximum        => 20,
-                :position       => 5250,
-                :defaults => {
-                  'REF04' => '2U'
-                }
+                :position       => 5250
 
     end
   end

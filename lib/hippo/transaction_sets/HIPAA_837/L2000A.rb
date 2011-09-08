@@ -39,10 +39,7 @@ module Hippo::TransactionSets
       #Billing Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2010AA,
                 :name           => 'Billing Provider Name',
-                :identified_by  => {
-                  'NM1.NM101' => '85',
-                  'NM1.NM108' => 'XX'
-                },
+                :identified_by  => {'NM1.NM101' => '85'},
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 150
@@ -50,9 +47,7 @@ module Hippo::TransactionSets
       #Pay-to Address Name
       loop    Hippo::TransactionSets::HIPAA_837::L2010AB,
                 :name           => 'Pay-to Address Name',
-                :identified_by  => {
-                  'NM1.NM101' => '87'
-                },
+                :identified_by  => {'NM1.NM101' => '87'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 150
@@ -60,10 +55,7 @@ module Hippo::TransactionSets
       #Pay-To Plan Name
       loop    Hippo::TransactionSets::HIPAA_837::L2010AC,
                 :name           => 'Pay-To Plan Name',
-                :identified_by  => {
-                  'NM1.NM101' => 'PE',
-                  'NM1.NM102' => '2'
-                },
+                :identified_by  => {'NM1.NM101' => 'PE'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 450

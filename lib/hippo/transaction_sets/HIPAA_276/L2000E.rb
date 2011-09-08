@@ -27,10 +27,7 @@ module Hippo::TransactionSets
       #Dependent Name
       loop    Hippo::TransactionSets::HIPAA_276::L2100E,
                 :name           => 'Dependent Name',
-                :identified_by  => {
-                  'NM1.NM101' => 'QC',
-                  'NM1.NM102' => '1'
-                },
+                :identified_by  => {'NM1.NM101' => 'QC'},
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 500
@@ -38,9 +35,7 @@ module Hippo::TransactionSets
       #Claim Status Tracking Number
       loop    Hippo::TransactionSets::HIPAA_276::L2200E,
                 :name           => 'Claim Status Tracking Number',
-                :identified_by  => {
-                  'TRN.TRN01' => '1'
-                },
+                :identified_by  => {'TRN.TRN01' => '1'},
                 :minimum        => 1,
                 :maximum        => nil,
                 :position       => 900

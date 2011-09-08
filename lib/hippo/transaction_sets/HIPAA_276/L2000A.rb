@@ -18,10 +18,7 @@ module Hippo::TransactionSets
       #Payer Name
       loop    Hippo::TransactionSets::HIPAA_276::L2100A,
                 :name           => 'Payer Name',
-                :identified_by  => {
-                  'NM1.NM101' => 'PR',
-                  'NM1.NM102' => '2'
-                },
+                :identified_by  => {'NM1.NM101' => 'PR'},
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 500

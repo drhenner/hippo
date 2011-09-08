@@ -31,7 +31,6 @@ module Hippo::TransactionSets
                 :maximum        => 1,
                 :position       => 4000,
                 :defaults => {
-                  'SV501' => 'HC',
                   'SV502' => 'DA'
                 }
 
@@ -276,8 +275,7 @@ module Hippo::TransactionSets
                 :maximum        => 5,
                 :position       => 4730,
                 :defaults => {
-                  'REF01' => 'G1',
-                  'REF04' => '2U'
+                  'REF01' => 'G1'
                 }
 
       #Line Item Control Number
@@ -337,8 +335,7 @@ module Hippo::TransactionSets
                 :maximum        => 5,
                 :position       => 47,
                 :defaults => {
-                  'REF01' => '9F',
-                  'REF04' => '2U'
+                  'REF01' => '9F'
                 }
 
       #Sales Tax Amount
@@ -409,10 +406,7 @@ module Hippo::TransactionSets
       #Rendering Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2420A,
                 :name           => 'Rendering Provider Name',
-                :identified_by  => {
-                  'NM1.NM101' => '82',
-                  'NM1.NM108' => 'XX'
-                },
+                :identified_by  => {'NM1.NM101' => '82'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 5000
@@ -420,10 +414,7 @@ module Hippo::TransactionSets
       #Purchased Service Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2420B,
                 :name           => 'Purchased Service Provider Name',
-                :identified_by  => {
-                  'NM1.NM101' => 'QB',
-                  'NM1.NM108' => 'XX'
-                },
+                :identified_by  => {'NM1.NM101' => 'QB'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 5000
@@ -431,11 +422,7 @@ module Hippo::TransactionSets
       #Service Facility Location Name
       loop    Hippo::TransactionSets::HIPAA_837::L2420C,
                 :name           => 'Service Facility Location Name',
-                :identified_by  => {
-                  'NM1.NM101' => '77',
-                  'NM1.NM102' => '2',
-                  'NM1.NM108' => 'XX'
-                },
+                :identified_by  => {'NM1.NM101' => '77'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 5000
@@ -443,11 +430,7 @@ module Hippo::TransactionSets
       #Supervising Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2420D,
                 :name           => 'Supervising Provider Name',
-                :identified_by  => {
-                  'NM1.NM101' => 'DQ',
-                  'NM1.NM102' => '1',
-                  'NM1.NM108' => 'XX'
-                },
+                :identified_by  => {'NM1.NM101' => 'DQ'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 5000
@@ -455,11 +438,7 @@ module Hippo::TransactionSets
       #Ordering Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2420E,
                 :name           => 'Ordering Provider Name',
-                :identified_by  => {
-                  'NM1.NM101' => 'DK',
-                  'NM1.NM102' => '1',
-                  'NM1.NM108' => 'XX'
-                },
+                :identified_by  => {'NM1.NM101' => 'DK'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 5000
@@ -467,10 +446,6 @@ module Hippo::TransactionSets
       #Referring Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2420F,
                 :name           => 'Referring Provider Name',
-                :identified_by  => {
-                  'NM1.NM102' => '1',
-                  'NM1.NM108' => 'XX'
-                },
                 :minimum        => 0,
                 :maximum        => 2,
                 :position       => 5000
@@ -478,10 +453,7 @@ module Hippo::TransactionSets
       #Ambulance Pick-up Location
       loop    Hippo::TransactionSets::HIPAA_837::L2420G,
                 :name           => 'Ambulance Pick-up Location',
-                :identified_by  => {
-                  'NM1.NM101' => 'PW',
-                  'NM1.NM102' => '2'
-                },
+                :identified_by  => {'NM1.NM101' => 'PW'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 5310
@@ -489,10 +461,7 @@ module Hippo::TransactionSets
       #Ambulance Drop-off Location
       loop    Hippo::TransactionSets::HIPAA_837::L2420H,
                 :name           => 'Ambulance Drop-off Location',
-                :identified_by  => {
-                  'NM1.NM101' => '45',
-                  'NM1.NM102' => '2'
-                },
+                :identified_by  => {'NM1.NM101' => '45'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 5380

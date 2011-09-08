@@ -11,7 +11,6 @@ module Hippo::TransactionSets
                 :maximum        => 1,
                 :position       => 1300,
                 :defaults => {
-                  'CLM05' => 'B',
                   'CLM10' => 'P'
                 }
 
@@ -436,32 +435,14 @@ module Hippo::TransactionSets
                 :name           => 'Anesthesia Related Procedure',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 2313,
-                :defaults => {
-                  'HI01' => 'BP',
-                  'HI02' => 'BO'
-                }
+                :position       => 2313
 
       #Condition Information
       segment Hippo::Segments::HI,
                 :name           => 'Condition Information',
                 :minimum        => 0,
                 :maximum        => 2,
-                :position       => 2320,
-                :defaults => {
-                  'HI01' => 'BG',
-                  'HI02' => 'BG',
-                  'HI03' => 'BG',
-                  'HI04' => 'BG',
-                  'HI05' => 'BG',
-                  'HI06' => 'BG',
-                  'HI07' => 'BG',
-                  'HI08' => 'BG',
-                  'HI09' => 'BG',
-                  'HI10' => 'BG',
-                  'HI11' => 'BG',
-                  'HI12' => 'BG'
-                }
+                :position       => 2320
 
       #Claim Pricing/Repricing Information
       segment Hippo::Segments::HCP,
@@ -473,10 +454,6 @@ module Hippo::TransactionSets
       #Referring Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2310A,
                 :name           => 'Referring Provider Name',
-                :identified_by  => {
-                  'NM1.NM102' => '1',
-                  'NM1.NM108' => 'XX'
-                },
                 :minimum        => 0,
                 :maximum        => 2,
                 :position       => 2500
@@ -484,10 +461,7 @@ module Hippo::TransactionSets
       #Rendering Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2310B,
                 :name           => 'Rendering Provider Name',
-                :identified_by  => {
-                  'NM1.NM101' => '82',
-                  'NM1.NM108' => 'XX'
-                },
+                :identified_by  => {'NM1.NM101' => '82'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 2500
@@ -495,11 +469,7 @@ module Hippo::TransactionSets
       #Service Facility Location Name
       loop    Hippo::TransactionSets::HIPAA_837::L2310C,
                 :name           => 'Service Facility Location Name',
-                :identified_by  => {
-                  'NM1.NM101' => '77',
-                  'NM1.NM102' => '2',
-                  'NM1.NM108' => 'XX'
-                },
+                :identified_by  => {'NM1.NM101' => '77'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 2500
@@ -507,11 +477,7 @@ module Hippo::TransactionSets
       #Supervising Provider Name
       loop    Hippo::TransactionSets::HIPAA_837::L2310D,
                 :name           => 'Supervising Provider Name',
-                :identified_by  => {
-                  'NM1.NM101' => 'DQ',
-                  'NM1.NM102' => '1',
-                  'NM1.NM108' => 'XX'
-                },
+                :identified_by  => {'NM1.NM101' => 'DQ'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 2500
@@ -519,10 +485,7 @@ module Hippo::TransactionSets
       #Ambulance Pick-up Location
       loop    Hippo::TransactionSets::HIPAA_837::L2310E,
                 :name           => 'Ambulance Pick-up Location',
-                :identified_by  => {
-                  'NM1.NM101' => 'PW',
-                  'NM1.NM102' => '2'
-                },
+                :identified_by  => {'NM1.NM101' => 'PW'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 2500
@@ -530,10 +493,7 @@ module Hippo::TransactionSets
       #Ambulance Drop-off Location
       loop    Hippo::TransactionSets::HIPAA_837::L2310F,
                 :name           => 'Ambulance Drop-off Location',
-                :identified_by  => {
-                  'NM1.NM101' => '45',
-                  'NM1.NM102' => '2'
-                },
+                :identified_by  => {'NM1.NM101' => '45'},
                 :minimum        => 0,
                 :maximum        => 1,
                 :position       => 2500

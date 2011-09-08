@@ -18,9 +18,7 @@ module Hippo::TransactionSets
       #Provider Name
       loop    Hippo::TransactionSets::HIPAA_276::L2100C,
                 :name           => 'Provider Name',
-                :identified_by  => {
-                  'NM1.NM101' => '1P'
-                },
+                :identified_by  => {'NM1.NM101' => '1P'},
                 :minimum        => 1,
                 :maximum        => 2,
                 :position       => 500
