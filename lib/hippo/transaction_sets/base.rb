@@ -54,6 +54,20 @@ module Hippo::TransactionSets
       end[sequence]
     end
 
+    def populate_component(component, defaults)
+      defaults ||= {}
+
+      defaults.each do |key, value|
+        if key =~ /(\w+)\.(.+)/
+          next_component, next_component_value = component.send($1.to_sym), {$2 => value}
+
+          populate_component(next_component, next_component_value)
+        else
+          component.send((key + '=').to_sym, value)
+        end
+      end
+    end
+
     def method_missing(method_name, *args)
       component_name, component_sequence = method_name.to_s.split('_')
       component_entry = get_component(component_name, component_sequence)
@@ -68,20 +82,8 @@ module Hippo::TransactionSets
         # iterate through the hash of defaults
         # and assign them to the component before
         # adding to @values
-        [:defaults, :identified_by].each do |sym|
-          next if component_entry[sym].nil?
-
-          component_entry[sym].each do |key, value|
-            next unless key.class == String
-
-            if component_entry[:class].superclass == Hippo::TransactionSets::Base
-              segment, field = key.split('.',2)
-              component.send(segment.to_sym).send((field + '=').to_sym, value)
-            else
-              component.send((key + '=').to_sym, value)
-            end
-          end
-        end
+        populate_component(component, component_entry[:defaults])
+        populate_component(component, component_entry[:identified_by])
 
         yield component if block_given?
 
