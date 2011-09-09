@@ -89,19 +89,27 @@ module Hippo::TransactionSets
 
         yield component if block_given?
 
-        values[component_entry[:sequence]] = if component_entry[:maximum] && component_entry[:maximum] > 1
-                                               [component]
+        values[component_entry[:sequence]] = if component_entry[:maximum] > 1
+                                               RepeatingComponent[component]
                                              else
                                                component
                                              end
       else
-        if component_entry[:maximum] && component_entry[:maximum] > 1 && block_given?
-          component =  component_entry[:class].new :parent => self
-          yield component
-          values[component_entry[:sequence]] << component
-        else
-          return values[component_entry[:sequence]]
-        end
+        return values[component_entry[:sequence]]
+      end
+    end
+
+    class RepeatingComponent < Array
+      def to_s
+        self.map(&:to_s).join
+      end
+
+      def segment_count
+        self.map(&:segment_count).inject(&:+)
+      end
+
+      def method_missing(method_name, *args)
+        self.first.send(method_name, *args)
       end
     end
   end
