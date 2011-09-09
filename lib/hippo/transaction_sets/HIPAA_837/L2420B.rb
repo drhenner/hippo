@@ -11,8 +11,7 @@ module Hippo::TransactionSets
                 :maximum        => 1,
                 :position       => 5000,
                 :defaults => {
-                  'NM101' => 'QB',
-                  'NM108' => 'XX'
+                  'NM101' => 'QB'
                 }
 
       #Purchased Service Provider Secondary Identification

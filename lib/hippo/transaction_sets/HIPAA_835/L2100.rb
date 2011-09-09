@@ -46,8 +46,7 @@ module Hippo::TransactionSets
                 :maximum        => 1,
                 :position       => 310,
                 :defaults => {
-                  'NM101' => '74',
-                  'NM108' => 'C'
+                  'NM101' => '74'
                 }
 
       #Service Provider Name
@@ -154,8 +153,7 @@ module Hippo::TransactionSets
                 :maximum        => 2,
                 :position       => 600,
                 :defaults => {
-                  'PER01' => 'CX',
-                  'PER07' => 'EX'
+                  'PER01' => 'CX'
                 }
 
       #Claim Supplemental Information

@@ -12,8 +12,7 @@ module Hippo::TransactionSets
                 :position       => 5000,
                 :defaults => {
                   'NM101' => 'DK',
-                  'NM102' => '1',
-                  'NM108' => 'XX'
+                  'NM102' => '1'
                 }
 
       #Ordering Provider Address

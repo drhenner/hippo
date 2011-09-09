@@ -21,11 +21,6 @@ module Hippo::TransactionSets
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 70,
-                :defaults => {
-                  'PAT05' => 'D8',
-                  'PAT07' => '01',
-                  'PAT09' => 'Y'
-                }
 
       #Patient Name
       loop    Hippo::TransactionSets::HIPAA_837::L2010CA,

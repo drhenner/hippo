@@ -19,9 +19,6 @@ module Hippo::TransactionSets
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 200,
-                :defaults => {
-                  'BPR08' => 'DA'
-                }
 
       #Reassociation Trace Number
       segment Hippo::Segments::TRN,

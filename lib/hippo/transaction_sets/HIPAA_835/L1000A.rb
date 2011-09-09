@@ -11,8 +11,7 @@ module Hippo::TransactionSets
                 :maximum        => 1,
                 :position       => 800,
                 :defaults => {
-                  'N101' => 'PR',
-                  'N103' => 'XV'
+                  'N101' => 'PR'
                 }
 
       #Payer Address
@@ -43,8 +42,7 @@ module Hippo::TransactionSets
                 :maximum        => 1,
                 :position       => 1300,
                 :defaults => {
-                  'PER01' => 'CX',
-                  'PER07' => 'EX'
+                  'PER01' => 'CX'
                 }
 
       #Payer Technical Contact Information

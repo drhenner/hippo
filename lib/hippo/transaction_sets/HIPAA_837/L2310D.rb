@@ -12,8 +12,7 @@ module Hippo::TransactionSets
                 :position       => 2500,
                 :defaults => {
                   'NM101' => 'DQ',
-                  'NM102' => '1',
-                  'NM108' => 'XX'
+                  'NM102' => '1'
                 }
 
       #Supervising Provider Secondary Identification

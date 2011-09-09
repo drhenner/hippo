@@ -54,9 +54,6 @@ module Hippo::TransactionSets
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 3110,
-                :defaults => {
-                  'OI04' => 'P'
-                }
 
       #Outpatient Adjudication Information
       segment Hippo::Segments::MOA,

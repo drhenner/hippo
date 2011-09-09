@@ -64,8 +64,7 @@ module Hippo::TransactionSets
                 :position       => 400,
                 :defaults => {
                   'PER01' => 'IC',
-                  'PER03' => 'TE',
-                  'PER05' => 'EX'
+                  'PER03' => 'TE'
                 }
 
     end

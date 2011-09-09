@@ -11,8 +11,7 @@ module Hippo::TransactionSets
                 :maximum        => 1,
                 :position       => 2500,
                 :defaults => {
-                  'NM102' => '1',
-                  'NM108' => 'XX'
+                  'NM102' => '1'
                 }
 
       #Referring Provider Secondary Identification

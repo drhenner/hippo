@@ -11,8 +11,7 @@ module Hippo::TransactionSets
                 :maximum        => 1,
                 :position       => 150,
                 :defaults => {
-                  'NM101' => '85',
-                  'NM108' => 'XX'
+                  'NM101' => '85'
                 }
 
       #Billing Provider Address

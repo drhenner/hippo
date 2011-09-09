@@ -10,9 +10,6 @@ module Hippo::TransactionSets
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 1300,
-                :defaults => {
-                  'CLM10' => 'P'
-                }
 
       #Date - Onset of Current Illness or Symptom
       segment Hippo::Segments::DTP,
@@ -191,9 +188,6 @@ module Hippo::TransactionSets
                 :minimum        => 0,
                 :maximum        => 10,
                 :position       => 1550,
-                :defaults => {
-                  'PWK05' => 'AC'
-                }
 
       #Contract Information
       segment Hippo::Segments::CN1,
@@ -373,7 +367,6 @@ module Hippo::TransactionSets
                 :maximum        => 1,
                 :position       => 1950,
                 :defaults => {
-                  'CR101' => 'LB',
                   'CR105' => 'DH'
                 }
 

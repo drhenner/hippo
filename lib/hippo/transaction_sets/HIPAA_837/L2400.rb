@@ -17,12 +17,6 @@ module Hippo::TransactionSets
                 :minimum        => 1,
                 :maximum        => 1,
                 :position       => 3700,
-                :defaults => {
-                  'SV109' => 'Y',
-                  'SV111' => 'Y',
-                  'SV112' => 'Y',
-                  'SV115' => '0'
-                }
 
       #Durable Medical Equipment Service
       segment Hippo::Segments::SV5,
@@ -40,9 +34,6 @@ module Hippo::TransactionSets
                 :minimum        => 0,
                 :maximum        => 10,
                 :position       => 4200,
-                :defaults => {
-                  'PWK05' => 'AC'
-                }
 
       #Durable Medical Equipment Certificate of Medical Necessity Indicator
       segment Hippo::Segments::PWK,
@@ -61,7 +52,6 @@ module Hippo::TransactionSets
                 :maximum        => 1,
                 :position       => 4250,
                 :defaults => {
-                  'CR101' => 'LB',
                   'CR105' => 'DH'
                 }
 

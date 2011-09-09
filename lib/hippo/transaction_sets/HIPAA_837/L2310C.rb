@@ -12,8 +12,7 @@ module Hippo::TransactionSets
                 :position       => 2500,
                 :defaults => {
                   'NM101' => '77',
-                  'NM102' => '2',
-                  'NM108' => 'XX'
+                  'NM102' => '2'
                 }
 
       #Service Facility Location Address
@@ -45,8 +44,7 @@ module Hippo::TransactionSets
                 :position       => 2750,
                 :defaults => {
                   'PER01' => 'IC',
-                  'PER03' => 'TE',
-                  'PER05' => 'EX'
+                  'PER03' => 'TE'
                 }
 
     end

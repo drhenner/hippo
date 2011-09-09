@@ -11,8 +11,7 @@ module Hippo::TransactionSets
                 :maximum        => 1,
                 :position       => 5000,
                 :defaults => {
-                  'NM101' => '82',
-                  'NM108' => 'XX'
+                  'NM101' => '82'
                 }
 
       #Rendering Provider Specialty Information
