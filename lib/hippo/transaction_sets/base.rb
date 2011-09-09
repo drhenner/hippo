@@ -12,6 +12,8 @@ module Hippo::TransactionSets
       end
 
       def add_component(klass, options={})
+        options[:maximum] ||= 1
+
         components << options.merge(:class => klass, :sequence => components.length)
       end
       alias segment add_component
