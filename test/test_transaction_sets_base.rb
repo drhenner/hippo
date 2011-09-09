@@ -32,7 +32,7 @@ class TestTransactionSetBase < MiniTest::Unit::TestCase
 
   end
 
-  def test_accessing_repeated_segments
+  def test_accessing_sements_with_same_segment_id
     ts = Hippo::TransactionSets::Test::Base.new
     ts.TSS.Field2 = 'Bar'
     ts.TCS.Field1 = 'Foo'
@@ -60,13 +60,26 @@ class TestTransactionSetBase < MiniTest::Unit::TestCase
 
     assert_equal 'TSS*Blah*Bar*Baz~TCS*Blah*:::CNBlah*Preset Field 7~TSS*Last Segment*Boo~', ts.to_s
 
+    # test nexted block syntax on non-looping component
     ts.L0001 do |l0001|
       l0001.TSS do |tss|
         tss.Field2 = 'SubBar'
       end
     end
 
-
     assert_equal 'TSS*Blah*Bar*Baz~TCS*Blah*:::CNBlah*Preset Field 7~TSS*Last Segment*Boo~TSS*Foo*SubBar~', ts.to_s
+
+    # test nexted block syntax on non-looping component
+    ts.L0002 do |l0002|
+      l0002.TCS do |tcs|
+        tcs.Field2 = 'SubBarBlah'
+      end
+
+      l0002.TSS do |tss|
+        tss.Field2 = 'SubBarRepeater'
+      end
+    end
+
+    assert_equal 'TSS*Blah*Bar*Baz~TCS*Blah*:::CNBlah*Preset Field 7~TSS*Last Segment*Boo~TSS*Foo*SubBar~TCS*:SubBarBlah**Foo2~TSS*Last Segment*SubBarRepeater~', ts.to_s
   end
 end
