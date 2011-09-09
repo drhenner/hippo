@@ -68,6 +68,18 @@ module Hippo::TransactionSets
           component.send((key + '=').to_sym, value)
         end
       end
+
+      component
+    end
+
+    def initialize_component(component_entry)
+        component = component_entry[:class].new :parent => self
+
+        # iterate through the hash of defaults
+        # and assign them to the component before
+        # adding to @values
+        populate_component(component, component_entry[:defaults])
+        populate_component(component, component_entry[:identified_by])
     end
 
     def method_missing(method_name, *args)
@@ -79,16 +91,10 @@ module Hippo::TransactionSets
       end
 
       if values[component_entry[:sequence]].nil?
-        component = component_entry[:class].new :parent => self
-
-        # iterate through the hash of defaults
-        # and assign them to the component before
-        # adding to @values
-        populate_component(component, component_entry[:defaults])
-        populate_component(component, component_entry[:identified_by])
+        component = initialize_component(component_entry)
 
         values[component_entry[:sequence]] = if component_entry[:maximum] > 1
-                                               RepeatingComponent.new(component_entry[:class],self, component)
+                                               RepeatingComponent.new(component_entry, self, component)
                                              else
                                                component
                                              end
@@ -99,15 +105,15 @@ module Hippo::TransactionSets
     end
 
     class RepeatingComponent < Array
-      def initialize(klass, parent, *args)
-        @klass = klass
+      def initialize(component_entry, parent, *args)
+        @component_entry = component_entry
         @parent = parent
 
         self.push(*args)
       end
 
       def build
-        self.push(@klass.new :parent => @parent)
+        self.push(@parent.initialize_component(@component_entry))
 
         yield self[-1] if block_given?
         self[-1]
