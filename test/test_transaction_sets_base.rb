@@ -3,8 +3,8 @@ require_relative './test_helper'
 class TestTransactionSetBase < MiniTest::Unit::TestCase
   def test_preset_values_are_set
     ts = Hippo::TransactionSets::Test::Base.new
-    ts.TCS {|tcs| }
-    ts.TSS {|tss| }
+    ts.TCS
+    ts.TSS.build
 
     assert_equal 'TSS*Blah~TCS***Preset Field 7~', ts.to_s
   end

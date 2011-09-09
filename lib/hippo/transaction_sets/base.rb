@@ -31,7 +31,7 @@ module Hippo::TransactionSets
     end
 
     def segment_count
-      values.map(&:segment_count).inject(&:+)
+      values.values.map(&:segment_count).inject(&:+)
     end
 
     def to_s
@@ -91,13 +91,14 @@ module Hippo::TransactionSets
       end
 
       if values[component_entry[:sequence]].nil?
-        component = initialize_component(component_entry)
 
-        values[component_entry[:sequence]] = if component_entry[:maximum] > 1
-                                               RepeatingComponent.new(component_entry, self, component)
-                                             else
-                                               component
-                                             end
+        component = if component_entry[:maximum] > 1
+                      RepeatingComponent.new(component_entry, self)
+                    else
+                      initialize_component(component_entry)
+                    end
+
+        values[component_entry[:sequence]] = component
       end
 
       yield values[component_entry[:sequence]] if block_given?
@@ -105,11 +106,9 @@ module Hippo::TransactionSets
     end
 
     class RepeatingComponent < Array
-      def initialize(component_entry, parent, *args)
+      def initialize(component_entry, parent)
         @component_entry = component_entry
         @parent = parent
-
-        self.push(*args)
       end
 
       def build
@@ -128,6 +127,8 @@ module Hippo::TransactionSets
       end
 
       def method_missing(method_name, *args, &block)
+        build if self.length == 0
+
         self.first.send(method_name, *args, &block)
       end
     end
