@@ -87,8 +87,6 @@ module Hippo::TransactionSets
         populate_component(component, component_entry[:defaults])
         populate_component(component, component_entry[:identified_by])
 
-        yield component if block_given?
-
         values[component_entry[:sequence]] = if component_entry[:maximum] > 1
                                                RepeatingComponent.new(component_entry[:class],self, component)
                                              else
@@ -96,6 +94,7 @@ module Hippo::TransactionSets
                                              end
       end
 
+      yield values[component_entry[:sequence]] if block_given?
       return values[component_entry[:sequence]]
     end
 
