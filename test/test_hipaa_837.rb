@@ -68,7 +68,7 @@ class TestHIPAA837 < MiniTest::Unit::TestCase
     ts = Hippo::TransactionSets::HIPAA_837::Base.new
 
     ts.ST do |st|
-      st.TransactionSetControlNumber        = '0123'
+      st.TransactionSetControlNumber        = '0021'
       st.ImplementationConventionReference  = '005010X222A1'
     end
 
@@ -82,25 +82,34 @@ class TestHIPAA837 < MiniTest::Unit::TestCase
 
     ts.L1000A do |l1000a|
       l1000a.NM1 do |nm1|
+        nm1.EntityTypeQualifier        = '2'
         nm1.NameLastOrOrganizationName = 'PREMIER BILLING SERVICE'
         nm1.IdentificationCode         = 'TGJ23'
       end
 
       l1000a.PER do |per|
-        per.Name                          = 'JERRY'
-        per.CommunicationNumberQualifier  = 'TE'
-        per.CommunicationNumber           = '3055552222'
+        per.Name                            = 'JERRY'
+        per.CommunicationNumberQualifier_01 = 'TE'
+        per.CommunicationNumber_01          = '3055552222'
+        per.CommunicationNumberQualifier_02 = 'EX'
+        per.CommunicationNumber_02          = '231'
       end
     end
 
     ts.L1000B do |l1000b|
       l1000b.NM1 do |nm1|
+        nm1.EntityTypeQualifier        = '2'
         nm1.NameLastOrOrganizationName = 'KEY INSURANCE COMPANY'
         nm1.IdentificationCode         = '66783JJT'
       end
     end
 
     ts.L2000A do |l2000a|
+      l2000a.HL do |hl|
+        hl.HL01 = hl.class.increment_sequence_number
+        hl.HL04 = 1
+      end
+
       l2000a.PRV do |prv|
         prv.ReferenceIdentification    = '203BF0100Y'
       end
@@ -110,6 +119,7 @@ class TestHIPAA837 < MiniTest::Unit::TestCase
         l2010aa.NM1 do |nm1|
           nm1.EntityTypeQualifier           = '2'
           nm1.NameLastOrOrganizationName    = 'BEN KILDARE SERVICE'
+          nm1.IdentificationCodeQualifier   = 'XX'
           nm1.IdentificationCode            = '9876543210'
         end
 
@@ -144,164 +154,190 @@ class TestHIPAA837 < MiniTest::Unit::TestCase
           n4.PostalCode                     = '33111'
         end
       end
+
+      ts.L2000B do |l2000b|
+        l2000b.HL do |hl|
+          hl.HL01 = hl.class.increment_sequence_number
+          hl.HL02 = l2000a.HL.HL01
+          hl.HL04 = 1
+        end
+
+        l2000b.SBR do |sbr|
+          sbr.PayerResponsibilitySequenceNumberCode = 'P'
+          sbr.ReferenceIdentification               = '2222-SJ'
+          sbr.ClaimFilingIndicatorCode              = 'CI'
+        end
+
+        l2000b.L2010BA do |l2010ba|
+          l2010ba.NM1 do |nm1|
+            nm1.EntityTypeQualifier         = '1'
+            nm1.NameLastOrOrganizationName  = 'SMITH'
+            nm1.NameFirst                   = 'JANE'
+            nm1.IdentificationCodeQualifier = 'MI'
+            nm1.IdentificationCode          = 'JS00111223333'
+          end
+
+          l2010ba.DMG do |dmg|
+            dmg.DateTimePeriod              = '19430501'
+            dmg.GenderCode                  = 'F'
+          end
+        end
+
+        l2000b.L2010BB do |l2010bb|
+          l2010bb.NM1 do |nm1|
+            nm1.EntityTypeQualifier           = '2'
+            nm1.NameLastOrOrganizationName    = 'KEY INSURANCE COMPANY'
+            nm1.IdentificationCodeQualifier   = 'PI'
+            nm1.IdentificationCode            = '999996666'
+          end
+
+          # second ref segment in L2010BB
+          l2010bb.REF_02 do |ref|
+            ref.ReferenceIdentificationQualifier = 'G2'
+            ref.ReferenceIdentification          = 'KA6663'
+          end
+        end
+
+        ts.L2000C do |l2000c|
+          l2000c.HL do |hl|
+            hl.HL01 = hl.class.increment_sequence_number
+            hl.HL02 = l2000b.HL.HL01
+            hl.HL04 = 0
+          end
+
+          l2000c.PAT do |pat|
+            pat.IndividualRelationshipCode = '19'
+          end
+
+          l2000c.L2010CA do |l2010ca|
+            l2010ca.NM1 do |nm1|
+              nm1.NameLastOrOrganizationName  = 'SMITH'
+              nm1.NameFirst                   = 'TED'
+            end
+
+            l2010ca.N3 do |n3|
+              n3.AddressInformation             = '236 N MAIN ST'
+            end
+
+            l2010ca.N4 do |n4|
+              n4.CityName                       = 'MIAMI'
+              n4.StateOrProvinceCode            = 'FL'
+              n4.PostalCode                     = '33413'
+            end
+
+            l2010ca.DMG do |dmg|
+              dmg.DateTimePeriod  = '19730501'
+              dmg.GenderCode      = 'M'
+            end
+          end
+
+          l2000c.L2300 do |l2300|
+            l2300.CLM do |clm|
+              clm.ClaimSubmitterSIdentifier         = '26463774'
+              clm.MonetaryAmount                    = '100'
+              clm.FacilityCodeValue                 = '11'
+              clm.FacilityCodeQualifier             = 'B'
+              clm.ClaimFrequencyTypeCode            = '1'
+              clm.YesNoConditionOrResponseCode      = 'Y'
+              clm.ProviderAcceptAssignmentCode      = 'A'
+              clm.YesNoConditionOrResponseCode_02   = 'Y'
+              clm.ReleaseOfInformationCode          = 'I'
+            end
+
+            l2300.REF_11 do |ref| #('Claim Identifier For Transmission Intermediaries') do |ref|
+              ref.ReferenceIdentification = '17312345600006351'
+            end
+
+            l2300.HI do |hi|
+              hi.CodeListQualifierCode_01 = 'BK'
+              hi.IndustryCode_01          = '0340'
+
+              hi.CodeListQualifierCode_02 = 'BF'
+              hi.IndustryCode_03          = 'V7389'
+            end
+
+            l2300.L2400.build do |l2400|
+              l2400.LX.LX01 = Hippo::Segments::LX.increment_sequence_number
+
+              l2400.SV1 do |sv1|
+                sv1.ProductServiceIdQualifier     = 'HC'
+                sv1.ProductServiceId              = '99213'
+                sv1.MonetaryAmount                = '40'
+                sv1.UnitOrBasisForMeasurementCode = 'UN'
+                sv1.Quantity                      = '1'
+                sv1.DiagnosisCodePointer          = 1
+              end
+
+              l2400.DTP('Date - Service Date') do |dtp|
+                dtp.DateTimePeriodFormatQualifier = 'D8'
+                dtp.DateTimePeriod                = '20061003'
+              end
+            end
+
+            l2300.L2400.build do |l2400|
+              l2400.LX.LX01 = Hippo::Segments::LX.increment_sequence_number
+
+              l2400.SV1 do |sv1|
+                sv1.ProductServiceIdQualifier     = 'HC'
+                sv1.ProductServiceId              = '87070'
+                sv1.MonetaryAmount                = '15'
+                sv1.UnitOrBasisForMeasurementCode = 'UN'
+                sv1.Quantity                      = '1'
+                sv1.DiagnosisCodePointer          = 1
+              end
+
+              l2400.DTP('Date - Service Date') do |dtp|
+                dtp.DateTimePeriodFormatQualifier = 'D8'
+                dtp.DateTimePeriod                = '20061003'
+              end
+            end
+
+            l2300.L2400.build do |l2400|
+              l2400.LX.LX01 = Hippo::Segments::LX.increment_sequence_number
+
+              l2400.SV1 do |sv1|
+                sv1.ProductServiceIdQualifier     = 'HC'
+                sv1.ProductServiceId              = '99214'
+                sv1.MonetaryAmount                = '35'
+                sv1.UnitOrBasisForMeasurementCode = 'UN'
+                sv1.Quantity                      = '1'
+                sv1.DiagnosisCodePointer          = 2
+              end
+
+              l2400.DTP('Date - Service Date') do |dtp|
+                dtp.DateTimePeriodFormatQualifier = 'D8'
+                dtp.DateTimePeriod                = '20061010'
+              end
+            end
+
+            l2300.L2400.build do |l2400|
+              l2400.LX.LX01 = Hippo::Segments::LX.increment_sequence_number
+
+              l2400.SV1 do |sv1|
+                sv1.ProductServiceIdQualifier     = 'HC'
+                sv1.ProductServiceId              = '86663'
+                sv1.MonetaryAmount                = '10'
+                sv1.UnitOrBasisForMeasurementCode = 'UN'
+                sv1.Quantity                      = '1'
+                sv1.DiagnosisCodePointer          = 2
+              end
+
+              l2400.DTP('Date - Service Date') do |dtp|
+                dtp.DateTimePeriodFormatQualifier = 'D8'
+                dtp.DateTimePeriod                = '20061010'
+              end
+            end
+          end
+        end
+      end
     end
 
-    ts.L2000B do |l2000b|
-      l2000b.SBR do |sbr|
-        sbr.PayerResponsibilitySequenceNumberCode = 'P'
-        sbr.ReferenceIdentification               = '2222-SJ'
-        sbr.ClaimFilingIndicatorCode              = 'CI'
-      end
-
-      l2000b.L2010BA do |l2010ba|
-        l2010ba.NM1 do |nm1|
-          nm1.EntityTypeQualifier         = '1'
-          nm1.NameLastOrOrganizationName  = 'SMITH'
-          nm1.NameFirst                   = 'JANE'
-          nm1.IdentificationCodeQualifier = 'MI'
-          nm1.IdentificationCode          = 'JS00111223333'
-        end
-
-        l2010ba.DMG do |dmg|
-          dmg.DateTimePeriod              = '19430501'
-          dmg.GenderCode                  = 'F'
-        end
-      end
-
-      l2000b.L2010BB do |l2010bb|
-        l2010bb.NM1 do |nm1|
-          nm1.EntityTypeQualifier           = '2'
-          nm1.NameLastOrOrganizationName    = 'KEY INSURANCE COMPANY'
-          nm1.IdentificationCodeQualifier   = 'PI'
-          nm1.IdentificationCode            = '999996666'
-        end
-
-        # second ref segment in L2010BB
-        l2010bb.REF_02 do |ref|
-          ref.ReferenceIdentificationQualifier = 'G2'
-          ref.ReferenceIdentification          = 'KA6663'
-        end
-      end
-    end
-
-    ts.L2000C do |l2000c|
-      l2000c.PAT do |pat|
-        pat.IndividualRelationshipCode = '19'
-      end
-
-      l2000c.L2010CA do |l2010ca|
-        l2010ca.NM1 do |nm1|
-          nm1.NameLastOrOrganizationName  = 'SMITH'
-          nm1.NameFirst                   = 'TED'
-        end
-
-        l2010ca.N3 do |n3|
-          n3.AddressInformation             = '236 W MAIN ST'
-        end
-
-        l2010ca.N4 do |n4|
-          n4.CityName                       = 'MIAMI'
-          n4.StateOrProvinceCode            = 'FL'
-          n4.PostalCode                     = '33413'
-        end
-
-        l2010ca.DMG do |dmg|
-          dmg.DateTimePeriod  = '19730501'
-          dmg.GenderCode      = 'M'
-        end
-      end
-
-      l2000c.L2300 do |l2300|
-        l2300.CLM do |clm|
-          clm.ClaimSubmitterSIdentifier         = '26463774'
-          clm.MonetaryAmount                    = '100'
-          clm.FacilityCodeValue                 = '11'
-          clm.FacilityCodeQualifier             = 'B'
-          clm.ClaimFrequencyTypeCode            = '1'
-          clm.YesNoConditionOrResponseCode      = 'Y'
-          clm.ProviderAcceptAssignmentCode      = 'A'
-          clm.YesNoConditionOrResponseCode_02   = 'Y'
-          clm.ReleaseOfInformationCode          = 'I'
-        end
-
-        l2300.REF_11 do |ref| #('Claim Identifier For Transmission Intermediaries') do |ref|
-          ref.ReferenceIdentification = '17312345600006351'
-        end
-
-        l2300.HI do |hi|
-          hi.CodeListQualifierCode  = 'BK'
-          hi.IndustryCode           = '0340'
-
-          hi.CodeListQualifierCode  = 'BF'
-          hi.IndustryCode           = 'V7389'
-        end
-
-        l2300.L2400.build do |l2400|
-          l2400.SV1 do |sv1|
-            sv1.ProductServiceIdQualifier     = 'HC'
-            sv1.ProductServiceId              = '99213'
-            sv1.MonetaryAmount                = '40'
-            sv1.UnitOrBasisForMeasurementCode = 'UN'
-            sv1.Quantity                      = '1'
-            sv1.DiagnosisCodePointer          = 1
-          end
-
-          l2400.DTP('Date - Service Date') do |dtp|
-            dtp.DateTimePeriod = '20061003'
-          end
-        end
-
-        l2300.L2400.build do |l2400|
-          l2400.SV1 do |sv1|
-            sv1.ProductServiceIdQualifier     = 'HC'
-            sv1.ProductServiceId              = '87070'
-            sv1.MonetaryAmount                = '15'
-            sv1.UnitOrBasisForMeasurementCode = 'UN'
-            sv1.Quantity                      = '1'
-            sv1.DiagnosisCodePointer          = 1
-          end
-
-          l2400.DTP('Date - Service Date') do |dtp|
-            dtp.DateTimePeriod = '20061003'
-          end
-        end
-
-        l2300.L2400.build do |l2400|
-          l2400.SV1 do |sv1|
-            sv1.ProductServiceIdQualifier     = 'HC'
-            sv1.ProductServiceId              = '99214'
-            sv1.MonetaryAmount                = '35'
-            sv1.UnitOrBasisForMeasurementCode = 'UN'
-            sv1.Quantity                      = '1'
-            sv1.DiagnosisCodePointer          = 1
-          end
-
-          l2400.DTP('Date - Service Date') do |dtp|
-            dtp.DateTimePeriod = '20061010'
-          end
-        end
-
-        l2300.L2400.build do |l2400|
-          l2400.SV1 do |sv1|
-            sv1.ProductServiceIdQualifier     = 'HC'
-            sv1.ProductServiceId              = '86663'
-            sv1.MonetaryAmount                = '10'
-            sv1.UnitOrBasisForMeasurementCode = 'UN'
-            sv1.Quantity                      = '1'
-            sv1.DiagnosisCodePointer          = 2
-          end
-
-          l2400.DTP('Date - Service Date') do |dtp|
-            dtp.DateTimePeriod = '20061010'
-          end
-        end
-      end
-    end
 
     ts.SE do |se|
       se.TransactionSetControlNumber = ts.ST.TransactionSetControlNumber
     end
 
+    ts.SE.NumberOfIncludedSegments    = ts.segment_count
 
     published_answer = <<EOF
 ST*837*0021*005010X222A1~
@@ -317,7 +353,7 @@ N4*MIAMI*FL*33111~
 REF*EI*587654321~
 NM1*87*2~
 N3*2345 OCEAN BLVD~
-N4*MAIMI*FL*33111~
+N4*MIAMI*FL*33111~
 HL*2*1*22*1~
 SBR*P**2222-SJ******CI~
 NM1*IL*1*SMITH*JANE****MI*JS00111223333~
@@ -348,7 +384,7 @@ DTP*472*D8*20061010~
 SE*42*0021~
 EOF
 
-    assert_equal published_answer, ts.to_s.split('~').join("~\n")
+    assert_equal published_answer, ts.to_s.split('~').join("~\n") + "~\n"
 
     #* not printing LX segments for each service line
     #* HL parent/child references wrong
