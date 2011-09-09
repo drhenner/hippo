@@ -52,6 +52,11 @@ module Hippo::Segments
 
     attr_accessor :values, :parent
 
+    # make totaling segment counts easier...
+    def segment_count
+      1
+    end
+
     def initialize(options = {})
       @parent = options.delete(:parent)
     end
