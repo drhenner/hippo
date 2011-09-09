@@ -90,16 +90,30 @@ module Hippo::TransactionSets
         yield component if block_given?
 
         values[component_entry[:sequence]] = if component_entry[:maximum] > 1
-                                               RepeatingComponent[component]
+                                               RepeatingComponent.new(component_entry[:class],self, component)
                                              else
                                                component
                                              end
-      else
-        return values[component_entry[:sequence]]
       end
+
+      return values[component_entry[:sequence]]
     end
 
     class RepeatingComponent < Array
+      def initialize(klass, parent, *args)
+        @klass = klass
+        @parent = parent
+
+        self.push(*args)
+      end
+
+      def build
+        self.push(@klass.new :parent => @parent)
+
+        yield self[-1] if block_given?
+        self[-1]
+      end
+
       def to_s
         self.map(&:to_s).join
       end
