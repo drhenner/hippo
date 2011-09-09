@@ -50,6 +50,28 @@ module Hippo::TransactionSets
                 :position       => 50
     end
 
+    class L0002 < Hippo::TransactionSets::Base
+      loop_name 'L0002'
+
+      segment Hippo::Segments::TestCompoundSegment,
+                :name           => 'Test Compound Segment #4',
+                :minimum        => 1,
+                :maximum        => 1,
+                :position       => 100,
+                :defaults => {
+                  'Field7' => 'Preset Field 7'
+                }
+
+      segment Hippo::Segments::TestSimpleSegment,
+                :name           => 'Test Simple Segment #5',
+                :minimum        => 1,
+                :maximum        => 1,
+                :position       => 50,
+                :defaults => {
+                  'TSS01' => 'Last Segment'
+                }
+    end
+
     class Base < Hippo::TransactionSets::Base
 
       segment Hippo::Segments::TestSimpleSegment,
@@ -83,6 +105,13 @@ module Hippo::TransactionSets
                 :name           => 'Test Sub-Loop',
                 :identified_by  => {
                   'TSS.TSS01'   => 'Foo'
+                }
+
+      loop Hippo::TransactionSets::Test::L0002,
+                :name           => 'Test Sub-Loop',
+                :maximum        => 5,
+                :identified_by  => {
+                  'TCS.Field7'   => 'Foo2'
                 }
     end
   end
