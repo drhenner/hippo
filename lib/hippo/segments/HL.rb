@@ -3,6 +3,11 @@ module Hippo::Segments
 
     segment_identifier 'HL'
 
+    def self.increment_sequence_number
+      @@sequence_number ||= 0
+      @@sequence_number += 1
+    end
+
     field :name                 => 'HierarchicalIdNumber',
           :sequence             => 1,
           :datatype             => :string,

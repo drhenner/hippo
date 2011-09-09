@@ -27,7 +27,10 @@ module Hippo::TransactionSets
       #Information Source Level
       loop    Hippo::TransactionSets::HIPAA_276::L2000A,
                 :name           => 'Information Source Level',
-                :identified_by  => {'HL.HL03' => '20'},
+                :identified_by  => {
+                  'HL.HL01' => Hippo::Segments::HL.increment_sequence_number,
+                  'HL.HL03' => '20'
+                },
                 :minimum        => 1,
                 :maximum        => nil,
                 :position       => 100
@@ -35,7 +38,10 @@ module Hippo::TransactionSets
       #Information Receiver Level
       loop    Hippo::TransactionSets::HIPAA_276::L2000B,
                 :name           => 'Information Receiver Level',
-                :identified_by  => {'HL.HL03' => '21'},
+                :identified_by  => {
+                  'HL.HL01' => Hippo::Segments::HL.increment_sequence_number,
+                  'HL.HL03' => '21'
+                },
                 :minimum        => 1,
                 :maximum        => nil,
                 :position       => 100
@@ -43,7 +49,10 @@ module Hippo::TransactionSets
       #Service Provider Level
       loop    Hippo::TransactionSets::HIPAA_276::L2000C,
                 :name           => 'Service Provider Level',
-                :identified_by  => {'HL.HL03' => '19'},
+                :identified_by  => {
+                  'HL.HL01' => Hippo::Segments::HL.increment_sequence_number,
+                  'HL.HL03' => '19'
+                },
                 :minimum        => 1,
                 :maximum        => nil,
                 :position       => 100
@@ -51,7 +60,10 @@ module Hippo::TransactionSets
       #Subscriber Level
       loop    Hippo::TransactionSets::HIPAA_276::L2000D,
                 :name           => 'Subscriber Level',
-                :identified_by  => {'HL.HL03' => '22'},
+                :identified_by  => {
+                  'HL.HL01' => Hippo::Segments::HL.increment_sequence_number,
+                  'HL.HL03' => '22'
+                },
                 :minimum        => 1,
                 :maximum        => nil,
                 :position       => 100
@@ -59,7 +71,10 @@ module Hippo::TransactionSets
       #Dependent Level
       loop    Hippo::TransactionSets::HIPAA_276::L2000E,
                 :name           => 'Dependent Level',
-                :identified_by  => {'HL.HL03' => '23'},
+                :identified_by  => {
+                  'HL.HL01' => Hippo::Segments::HL.increment_sequence_number,
+                  'HL.HL03' => '23'
+                },
                 :minimum        => 0,
                 :maximum        => nil,
                 :position       => 100

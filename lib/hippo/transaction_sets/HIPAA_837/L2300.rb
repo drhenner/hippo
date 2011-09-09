@@ -501,6 +501,7 @@ module Hippo::TransactionSets
       #Service Line Number
       loop    Hippo::TransactionSets::HIPAA_837::L2400,
                 :name           => 'Service Line Number',
+                :identified_by  => {'LX.LX01' => Hippo::Segments::LX.increment_sequence_number},
                 :minimum        => 1,
                 :maximum        => 50,
                 :position       => 3650
