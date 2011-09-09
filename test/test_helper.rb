@@ -55,7 +55,7 @@ module Hippo::TransactionSets
       segment Hippo::Segments::TestSimpleSegment,
                 :name           => 'Test Simple Segment #1',
                 :minimum        => 1,
-                :maximum        => 1,
+                :maximum        => 5,
                 :position       => 50,
                 :defaults => {
                   'TSS01' => 'Blah'

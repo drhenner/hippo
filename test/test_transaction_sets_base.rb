@@ -40,4 +40,33 @@ class TestTransactionSetBase < MiniTest::Unit::TestCase
 
     assert_equal 'TSS*Blah*Bar~TCS*Foo**Preset Field 7~TSS*Last Segment*Baz~', ts.to_s
   end
+
+  def test_assigning_segment_values_with_block_syntax
+    ts = Hippo::TransactionSets::Test::Base.new
+
+    ts.TSS do |tss|
+      tss.Field2 = 'Bar'
+      tss.Field3 = 'Baz'
+    end
+
+    ts.TCS do |tcs|
+      tcs.Field1 = 'Blah'
+      tcs.CompositeCommonName_02 = 'CNBlah'
+    end
+
+    ts.TSS_02 do |tss|
+      tss.Field2 = 'Boo'
+    end
+
+    assert_equal 'TSS*Blah*Bar*Baz~TCS*Blah*:::CNBlah*Preset Field 7~TSS*Last Segment*Boo~', ts.to_s
+
+    ts.L0001 do |l0001|
+      l0001.TSS do |tss|
+        tss.Field2 = 'SubBar'
+      end
+    end
+
+
+    assert_equal 'TSS*Blah*Bar*Baz~TCS*Blah*:::CNBlah*Preset Field 7~TSS*Last Segment*Boo~TSS*Foo*SubBar~', ts.to_s
+  end
 end
