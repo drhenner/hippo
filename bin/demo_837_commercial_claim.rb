@@ -232,7 +232,7 @@ ts.L2000C do |l2000c|
       hi.IndustryCode           = 'V7389'
     end
 
-    l2300.L2400 do |l2400|
+    l2300.L2400.build do |l2400|
       l2400.SV1 do |sv1|
         sv1.ProductServiceIdQualifier     = 'HC'
         sv1.ProductServiceId              = '99213'
@@ -247,7 +247,7 @@ ts.L2000C do |l2000c|
       end
     end
 
-    l2300.L2400 do |l2400|
+    l2300.L2400.build do |l2400|
       l2400.SV1 do |sv1|
         sv1.ProductServiceIdQualifier     = 'HC'
         sv1.ProductServiceId              = '87070'
@@ -262,7 +262,7 @@ ts.L2000C do |l2000c|
       end
     end
 
-    l2300.L2400 do |l2400|
+    l2300.L2400.build do |l2400|
       l2400.SV1 do |sv1|
         sv1.ProductServiceIdQualifier     = 'HC'
         sv1.ProductServiceId              = '99214'
@@ -277,7 +277,7 @@ ts.L2000C do |l2000c|
       end
     end
 
-    l2300.L2400 do |l2400|
+    l2300.L2400.build do |l2400|
       l2400.SV1 do |sv1|
         sv1.ProductServiceIdQualifier     = 'HC'
         sv1.ProductServiceId              = '86663'
