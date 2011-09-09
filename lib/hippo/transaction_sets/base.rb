@@ -121,8 +121,8 @@ module Hippo::TransactionSets
         self.map(&:segment_count).inject(&:+)
       end
 
-      def method_missing(method_name, *args)
-        self.first.send(method_name, *args)
+      def method_missing(method_name, *args, &block)
+        self.first.send(method_name, *args, &block)
       end
     end
   end
