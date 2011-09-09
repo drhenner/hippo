@@ -89,7 +89,6 @@ module Hippo::TransactionSets
       #Header Number
       loop    Hippo::TransactionSets::HIPAA_835::L2000,
                 :name           => 'Header Number',
-                :identified_by  => {'LX.LX01' => Hippo::Segments::LX.increment_sequence_number},
                 :minimum        => 0,
                 :maximum        => nil,
                 :position       => 30

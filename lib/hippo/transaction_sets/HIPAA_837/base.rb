@@ -43,7 +43,6 @@ module Hippo::TransactionSets
       loop    Hippo::TransactionSets::HIPAA_837::L2000A,
                 :name           => 'Billing Provider Hierarchical Level',
                 :identified_by  => {
-                  'HL.HL01' => Hippo::Segments::HL.increment_sequence_number,
                   'HL.HL03' => '20'
                 },
                 :minimum        => 1,
@@ -54,7 +53,6 @@ module Hippo::TransactionSets
       loop    Hippo::TransactionSets::HIPAA_837::L2000B,
                 :name           => 'Subscriber Hierarchical Level',
                 :identified_by  => {
-                  'HL.HL01' => Hippo::Segments::HL.increment_sequence_number,
                   'HL.HL03' => '22'
                 },
                 :minimum        => 1,
@@ -65,7 +63,6 @@ module Hippo::TransactionSets
       loop    Hippo::TransactionSets::HIPAA_837::L2000C,
                 :name           => 'Patient Hierarchical Level',
                 :identified_by  => {
-                  'HL.HL01' => Hippo::Segments::HL.increment_sequence_number,
                   'HL.HL03' => '23'
                 },
                 :minimum        => 0,

@@ -29,7 +29,6 @@ module Hippo::TransactionSets
       loop    Hippo::TransactionSets::HIPAA_277::L2000A,
                 :name           => 'Information Source Level',
                 :identified_by  => {
-                  'HL.HL01' => Hippo::Segments::HL.increment_sequence_number,
                   'HL.HL03' => '20'
                 },
                 :minimum        => 1,
@@ -40,7 +39,6 @@ module Hippo::TransactionSets
       loop    Hippo::TransactionSets::HIPAA_277::L2000B,
                 :name           => 'Information Receiver Level',
                 :identified_by  => {
-                  'HL.HL01' => Hippo::Segments::HL.increment_sequence_number,
                   'HL.HL03' => '21'
                 },
                 :minimum        => 1,
@@ -51,7 +49,6 @@ module Hippo::TransactionSets
       loop    Hippo::TransactionSets::HIPAA_277::L2000C,
                 :name           => 'Billing Provider of Service Level',
                 :identified_by  => {
-                  'HL.HL01' => Hippo::Segments::HL.increment_sequence_number,
                   'HL.HL03' => '19'
                 },
                 :minimum        => 0,
@@ -62,7 +59,6 @@ module Hippo::TransactionSets
       loop    Hippo::TransactionSets::HIPAA_277::L2000D,
                 :name           => 'Patient Level',
                 :identified_by  => {
-                  'HL.HL01' => Hippo::Segments::HL.increment_sequence_number,
                   'HL.HL03' => 'PT'
                 },
                 :minimum        => 0,
