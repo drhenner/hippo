@@ -209,15 +209,15 @@ ts.L2000C do |l2000c|
 
   l2000c.L2300 do |l2300|
     l2300.CLM do |clm|
-      clm.ClaimSubmitterSIdentifier     = '26463774'
-      clm.MonetaryAmount                = '100'
-      clm.FacilityCodeValue             = '11'
-      clm.FacilityCodeQualifier         = 'B'
-      clm.ClaimFrequencyTypeCode        = '1'
-      clm.YesNoConditionOrResponseCode  = 'Y'
-      clm.ProviderAcceptAssignmentCode  = 'A'
-      clm.YesNoConditionOrResponseCode  = 'Y'
-      clm.ReleaseOfInformationCode      = 'I'
+      clm.ClaimSubmitterSIdentifier         = '26463774'
+      clm.MonetaryAmount                    = '100'
+      clm.FacilityCodeValue                 = '11'
+      clm.FacilityCodeQualifier             = 'B'
+      clm.ClaimFrequencyTypeCode            = '1'
+      clm.YesNoConditionOrResponseCode      = 'Y'
+      clm.ProviderAcceptAssignmentCode      = 'A'
+      clm.YesNoConditionOrResponseCode_02   = 'Y'
+      clm.ReleaseOfInformationCode          = 'I'
     end
 
     l2300.REF_11 do |ref| #('Claim Identifier For Transmission Intermediaries') do |ref|
@@ -298,7 +298,7 @@ ts.SE do |se|
   se.TransactionSetControlNumber = ts.ST.TransactionSetControlNumber
 end
 
-puts ts.to_s
+puts ts.to_s.split('~').join("~\n")
 
 =begin
 ST*837*0021*005010X222A1~
@@ -348,13 +348,13 @@ SE*42*0021~
 
 =begin
 ST*837*0123*005010X222A1~
-BHT*0019*00**20110908*2326*CH~
+BHT*0019*00**20110909*0040*CH~
 NM1*41**PREMIER BILLING SERVICE*****46*TGJ23~
 PER*IC*JERRY*TE*3055552222~
 NM1*40*2*KEY INSURANCE COMPANY*****46*66783JJT~
 HL***20*1~
 PRV*BI*PXC*203BF0100Y~
-NM1*85*2*BEN KILDARE SERVICE*****XX*9876543210~
+NM1*85*2*BEN KILDARE SERVICE******9876543210~
 N3*234 SEAWAY ST~
 N4*MIAMI*FL*33111~
 REF*EI*587654321~
@@ -362,32 +362,31 @@ NM1*87*2~
 N3*2345 OCEAN BLVD~
 N4*MIAMI*FL*33111~
 HL***22~
-SBR*P*18*2222-SJ******CI~
+SBR*P**2222-SJ******CI~
 NM1*IL*1*SMITH*JANE****MI*JS00111223333~
 DMG*D8*19430501*F~
 NM1*PR*2*KEY INSURANCE COMPANY*****PI*999996666~
 REF*G2*KA6663~
 HL***23*0~
-PAT*19****D8**01**Y~
+PAT*19~
 NM1*QC*1*SMITH*TED~
-N3*236 Wf MAIN ST~
+N3*236 W MAIN ST~
 N4*MIAMI*FL*33413~
 DMG*D8*19730501*M~
-CLM**********P~
-REF*4N
-~HI~
-SV1*HC:99213*40*UN*1***1**Y**Y*Y***0~
+CLM*26463774*100***11:B:1*Y*A*Y*I~
+REF*D9*17312345600006351~
+HI*BF:V7389~
+SV1*HC:99213*40*UN*1***1~
 DTP*472**20061003~
-SV1*HC:87070*15*UN*1***1**Y**Y*Y***0~
+SV1*HC:87070*15*UN*1***1~
 DTP*472**20061003~
-SV1*HC:99214*35*UN*1***1**Y**Y*Y*UN**0~
+SV1*HC:99214*35*UN*1***1~
 DTP*472**20061010~
-SV1*HC:86663*10*UN*1***2**Y**Y*Y***0~
+SV1*HC:86663*10*UN*1***2~
 DTP*472**20061010~
-SE**0123~
+SE**0123
 
 * not printing LX segments for each service line
 * HL parent/child references wrong
 * HL total segments counts should only be counting direct children
-* default field values should only be set for the fields that are required
 =end
