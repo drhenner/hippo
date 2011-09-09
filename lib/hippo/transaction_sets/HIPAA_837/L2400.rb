@@ -16,7 +16,7 @@ module Hippo::TransactionSets
                 :name           => 'Professional Service',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 3700,
+                :position       => 3700
 
       #Durable Medical Equipment Service
       segment Hippo::Segments::SV5,
@@ -33,7 +33,7 @@ module Hippo::TransactionSets
                 :name           => 'Line Supplemental Information',
                 :minimum        => 0,
                 :maximum        => 10,
-                :position       => 4200,
+                :position       => 4200
 
       #Durable Medical Equipment Certificate of Medical Necessity Indicator
       segment Hippo::Segments::PWK,

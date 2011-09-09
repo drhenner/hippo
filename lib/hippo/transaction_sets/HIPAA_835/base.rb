@@ -18,7 +18,7 @@ module Hippo::TransactionSets
                 :name           => 'Financial Information',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 200,
+                :position       => 200
 
       #Reassociation Trace Number
       segment Hippo::Segments::TRN,

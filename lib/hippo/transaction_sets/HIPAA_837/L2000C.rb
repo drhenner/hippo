@@ -20,7 +20,7 @@ module Hippo::TransactionSets
                 :name           => 'Patient Information',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 70,
+                :position       => 70
 
       #Patient Name
       loop    Hippo::TransactionSets::HIPAA_837::L2010CA,

@@ -53,7 +53,7 @@ module Hippo::TransactionSets
                 :name           => 'Other Insurance Coverage Information',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 3110,
+                :position       => 3110
 
       #Outpatient Adjudication Information
       segment Hippo::Segments::MOA,

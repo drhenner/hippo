@@ -9,7 +9,7 @@ module Hippo::TransactionSets
                 :name           => 'Claim Information',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 1300,
+                :position       => 1300
 
       #Date - Onset of Current Illness or Symptom
       segment Hippo::Segments::DTP,
@@ -187,7 +187,7 @@ module Hippo::TransactionSets
                 :name           => 'Claim Supplemental Information',
                 :minimum        => 0,
                 :maximum        => 10,
-                :position       => 1550,
+                :position       => 1550
 
       #Contract Information
       segment Hippo::Segments::CN1,

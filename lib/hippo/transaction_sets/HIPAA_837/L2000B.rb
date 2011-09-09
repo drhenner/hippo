@@ -19,14 +19,14 @@ module Hippo::TransactionSets
                 :name           => 'Subscriber Information',
                 :minimum        => 1,
                 :maximum        => 1,
-                :position       => 50,
+                :position       => 50
 
       #Patient Information
       segment Hippo::Segments::PAT,
                 :name           => 'Patient Information',
                 :minimum        => 0,
                 :maximum        => 1,
-                :position       => 70,
+                :position       => 70
 
       #Subscriber Name
       loop    Hippo::TransactionSets::HIPAA_837::L2010BA,
