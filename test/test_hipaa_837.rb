@@ -1,5 +1,10 @@
 #!/usr/bin/env ruby
 
+require_relative 'test_helper'
+
+class TestHIPAA837 < MiniTest::Unit::TestCase
+
+  def test_commercial_health_insurance
 =begin
 This example file is based on the Commercial Health Insurance example (3.1.1) published in the 5010X222A1 TR3.
 
@@ -58,13 +63,9 @@ CHARGES: Follow-up visit = $35.00, lab test for mono = $10.00.
 TOTAL CHARGES: $100.00.
 ELECTRONIC ROUTE: Billing provider (sender), to VAN to Key Insurance Company (receiver).
 VAN claim identification number = 17312345600006351.
+
 =end
 
-require_relative 'test_helper'
-
-class TestHIPAA837 < MiniTest::Unit::TestCase
-
-  def test_commercial_claim_example
     ts = Hippo::TransactionSets::HIPAA_837::Base.new
 
     ts.ST do |st|
