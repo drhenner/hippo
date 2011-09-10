@@ -151,28 +151,37 @@ Using the simple transaction set and segments defined above, here are a few ways
 the fields.
 
 To create a transaction set simple choose the set you want and call new on it's Base class.
+
 ```ruby
     ts = Hippo::TransactionSets::Test::Base.new
 ```
+
 The segments can be accessed directly from the created transaction set using the segment
 identifier.
+
 ```ruby
     ts.TCS
 ```
+
 Since the TSS segment can be repeated we must call #build to generate a new
 instance for each repeat. (You will be returned the first instance each time if you
 do not call #build.)
+
 ```ruby
     ts.TSS.build
 ```
+
 The code above produces the following string output (notice how the values from 
 :defaults are prefilled, and the output is automatically sorted based on the order
 that the segments were declared):
+
 ```ruby
     # ts.to_s => 'TSS*Blah~TCS***Preset Field 7~'
 ```
+
 To set field values on a given segment you can access it either by calling the field directly
 on the segment or by passing a block to the segment.
+
 ```ruby
     # this is one way to populate the fields
     ts.TCS.Field1 = 'Foo'
@@ -205,11 +214,14 @@ TSS_02 instead.
 
     # ts.to_s => 'TSS*Blah*Bar~TCS*Foo**Preset Field 7~TSS*Last Segment*Baz~'
 ```
+
 The same technique can be used to reference fields within a segment that have the same name.
+
 ```ruby
     ts.TSS.CommonName = 'Value1'
     ts.TSS.CommonName_02 = 'Value2'
 
     # ts.to_s => 'TSS*Blah*Bar***Value1*Value2~TCS*Foo**Preset Field 7~TSS*Last Segment*Baz~'
 ```
+
 For more example please review the test suite.
